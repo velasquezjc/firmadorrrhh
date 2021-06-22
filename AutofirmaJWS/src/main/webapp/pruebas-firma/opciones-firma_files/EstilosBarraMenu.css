@@ -1,0 +1,192 @@
+﻿#barra_menu_contenedor
+{
+    height: auto;
+}
+
+#barra_menu_contenedor_imagen
+{
+    background-color: #00001c;
+    position: absolute;
+    left: 0px;
+    min-height: 30px;
+    right: 0px;
+}
+
+#img_logo_sistema
+{
+    position: absolute;
+    top: 11px;
+    left: 30px;
+    height: 44px;
+}
+
+#img_logo_minis
+{
+    position: absolute;
+    top: 7px;
+    right: 184px;
+    height: 47px;
+}
+
+#img_logo_direccion
+{
+    position: absolute;
+    top: 16px;
+    right: 23px;
+    height: 28px;
+}
+#imagen_recomendaciones
+{
+   height: 100%;
+   width:100%; 
+}
+
+#indicaciones_al_subir_imagen
+{
+}
+
+#indicaciones_al_subir_imagen #titulo_indicaciones
+{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#indicaciones_al_subir_imagen .indicacion
+{
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+#indicaciones_al_subir_imagen #btn_ok
+{
+    height: 40px;
+    cursor: pointer;
+    margin-left: 380px;
+    margin-top: 10px;
+}
+
+#barra_menu
+{
+    position: absolute;
+    left: 50%;
+    min-height: 30px;
+    width: 1024px;
+    margin-left: -512px;
+    background-color: #EEE;
+}
+
+#contenedor_imagen
+{
+    width: 100%;
+    background-color: #1c2431;
+    height: 83px;
+}
+
+#contenedor_barraInferior
+{
+    width: 100%;
+    background-color: rgb(25, 75, 180);
+    height: 30px;
+    border-top: 3px solid white;
+}
+
+#barra_menu_nombre_sistema
+{
+    position: absolute;
+    top: 5px;
+    left: 187px;
+    width: 265px;
+    text-align: center;
+    font-family: Arial;
+    color: White;
+    font-size: 10px;
+}
+
+#barra_menu_inferior
+{
+    background-color: rgb(25, 75, 180);
+    border-top: 3px solid white;
+    height: 25px;
+    margin-top: -3px;
+    position: absolute;
+    left: 50%;
+    min-height: 30px;
+    width: 1024px;
+    margin-left: -512px;
+}
+
+#barra_menu_inferior_usuario
+{
+    /*display:inline-block;     width:75%;*/
+    color: White;
+    padding-left: 20px;
+    vertical-align: middle;
+    margin-top: 5px;
+}
+
+#barra_menu_label_usuario
+{
+    display: inline-block;
+}
+
+#LabelUsuario
+{
+    display: inline-block;
+}
+
+#barra_menu_inferior_botones
+{
+    /* display:inline-block;         width:19%;   */
+    border-left: 4px solid white;
+    padding-left: 20px;
+    height: 30px;
+    float: right;
+    margin-top: -22px;
+    vertical-align: middle;
+    margin-right: 60px;
+}
+
+.barra_menu_botones
+{
+    border: solid 0px #ffffff;
+    font-size: 13px;
+    color: #fff;
+    padding: 4px 9px;
+    background-color: #194ab4 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    text-shadow: none !important;
+}
+
+.barra_menu_botones:hover
+{
+    color: rgb(110, 208, 226) !important;
+    background-color: #194ab4 !important;
+}
+
+.clickeable
+{
+    cursor: pointer;
+}
+
+#barra_navegacion
+{
+    height: 28px;
+    width: 100%;
+    background-color: rgb(25, 75, 180);
+    border-top: solid white;
+    border-bottom: solid white;
+    /* margin-bottom: 20px; */
+    position: relative;
+}
+    
+.borde-circular
+{
+    border-radius: 50px !important;
+    border-color: Black;
+    -webkit-border-radius: 500px;
+    box-shadow: 15px 20px 25px rgba(0,0,0,0.7) !important;
+    -webkit-box-shadow: 20px 20px 25px rgba(0,0,0,0.7);
+    -moz-box-shadow: 20px 20px 25px rgba(0,0,0,0.7);
+    margin: 2% 1% 2% 1%;
+}

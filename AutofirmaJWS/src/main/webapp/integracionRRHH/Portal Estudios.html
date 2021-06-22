@@ -1,0 +1,591 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0059)https://rrhh.desarrollosocial.gob.ar/Portal/Documentos.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>
+	Portal Estudios
+</title><meta name="viewport" content="width=device-width">
+        <!-- CSS media query on a link element -->
+             
+           <!--  <link rel="stylesheet" href="./Portal Estudios_files/bootstrap.css" type="text/css">
+            <link rel="stylesheet" href="./Portal Estudios_files/bootstrap-responsive.css" type="text/css">
+            <link rel="stylesheet" href="./Portal Estudios_files/jquery-ui-1.10.2.custom.min.css">
+            <link rel="stylesheet" href="./Portal Estudios_files/Estilos.css" type="text/css">
+            <link rel="stylesheet" href="./Portal Estudios_files/EstilosSACC.css" type="text/css">
+            <link rel="stylesheet" href="./Portal Estudios_files/alertify.core.css" type="text/css">
+            <link rel="stylesheet" href="./Portal Estudios_files/alertify.default.css" type="text/css">
+            <link rel="stylesheet" href="./Portal Estudios_files/opentip.css" type="text/css">
+            <link rel="stylesheet" href="./Portal Estudios_files/animate.css" type="text/css">
+            <script type="text/javascript" src="./Portal Estudios_files/jquery-latest.min.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/underscore-min.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/jquery-1.9.1.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/jquery.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/alertify.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/jquery-ui-1.10.2.custom.min.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/jquery.ui.datepicker-es.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/FuncionesDreamWeaver.js"></script>   
+            <script type="text/javascript" src="./Portal Estudios_files/Grilla.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/InputAutocompletable.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/placeholder_ie.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/InputSoloNumeros.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/bootstrap-dropdown.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/linq.min.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/list.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/jquery.leanModal.min.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/bootstrap-collapse.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/bootstrap-transition.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/ProveedorAjax.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/Validaciones.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/Colecciones.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/PolyfillsIE.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/Combos.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/opentip-jquery-excanvas.min.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/Promesa.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/Backend.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/Repositorio.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/HabilitadorDeControles.js"></script>--> 
+            <link rel="stylesheet" href="./Portal Estudios_files/estilosPortalSecciones.css"><style type="text/css"></style></head>
+          
+            
+<script type="text/javascript" src="../valide/js/miniapplet.js"></script>
+<script type="text/javascript" src="../valide/js/protocolcheck.js"></script>
+<script type="text/javascript" src="../valide/js/funcionesExtrasJNLP.js"></script>
+<script type="text/javascript" src="../valide/js/constantes.js"></script>
+<script type="text/javascript" src="../valide/js/intercomunicacionBrowser-App.js"></script>
+            
+  <script type="text/javascript" >
+var HOST = Constants.URL_BASE_APP;
+var storage = "http://www.milocal.com:8080" + "/AlmacenarFirma"; //document.getElementById('storageService').value;
+var retrieve = HOST + "/RecuperarFirma";//document.getElementById('retrieveService').value;
+var jnlp = Constants.URL_BASE_JNLP;//document.getElementById('jnlpService').value;
+MiniApplet.setServlets(storage, retrieve);
+MiniApplet.setJnlpService (jnlp); // URL donde esta el generador de JNLP
+if (navigator.platform.indexOf("Linux")!=-1 || navigator.platform.indexOf("Mac")!=-1){
+//En Mac y Linux se fuerza la utilización de servidores intermedios
+MiniApplet.setForceWSMode(true);
+}
+//dominio desde el que se realiza la llamada al servicio
+//MiniApplet.cargarAppAfirma('miniapplet.js');
+MiniApplet.cargarAppAfirma(HOST+'valide/js/miniapplet.js',MiniApplet.KEYSTORE_WINDOWS);
+
+
+	
+</script>   
+      
+<script type="text/javascript" defer="defer">
+  //var archivo; //variable que almacenara el documento a firmar.
+  //NOTA: ver que tan grande puede ser? en memoria
+ //NOTA2: solo usar estas variables globales si se realiza de a una vez la firma
+  var idEstadoF = null;
+  var idBotonF = null;
+  
+  function downloadedErrorCallback(e) {
+		showLog("Error en la descarga de los datos: " + e);
+	}
+	//descargar archivo binario pdf o imagen y firmar
+	function firmarFileB64ServerExterno(urlDocumento,idEstado,idBoton) {
+		try {
+			var data = urlDocumento;
+			MiniApplet.downloadRemoteDataB64ServerExterno(
+					data,
+					downloadedFileSuccessCallback,
+					downloadedErrorCallback,idEstado,idBoton);
+			
+		} catch(e) {
+			showLog("Error en la descarga de los datos: " + e);
+		}
+	}
+	function downloadedFileSuccessCallback(data,idEstado,idBoton) {
+		//document.getElementById("data").value = data;
+		//(data != undefined && data != null && data != "") ? data : document.location
+		var archivoB64 = data;	
+		firmar(archivoB64,idEstado,idBoton);
+	}
+	
+  function firmar(archivoB64,idEstado,idBoton) {
+	  
+	  var dataB64 = archivoB64;
+	  var estado = document.getElementById(idEstado);
+      var btn_firmar = document.getElementById(idBoton);
+		
+      idEstadoF = idEstado;//usados de forma global
+      idBotonF = idBoton;
+      
+		//deshabilitar todos los demas botones para que no intenten 
+		//descargar otros files paralelamente, puede ser motivo de bug 
+		//en caso de firmas de varios megas de archivos
+				
+		//divMensaje.innerHTML='&nbsp;';
+		
+		var format = "AUTO";
+		var algorithm = "SHA1withRSA";
+		var params="";
+		params= params + "signaturePositionOnPageLowerLeftX = 60"+ "\n";
+		params= params + "signaturePositionOnPageLowerLeftY = 60"+ "\n";
+		params= params + "signaturePositionOnPageUpperRightX = 550"+ "\n";
+		params= params + "signaturePositionOnPageUpperRightY = 130"+ "\n";
+		params= params + "signaturePage = -1"+ "\n";
+		//nota: por el momento no se puede enviar texto enriquecido  /n /r /t
+		params= params + "layer2Text = Firmado Digitalmente conforme Ley 25.506 por: $$SUBJECTCN$$ el día $$SIGNDATE=dd/MM/yyyy HH:mm:ss$$ certificado emitido por $$ISSUERCN$$ con serial $$CERTSERIAL$$"+ "\n";
+		params= params + "layer2FontFamily = 0"+ "\n";
+		params= params + "layer2FontSize = 10"+ "\n";
+		params= params + "layer2FontStyle = 0"+ "\n";
+		params= params + "layer2FontColor = black";
+		
+		try {		
+			//setear estados de la imagen y boton
+			btn_firmar.classList.remove('botonFirma');
+			btn_firmar.classList.add('botonGrisadoFirma');
+			//NOTA: con disabled ya es suficiente no es necesario cambiar de estilo a gris, porque aun asi hay que deshabilitar el boton
+			//NOTA2: pero si se actualiza la pagina por alguna razon si se dejo el boton deshabilitado va a quedar asi, es como que el navegador reusa el objeto boton del DOM, FIX: hay que hacer enter en la url asi recarga directamente la pagina
+			//NOTA3: en caso de que se cancele el launch desde el inicio los botones no pueden detectar este evento y quedaran en proceso pero sin hacer nada, FIX:?????
+		    btn_firmar.disabled = true; 
+			
+			estado.classList.remove('estadoNoFirmado');
+			estado.classList.add('estadoProcesando');
+						
+			/*MiniApplet.sign(
+						dataB64,
+						algorithm,
+						format,
+						params,
+						successCallback,
+						errorCallback);*/
+		    
+			MiniApplet.signAndSaveToFile(
+					"SIGN",
+					dataB64,
+					algorithm,
+					format,
+					params,
+					"archivoFirmado.pdf",
+					successCallback,
+					errorCallback);
+		}
+		catch (e) {
+			//Se muestra el mensaje de error si NO es de cancelación de la operación
+			//por ejemplo mal tipo de algoritmo enviado,etc
+			//el canceled no es por parte del usuario sino por ejemplo por no hallarse
+			//por lo menos un certificado en el almacen seleccionado, igualmente modifique 
+			//este error para que por lo menos me permita seleccionar otro certificado sin
+			//emitir esta excepcion
+			if ((e.message.indexOf("PrivilegedActionException")==-1) && 
+			    (e.message.indexOf("AOCancelledOperationException")==-1) && 
+			    (e.message.indexOf("Error calling method on NPObject")==-1) && 
+				(e.message.indexOf("Operacion cancelada por el usuario")==-1)) {
+				/*divMensaje.innerHTML='<div class="iconErrorFirma">Error al firmar</div><br><div style="width:300pt">&nbsp;' + e.message + '</div>';*/
+			}
+			btn_firmar.disabled = false;
+			btn_firmar.classList.remove('botonGrisadoFirma');
+			btn_firmar.classList.add('botonFirma');
+			estado.classList.remove('estadoProcesando');
+			estado.classList.add('estadoNoFirmado');
+			
+		}
+		
+	}
+	
+
+	function successCallback(signatureB64, certificateB64) {
+	
+		//en realidad el algoritmo por default es utf-8 pero igualmente no se 
+		//toma en cuenta el segundo parametro, abria que eliminarlo si el algoritmo
+		//es por default utf-8
+		var fichero = signatureB64;//MiniApplet.getTextFromBase64 (signatureB64, "utf-8");
+		var estado = document.getElementById(idEstadoF);
+	    var btn_firmar = document.getElementById(idBotonF);
+	    
+		signature = signatureB64;
+			
+		/*divMensaje.innerHTML='<br><div class="iconOKFirma">Fichero firmado correctamente</div><br>&nbsp;';*/
+		
+		//btn_firmar.disabled = false;
+		estado.classList.remove('estadoProcesando');
+		estado.classList.add('estadoFirmado');
+		
+	}
+	
+	function errorCallback(errorType, errorMessage) {
+		var estado = document.getElementById(idEstadoF);
+	    var btn_firmar = document.getElementById(idBotonF);
+	    
+		if ((errorMessage) && 
+(errorMessage.indexOf("AOCancelledOperationException")==-1) && 
+(errorMessage.indexOf("Operacion cancelada por el usuario")==-1)) {
+			if (errorMessage.indexOf("El almacen no contenia entradas")!=-1) {
+				/*divMensaje.innerHTML='<img class="iconStatus" src="../img/iconFALLO.png">No existen certificados en el almacén de su navegador<br><br>';*/
+			}
+			else {
+				/*divMensaje.innerHTML='<div class="iconErrorFirma">Error al firmar</div><br><div style="width:300pt">' + errorMessage + '</div>';*/
+			}
+		}
+		btn_firmar.disabled = false;
+		btn_firmar.classList.remove('botonGrisadoFirma');
+		btn_firmar.classList.add('botonFirma');
+		estado.classList.remove('estadoProcesando');
+		estado.classList.add('estadoNoFirmado');
+	}
+	//la siguiente funcion se ejecuta desde protocolchec al agragar un iframe para cargar la app jnlp
+	function mostrarPantalla()	{
+		
+		/*document.getElementById("cargandoApplet").style.display = "none";
+		document.getElementById("pantalla").style.display = "block";
+		if (mobile==true) {
+			document.getElementById("firmaProceso1").style.display = "none";
+			document.getElementById("botones").style.display = "none";
+			document.getElementById("divmensaje").style.display = "none";
+			
+			if (MiniApplet.isAndroid()) {
+				document.getElementById("firmaProcesoAND").style.display = "inline";
+			}
+			else if (MiniApplet.isIOS()) {
+				document.getElementById("firmaProcesoIOS").style.display = "inline";
+			}
+			document.getElementById("firmaMovil").style.display = "inline";
+			document.getElementById("saveFile").style.display = "none";
+			document.getElementById("clienteEscritorio").style.display = "none";
+			document.getElementById("nota").style.display = "none";
+			document.getElementById("nota2").style.display = "inline";
+		}*/
+	}
+	
+  
+  </script>    
+            
+            
+            
+<body>
+    <form method="post" action="https://rrhh.desarrollosocial.gob.ar/Portal/Documentos.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTMzNjEwNjQyOWRkp+uVq00opNIT/zaTXWK30Ro5qGVg0PW203f9fK54BfM=">
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="FC3B2A38">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAM5Y+lr9OaEaQ7K//w8xGk1pnZyyDB2rwTleLKVnNvvE78deDCe+i2HgQzzlr4muY5kIzA3jwkYB4cistDz3CTEbhU/gExANwriXVY25R14+Q==">
+</div>
+    
+
+    <title></title>
+    
+    <link id="link1" rel="stylesheet" href="./Portal Estudios_files/EstilosBarraMenu.css" type="text/css">
+    <link id="link2" rel="stylesheet" href="./Portal Estudios_files/BarraMenuUsuarios.css" type="text/css">
+    <link href="./Portal Estudios_files/vex.css" rel="stylesheet">
+    <link href="./Portal Estudios_files/vex-theme-os.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Portal Estudios_files/bootstrap.min.css">
+    <link href="./Portal Estudios_files/vex.css" rel="stylesheet">
+    <link href="./Portal Estudios_files/vex-theme-os.css" rel="stylesheet">
+  <!-- <script type="text/javascript" src="./Portal Estudios_files/BarraMenu.js"></script>
+    <script type="text/javascript" src="./Portal Estudios_files/BotonDesplegable.js"></script>
+    <script type="text/javascript" src="./Portal Estudios_files/VistaThumbnail.js"></script>
+    <script type="text/javascript" src="./Portal Estudios_files/SubidorDeImagenes.js"></script>
+    <script type="text/javascript" src="./Portal Estudios_files/vex.combined.min.js"></script>
+ -->  
+<div id="barra_menu_contenedor" class="no-print">
+    <div id="contenedor_imagen">
+        <img src="./Portal Estudios_files/logo_sistema.png" id="img_logo_sistema" alt="logosistema">
+        <img src="./Portal Estudios_files/logo_ministerio.png" id="img_logo_minis" alt="logosistema">
+        <img src="./Portal Estudios_files/logo_direccion.png" id="img_logo_direccion" alt="logosistema">
+        <div id="barra_menu_nombre_sistema">
+        </div>
+    </div>
+    <div id="barra_navegacion"> 
+        <div id="boton_home">
+            <img src="./Portal Estudios_files/Home-icono.png" id="home_imagen" alt="homeicono">
+        </div>
+        <div id="contenedor_imagen_usuario">
+            <img src="./Portal Estudios_files/portal_empleado.png" id="foto_usuario_icono" alt="fotouser">
+            <div id="imagen">
+            </div>
+        </div>
+        <div id="contenedor_menu_usuarios" class="menu_usuario sombrita" style="display: none;">
+            <div class="flechita">
+            </div>
+            <div id="contenedor_foto_usuario">
+                <img id="foto_usuario_generica" src="./Portal Estudios_files/portal_empleado.png" alt="fotousuariogenerica" class="foto_menu_estilo">
+                <div id="foto_usuario_menu" class="foto_menu_estilo" style="display: none;">
+                </div>
+                <div id="barrita_cambio_imagen">
+                    <div>
+                        Cambiar</div>
+                    <div>
+                        Imágen</div>
+                </div>
+            </div>
+            
+            <div id="nombre_user" class="cabecera_menu_usuario">Juan Carlos</div>
+            <div id="apellido_user" class="cabecera_menu_usuario">VELASQUEZ QUIROZ</div>
+            <div id="dni_user" class="cabecera_menu_usuario">29064932</div>
+            <div id="email_user" class="cabecera_menu_usuario">vela.mil@gmail.com</div>
+            <div id="info_usuario">
+                <a id="cambiar-email_usuario" class="" name="signup">Modificar correo</a>
+                
+                <a id="go" rel="leanModal" class="" name="signup" href="https://rrhh.desarrollosocial.gob.ar/Portal/Documentos.aspx#signup">Cambiar Contraseña</a>
+                
+
+
+
+
+                <div id="signup">
+			        <div id="signup-ct">
+				        <div id="signup-header">
+					        <h2 style="color:#fff;">Cambio de Contraseña</h2>
+					        <p></p>
+					        <a class="modal_close" href="https://rrhh.desarrollosocial.gob.ar/Portal/Documentos.aspx#"></a>
+				        </div>
+							<div id="contenido_form">
+				              <div class="txt-fld">
+				                <label for="">Contraseña actual</label>
+                                <input id="pass_actual" type="password" class="posicionamiento_input_cambio_pass">
+                               
+				              </div>
+				              <div class="txt-fld">
+				                <label for="">Nueva Contraseña</label>
+                                 <input id="pass_nueva" type="password" class="posicionamiento_input_cambio_pass">
+                               
+				               
+				              </div>
+				              <div class="txt-fld">
+				                <label for="">Repetir Contraseña</label>
+                                <input id="pass_nueva_repetida" type="password" class="posicionamiento_input_cambio_pass">
+                               
+				              </div>
+				              <div class="btn-fld">
+                              <p><span style="font-weight:bold;">Advertencia:</span> Ingresar al menos 8 dígitos (números y letras)</p>
+                               
+				                <input type="button" class="btn btn-primary" id="pass" value="Cambiar">
+                              </div>
+                            </div>	         
+			        </div>
+                </div> 
+
+                <input name="BarraMenu$FormPassword$urlAjax" type="text" id="BarraMenu_FormPassword_urlAjax" style="display:none;">
+
+              
+
+                <div id="cerrar-sesion_usuario">
+                    <input type="submit" name="BarraMenu$CerrarSessionLinkButton" value="Cerrar Sesión" id="BarraMenu_CerrarSessionLinkButton" class="btn btn-primary">
+                </div>
+            </div>
+        </div>
+        <div id="contenedor_imagen_cuadrados" class="sombrita-iconos">
+            <img src="./Portal Estudios_files/cuadraditos.png" id="menu_cuadrados" alt="fotousuariomenu">
+        </div>
+        <div id="contenedor_menu_cuadrados" class="menu_usuario sombrita" style="display: none;">
+            <div class="flechita">
+            </div>
+        <a href="https://rrhh.desarrollosocial.gob.ar/SeleccionDeArea.aspx"><img src="./Portal Estudios_files/Administración_de_Areas.png" class="redondeo-modulos" style="margin: 5px;"></a><a href="https://rrhh.desarrollosocial.gob.ar/FormularioConcursar/PanelDeControl.aspx"><img src="./Portal Estudios_files/POSTULAR.png" class="redondeo-modulos" style="margin: 5px;"></a></div>
+        <!--mensajes-->
+        <div id="contenedor_imagen_mensajes">
+            
+            <div id="notificacion_punto_rojo" style="display: none;">0</div>
+            <img src="./Portal Estudios_files/mensajes-icono.png" id="menu_mensajes" alt="fotousuariomenu">
+        </div>
+        <div id="contenedor_menu_mensajes" class="menu_usuario sombrita-iconos" style="display: none;">
+            <div class="flechita">
+            </div>
+            <div class="contenedor_de_alertas_y_mensajes"></div>
+        </div>
+    </div>
+    <div id="plantillas_barra_menu" style="display: none">
+        <div class="ui_mensaje_alerta mensaje_alerta sombra-mensaje">
+            <p class="titulo_mensaje_alerta">
+                Mensaje 1</p>
+            <p class="contenido_mensaje_alerta">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mi nunc, euismod
+                eget est nec, consequat porttitor est. Maecenas ante elit, bibendum in volutpat
+                sit amet, imperdiet ac neque. Quisque dapibus eros sit amet mauris venenatis molestie.
+                Integer feugiat felis dolor, pellentesque tincidunt nulla efficitur quis. Pellentesque
+                pretium velit id neque accumsan, vitae aliquam augue mollis. Fusce ut diam malesuada,
+                placerat tortor et, efficitur massa. Praesent sagittis tortor et enim accumsan laoreet.
+                Praesent ut sapien ac leo porta finibus eget vitae lacus. Aliquam at arcu felis.
+                Morbi sit amet consectetur ex. Maecenas in nisi turpis.</p>
+        </div>
+
+        <div id="contenedor_chat_mensajes">
+            <div id="titulo_chat">
+            </div>
+            <div id="cuerpo_chat">
+                <div id="plantilla_mensaje">
+                </div>
+            </div>
+            <input id="btn_enviar" type="button" class="btn btn-primary" value="Enviar">
+            <input id="btn_cerrar" type="button" class="btn btn-primary" value="Cerrar">
+            <input id="bnt_finalizar" type="button" class="btn btn-primary" value="Finalizar">
+        </div>
+    </div>
+</div>
+    <div>
+     <div class="container-fluid">
+        <h1 style="text-align:center; margin:30px; "></h1>
+        <div style="margin: 0 auto;" class="row">
+            <div style="text-align:center;" class="caja_izq"> <div class="imagen">   
+    </div>
+    <div style="text-align:center;">
+        <p id="nombre_empleado" class="">VELASQUEZ QUIROZ, Juan Carlos</p>
+       <!-- <p class=""><span id="cargo">Analista en Gestión de la información</span></p>-->
+    </div>
+    <hr>
+   <!-- <h3 class="h3_caja_izq">Accesos directos</h3>-->
+    <div class="div_texto_caja_izq">
+        <ul>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/consultas.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/Consultas.aspx" id="link_consultas">Consultas</a></li>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/datos_personales.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/DatosPersonales.aspx">Datos Personales</a></li>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/perfil_prof.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/Perfil.aspx">Carrera Administrativa</a></li>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/estudios.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/Documentos.aspx">Documentos Legajo</a></li>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/beneficios_y_pagos.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/Recibo.aspx">Beneficios</a></li>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/licencias.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/Licencias.aspx">Licencias</a></li>
+            <li class="no_disponible"><img alt="icono" src="./Portal Estudios_files/notificaciones.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/Documentos.aspx#">Capacitaciones</a></li>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/viaticos.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/Organigrama.aspx">Organigrama</a></li>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/capacitacion.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/MenuPrincipal/Menu.aspx">Aplicaciones</a></li>
+        </ul>
+    </div>
+</div>
+<style TYPE="text/css">  
+.botonFirma {
+	background: -moz-linear-gradient(top, #587BA0, #38577f 15px);
+	background: -webkit-gradient(linear, 0 0, 0 50%, from(#587BA0),
+		to(#38577f) );
+	background-image: linear-gradient(to bottom, #2574AD, #034574);
+	background-color: #38577f;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px; /*azul marino oscuro opaco*/
+	-ms-border-radius: 4px;
+	color: #fff;
+	/*float: center;*/
+	border: none;
+	padding: 3px 12px 3px 12px;/*padding: 5px 18px 5px 18px;*/
+	/*margin: 5px 0 0 0;*/
+	font-family: arial;
+	font-size: 8pt;
+	cursor:hand;
+	font-weight: bold;
+}
+.botonGrisadoFirma {
+	background-color: #ccc;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px; /*azul marino oscuro opaco*/
+	-ms-border-radius: 4px;
+	color:#ffffff;
+	/*float: center;*/
+	border: none;
+	padding: 3px 12px 3px 12px;/*padding: 5px 18px 5px 18px;*/
+	/*margin: 5px 0 0 0;*/
+	font-family: arial;
+	font-size: 8pt;
+	cursor:auto;
+	font-weight: bold;
+}
+.estadoFirmado{
+background-image: url('./Portal Estudios_files/pased.png');
+background-repeat: no-repeat;	
+background-position: center;
+
+}
+.estadoNoFirmado{
+background-image: url('./Portal Estudios_files/archi.gif');
+background-repeat: no-repeat;	
+background-position: center;
+
+}
+.estadoProcesando{
+background-image: url('./Portal Estudios_files/loads.gif');
+background-repeat: no-repeat;	
+background-position: center;
+
+}
+
+</style> 
+            <div class="caja_der papel">   
+                <legend style="margin-top: 20px;">Documentos del Legajo</legend>
+                 <div id="tabla_documentos"><table class="tablex table-striped table-bordered table-condensed" style="cursor: pointer;width:100%"><thead class="estilo_tabla_portal"><tr>
+				 <th style="background-image: linear-gradient(to bottom, #2574AD, #034574); " data-sort="Folio">Folio</th>
+				 <th style="background-image: linear-gradient(to bottom, #2574AD, #034574); " data-sort="Documento">Documento</th>
+				 <th style="background-image: linear-gradient(to bottom, #2574AD, #034574); " data-sort="xxx">Estado</th>
+				 <th style="background-image: linear-gradient(to bottom, #2574AD, #034574); " data-sort="xxx">Operación</th>
+				 </tr></thead>
+				 <tbody class="list">
+				 <tr><td class="Folio">00-001/006</td><td class="Documento">Decreto 2699</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-001/006</td><td class="Documento">Decreto 2699</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-007/007</td><td class="Documento">Notif. designacion en planta permanente</td>
+				 <td id="img3" class="estadoNoFirmado"></td>
+				 <td style="text-align: center">
+				 <input id="b3" class="botonFirma" type="button" value="Firmar" onclick="javascript:firmarFileB64ServerExterno('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64','img3','b3');return false;" />
+				 </td></tr>
+
+				 <tr><td class="Folio">00-008/008</td><td class="Documento">DDJJ D.85/02-(ANEXO)-2016</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-009/009</td><td class="Documento">DDJJ D.85/02-IncompInhabConf-2016</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-010/010</td><td class="Documento">DDJJ D.894/01-IncompatPrev-2016</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-011/011</td><td class="Documento">DDJJ 8566/61 DA 5/00-Incomp-2016</td>
+				 <td id="img7" class="estadoNoFirmado"></td>
+				 <td style="text-align: center">
+				 <input id="b7" class="botonFirma" type="button" value="Firmar" onclick="javascript:firmarFileB64ServerExterno('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64','img7','b7');return false;" />
+				 </td></tr>
+
+				 <tr><td class="Folio">00-012/012</td><td class="Documento">DDJJ 1421/02-I-Art 4-Imp.Ing-2016</td>
+				 <td id="img8" class="estadoNoFirmado"></td>
+				 <td style="text-align: center">
+				 <input id="b8" class="botonFirma" type="button" value="Firmar" onclick="javascript:firmarFileB64ServerExterno('https://www.milocal.com:8443/AutofirmaJWS/prueba2.b64','img8','b8');return false;" />
+				 </td></tr>
+
+				 <tr><td class="Folio">00-013/013</td><td class="Documento">RNR- Cert. de antecendetes penales</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-014/014</td><td class="Documento">Cert. Psicofisico</td></tr>
+
+				 <tr><td class="Folio">00-015/017</td><td class="Documento">Curriculum vitae</td></tr>
+
+				 <tr><td class="Folio">00-018/018</td><td class="Documento">Estudio nivel: Universitario</td></tr>
+
+				 <tr><td class="Folio">00-019/019</td><td class="Documento">Copia de DNI agente</td></tr>
+
+				 <tr><td class="Folio">00-020/020</td><td class="Documento">Const. de CUIL agente</td></tr>
+
+				 <tr><td class="Folio">00-021/021</td><td class="Documento">Cert. Psicofisico</td></tr>
+
+				 <tr><td class="Folio">00-022/022</td><td class="Documento">Solicitud de documentacion</td></tr>
+
+				 <tr><td class="Folio">00-023/024</td><td class="Documento">Seguro de vida</td></tr>
+
+				 <tr><td class="Folio">00-025/025</td><td class="Documento">Solicitud de documentacion</td></tr>
+
+				 <tr><td class="Folio">00-026/026</td><td class="Documento">Fotocopia carneto obra social</td></tr>
+
+				 <tr><td class="Folio">00-027/028</td><td class="Documento">Solicitud de documentacion</td></tr>
+
+				 <tr><td class="Folio">00-029/029</td><td class="Documento">DDJJ de Cargos DUPLICADO-2016</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-030/030</td><td class="Documento">DDJJ de Cargos ORIGINAL-2016</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 </tbody></table></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+<!-- 
+<script type="text/javascript" src="./Portal Estudios_files/Legajo.js"></script>
+<script type="text/javascript" src="./Portal Estudios_files/Spin.js"></script>
+<script type="text/javascript" src="./Portal Estudios_files/VistaThumbnail.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function ($) {
+
+        //para cargar el menu izquierdo 
+        $(".caja_izq").load("SeccionIzquierda.htm", function () {
+            Backend.start(function () {
+                Legajo.getNombre();
+                Legajo.getDocumentos();
+            });
+        });
+
+    });
+
+</script> -->
+
+<div id="lean_overlay"></div></body></html>

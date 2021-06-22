@@ -1,0 +1,17 @@
+<?xml version="1.0″ encoding="utf-8″?> 
+<!– JNLP File for SwingSet2 Demo Application –>
+<jnlp spec="1.0+" codebase="http://www.milocal.com:8080/" href="miwebstart.jnlp">
+	<information>
+		<title>Primera prueba de WebStart</title>
+		<vendor>www.adictosaltrabajo.com</vendor>
+		<homepage href="index.html" />
+		<description>Este es un ejemplo simple de Webstart</description>
+		<description kind="short">Ejemplo de WebStart.</description>
+		<offline-allowed />
+	</information>
+	<resources>
+		<j2se version="1.4" />
+		<jar href="applet_afirma_3_4.jar" />
+	</resources>
+	<application-desc main-class="editorGrafico" />
+</jnlp> 

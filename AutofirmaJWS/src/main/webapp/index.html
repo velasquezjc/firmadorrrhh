@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
+<html> <!-- Ejemplo basico de lanzador de la aplicacion -->
+  <head>
+	<title>Ejemplo de despliegue de la App</title>   
+    <meta charset="UTF-8">    
+	<script type="text/javascript" src="valide/js/miniapplet.js"></script>
+	<script type="text/javascript" src="valide/js/protocolcheck.js"></script>
+    <script type="text/javascript" src="valide/js/constantes.js"></script>
+    
+<!--     <script type="text/javascript" src="valide/js/intercomunicacionBrowser-App.js"></script> -->
+	<script type="text/javascript">
+
+		// IMPORTANTE: PARA PRUEBAS, USAR SIEMPRE UNA IP O NOMBRE DE DOMINIO, NUNCA 'LOCALHOST' O '127.0.0.1'
+		// SI NO SE HACE ASI, AUTOFIRMA BLOQUEARA LA FIRMA POR SEGURIDAD
+        var HOST = Constants.URL_BASE_APP;
+	
+		function saveSignature() {
+			MiniApplet.saveDataToFile(
+					document.getElementById('result').value,
+					"Guardar firma electronica",
+					null,
+					null,
+					null);
+		}
+
+		function showResultCallback(signatureB64, certificateB64) {
+			showLog("Firma OK");
+			document.getElementById('result').value = signatureB64;
+		}
+
+		function showCertCallback(certificateB64) {
+			showLog("Certificado seleccionado");
+			document.getElementById('result').value = certificateB64;
+		}
+		
+		function showErrorCallback(errorType, errorMessage) {
+			showLog("Type: " + errorType + "\nMessage: " + errorMessage);
+		}
+
+		function doSign() {
+			try {
+				//var data = "abc";//data igual a vacio lanza una seleccion de archivo, pero se firman los datos del archivo no el hash
+				var data = document.getElementById("data").value;
+
+				MiniApplet.sign(
+					(data != undefined && data != null && data != "") ? data : null,
+					document.getElementById("algorithm").value,
+					document.getElementById("format").value,
+					document.getElementById("params").value,
+					showResultCallback,
+					showErrorCallback);
+				
+			} catch(e) {
+				try {
+					showLog("Type: " + MiniApplet.getErrorType() + "\nMessage: " + MiniApplet.getErrorMessage());
+				} catch(ex) {
+					showLog("Error: " + e);
+				}
+			}
+		}
+        //firmar y salvar
+		function doSignAndSave() {
+			try {
+				//var data = "abc";//data igual a vacio lanza una seleccion de archivo, pero se firman los datos del archivo no el hash
+				var data = document.getElementById("data").value;
+
+				//el codigo de operacion puede ser SIGN, COSIGN,COUNTERSIGN
+				MiniApplet.signAndSaveToFile(
+					"SIGN",
+					(data != undefined && data != null && data != "") ? data : null,
+					document.getElementById("algorithm").value,
+					document.getElementById("format").value,
+					document.getElementById("params").value,
+					"archivoFirmado.pdf",
+					showResultCallback,
+					showErrorCallback);
+				
+			} catch(e) {
+				try {
+					showLog("Type: " + MiniApplet.getErrorType() + "\nMessage: " + MiniApplet.getErrorMessage());
+				} catch(ex) {
+					showLog("Error: " + e);
+				}
+			}
+		}
+		//descarga una url y la firma  (para descargar html,etc (strings) y formato CADES)
+		function downloadAndSign() {
+			try {
+				var data = document.getElementById("urlParam").value;
+				MiniApplet.downloadRemoteData(
+						(data != undefined && data != null && data != "") ? data : document.location,
+						downloadedSuccessCallback,
+						downloadedErrorCallback);
+			} catch(e) {
+				showLog("Error en la descarga de los datos: " + e);
+			}
+		}
+		
+		function downloadedSuccessCallback(data) {
+			document.getElementById("data").value = data;
+			doSign();			
+		}
+		
+		function downloadedErrorCallback(e) {
+			showLog("Error en la descarga de los datos: " + e);
+		}
+		//descargar archivo binario pdf o imagen
+		function downloadFileB64AndSignAndSave() {
+			try {
+				var data = document.getElementById("urlArchivoParam").value;
+				MiniApplet.downloadRemoteDataB64(
+						(data != undefined && data != null && data != "") ? data : document.location,
+						downloadedFileSuccessCallback,
+						downloadedErrorCallback);
+			} catch(e) {
+				showLog("Error en la descarga de los datos: " + e);
+			}
+		}
+		function downloadedFileSuccessCallback(data) {
+			document.getElementById("data").value = data;
+			//document.getElementById("result").value = data;			
+			doSignAndSave();
+		}
+		
+		function doSignBatch() {
+			try {
+				var batch = createBatchConfiguration();
+
+				MiniApplet.signBatch(
+					MiniApplet.getBase64FromText(batch),
+					HOST + '/afirma-server-triphase-signer/BatchPresigner', //$NON-NLS-1$
+					HOST + '/afirma-server-triphase-signer/BatchPostsigner', //$NON-NLS-1$
+					document.getElementById("params").value,
+					showResultCallback,
+					showErrorCallback);
+
+			} catch(e) {
+				try {
+					showLog("Type: " + MiniApplet.getErrorType() + "\nMessage: " + MiniApplet.getErrorMessage());
+				} catch(ex) {
+					showLog("Error: " + e);
+				}
+			}
+		}
+
+		function createBatchConfiguration() {
+
+			var config1 = MiniApplet.getBase64FromText("FileName=C:/salida/batch/FIRMA1.xml");
+			var config2 = MiniApplet.getBase64FromText("FileName=C:/salida/batch/FIRMA2.xml");
+
+			return "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\r\n" + //$NON-NLS-1$
+			"<signbatch stoponerror=\"false\" algorithm=\"SHA256withRSA\">\r\n" + //$NON-NLS-1$
+			" <singlesign Id=\"7725374e-728d-4a33-9db9-3a4efea4cead\">\r\n" + //$NON-NLS-1$
+			"  <datasource>SG9sYSBNdW5kbw==</datasource>\r\n" + //$NON-NLS-1$
+			"  <format>XAdES</format>\r\n" + //$NON-NLS-1$
+			"  <suboperation>sign</suboperation>\r\n" + //$NON-NLS-1$
+			"  <extraparams>Iw0KI1RodSBBdWcgMTMgMTY6Mjk6MDUgQ0VTVCAyMDE1DQpTaWduYXR1cmVJZD03NzI1Mzc0ZS03MjhkLTRhMzMtOWRiOS0zYTRlZmVhNGNlYWQNCg==</extraparams>\r\n" + //$NON-NLS-1$
+			"  <signsaver>\r\n" + //$NON-NLS-1$
+			"   <class>es.gob.afirma.signers.batch.SignSaverFile</class>\r\n" + //$NON-NLS-1$
+			"   <config>" + config1 + "</config>\r\n" + //$NON-NLS-1$
+			"  </signsaver>\r\n" + //$NON-NLS-1$
+			" </singlesign>\r\n" + //$NON-NLS-1$
+ 			" <singlesign Id=\"93d1531c-cd32-4c8e-8cc8-1f1cfe66f64a\">\r\n" + //$NON-NLS-1$
+			"  <datasource>SG9sYSBNdW5kbw==</datasource>\r\n" + //$NON-NLS-1$
+			"  <format>CAdES</format>\r\n" + //$NON-NLS-1$
+			"  <suboperation>sign</suboperation>\r\n" + //$NON-NLS-1$
+			"  <extraparams>cG9saWN5SWRlbnRpZmllcj11cm46b2lkOjIuMTYuNzI0LjEuMy4xLjEuMi4xLjlcbnBvbGljeVF1YWxpZmllcj1odHRwczovL3NlZGUuMDYwLmdvYi5lcy9wb2xpdGljYV9kZV9maXJtYV9hbmV4b18xLnBkZlxucG9saWN5SWRlbnRpZmllckhhc2hBbGdvcml0aG09aHR0cDovL3d3dy53My5vcmcvMjAwMC8wOS94bWxkc2lnI3NoYTFcbnBvbGljeUlkZW50aWZpZXJIYXNoPUc3cm91Y2Y2MDArZjAzci9vMGJBT1E2V0FzMD0=</extraparams>\r\n" + //$NON-NLS-1$
+			// cG9saWN5SWRlbnRpZmllcj11cm46b2lkOjIuMTYuNzI0LjEuMy4xLjEuMi4xLjlcbnBvbGljeVF1YWxpZmllcj1odHRwczovL3NlZGUuMDYwLmdvYi5lcy9wb2xpdGljYV9kZV9maXJtYV9hbmV4b18xLnBkZlxucG9saWN5SWRlbnRpZmllckhhc2hBbGdvcml0aG09aHR0cDovL3d3dy53My5vcmcvMjAwMC8wOS94bWxkc2lnI3NoYTFcbnBvbGljeUlkZW50aWZpZXJIYXNoPUc3cm91Y2Y2MDArZjAzci9vMGJBT1E2V0FzMD0=
+			"  <signsaver>\r\n" + //$NON-NLS-1$
+			"   <class>es.gob.afirma.signers.batch.SignSaverFile</class>\r\n" + //$NON-NLS-1$
+			"   <config>" + config2 + "</config>\r\n" + //$NON-NLS-1$
+			"  </signsaver>\r\n" + //$NON-NLS-1$
+			" </singlesign>\r\n" + //$NON-NLS-1$
+			"</signbatch>"; //$NON-NLS-1$
+						
+		}
+		
+		function doCoSign() {
+			try {
+				var signature = document.getElementById("signature").value;
+				var data = document.getElementById("data").value;
+
+				MiniApplet.coSign(
+					(signature != undefined && signature != null && signature != "") ? signature : null,
+					(data != undefined && data != null && data != "") ? data : null,
+					document.getElementById("algorithm").value,
+					document.getElementById("format").value,
+					document.getElementById("params").value,
+					showResultCallback,
+					showErrorCallback);
+
+			} catch(e) {
+				showLog("Type: " + MiniApplet.getErrorType() + "\nMessage: " + MiniApplet.getErrorMessage());
+			}
+		}
+
+		function doCounterSign() {
+			try {
+				var signature = document.getElementById("signature").value;
+
+				MiniApplet.counterSign(
+					(signature != undefined && signature != null && signature != "") ? signature : null,
+					document.getElementById("algorithm").value,
+					document.getElementById("format").value,
+					document.getElementById("params").value,
+					showResultCallback,
+					showErrorCallback);
+			} catch(e) {
+				showLog("Type: " + MiniApplet.getErrorType() + "\nMessage: " + MiniApplet.getErrorMessage());
+			}
+		}
+
+		function doSelectCert() {
+			try { 
+				MiniApplet.selectCertificate(
+					document.getElementById("params").value,
+					showCertCallback,
+					showErrorCallback);
+			} catch(e) {
+				showLog("Type: " + MiniApplet.getErrorType() + "\nMessage: " + MiniApplet.getErrorMessage());
+			}
+		}
+
+		function showAppletLog() {
+			try {
+				showLog(MiniApplet.getCurrentLog());
+			} catch(e) {
+				showLog("Type: " + MiniApplet.getErrorType() + "\nMessage: " + MiniApplet.getErrorMessage());
+			}
+		}
+
+		/**
+		 * Funcion para la carga de un fichero. Almacena el contenido del fichero en un campo oculto y muestra su nombre.
+		 * LA CARGA INDEPENDIENTE DE FICHEROS DEBE EVITARSE EN LA MEDIDA DE LO POSIBLE. Si deseas firmar, cofirmar o contrafirmar
+		 * un fichero, llama al metodo correspondiente (sign(), coSign() o counterSign()) sin indicar los datos.
+		 * El uso del metodo de carga no sera compatible con el Cliente movil.
+		 */
+		function browse(title, dataField, textDiv) {
+			try {
+				var filenameDataB64 = MiniApplet.getFileNameContentBase64(title, null, null, null);
+				if (filenameDataB64 == null) {
+					return;
+				}
+
+				var dataB64;
+				var separatorIdx = filenameDataB64.indexOf("|");
+				if ((separatorIdx + 1) < filenameDataB64.length) {
+					textDiv.innerHTML = filenameDataB64.substring(0, separatorIdx);
+					dataField.value = filenameDataB64.substring(separatorIdx + 1);
+				} else {
+					// El fichero no contenia datos
+					return;
+				}
+			} catch(e) {
+				showLog("Type: " + MiniApplet.getErrorType() + "\nMessage: " + MiniApplet.getErrorMessage());
+			}
+		}
+		
+		function cleanDataField(dataField, textDiv) {
+			textDiv.innerHTML = "";
+			dataField.value = null;
+		}
+		
+		function addExtraParam(extraParam) {
+			var paramsList = document.getElementById("params");
+			paramsList.value = paramsList.value + extraParam + "\n";//fijarse si se debe dar vuelta en barra n
+			document.getElementById('newParam').value = "";
+		}
+		
+		function cleanExtraParams() {
+			document.getElementById("params").value = "serverUrl="+Constants.URL_BASE_TRIFASICA;			 
+			document.getElementById('newParam').value = "";
+		}
+		
+		function showLog(newLog) {
+			document.getElementById('console').value = document.getElementById('console').value + "\n" + newLog;
+		}
+		
+		function doKeystore() {
+			try { 
+				MiniApplet.setKeyStore(	document.getElementById("keystore").value);
+				showLog("Type: INFO " + "\nMessage: Keystore seteado a " + document.getElementById("keystore").value);
+			} catch(e) {
+				showLog("Type: " + MiniApplet.getErrorType() + "\nMessage: " + MiniApplet.getErrorMessage());
+			}
+		}
+	</script>
+  </head>
+	<body>
+<!-- 	MODIFICAR: en caso de despliegue local el js de los archivos de valide de constantes.js a constantes-server.js -->
+    <div style="margin: 2px">
+    <script type="text/javascript" >
+        document.write('<a href="'+Constants.URL_BASE_APP+'/valide/firmar.html" title="Pruebas de firma">Pagina de pruebas de validación</a>');
+    </script><br/>    
+    <script type="text/javascript" >
+        document.write('<a href="'+Constants.URL_BASE_APP+'/integracionRRHH/Portal Estudios.html" title="Pruebas de integracion">Pagina de pruebas de integración RRHH Legajos</a>');
+    </script><br/>
+    <script type="text/javascript" >
+         document.write('<a href="'+Constants.URL_BASE_APP+'/integracionRRHH/Portal EstudiosMasivo.html" title="Pruebas de integracion">Pagina de pruebas de integración RRHH Legajos Masivo</a>');
+    </script>     
+    <br/><br/>
+    </div>
+        
+<!--  	<a id="jnlpService" href="http://www.milocal.com:8080/autofirma.jsp">Pulsar para arrancar aplicación</a>-->
+		<script type="text/javascript">
+//			MiniApplet.setForceWSMode(true);
+			//MiniApplet.cargarMiniApplet(HOST + '/afirma-ui-miniapplet-deploy');
+//			MiniApplet.cargarMiniApplet(HOST + '/ejem');
+			//MiniApplet.cargarAppAfirma("http://www.miweb.com/afirma");
+//			MiniApplet.setServlets(HOST + "81/firmaDigitalStorage/StorageService", HOST + "81/firmaDigitalRetriever/RetrieveService");
+   
+//el storage y retriever me sirven para la comunicacion mediante servidor intermedio
+//son los unicos servicios que se requieren, que forman parte del servidor intermedio
+//en este caso el mismo servidor que mantiene el recurso jws mantiene los servicios 
+//de comunicacion intermedia
+/*nota: como el certificado que uso para la intercomunicacion ssl del cliente app y el server
+ * esta con el CN en 127.0.0.1, se debe emitir un certificado con el CN adecuado del 
+ server con el que se comunicara, se puede utilizar el generador de certificados en 
+ CertUtil y cambiar el cn a www.milocal.com, tambien modificar el altNames al tipo dnsName y generar un nuevo certificado
+ *//*nota: verificar que el certificado del server que solicita la ejecucion de la firma
+ este con el CN correctamente generado para ese server, porque creo que el verificador de certificado
+ del cliente tirara un error en caso contrario.Tambien el certificado de la app debe estar en el truestore del server.
+ nota2: aqui para acortar se corrio un segundo server para el almacenaje y otro para la recuperacion
+ sin ssl, notar que el retrieve es por https pero parece que no se ejecuta el verificador
+ de CN en el certificado del server y el solicitante(creo que es porque en firefox puse
+		 como excepcion el sitio de donde se recupera info, cosa que no es realizada en el cliente app
+		 nota 5: notar que siempre en la firma por servidor intermedio se lanza la aplicacion
+		 local descargada pero nunca se dejan puertos abiertos para una siguiente solicitud
+		 no se abren puertos en el cliente app*/
+		 var storage = "http://www.milocal.com:8080" + "/AlmacenarFirma"; //document.getElementById('storageService').value;
+var retrieve = HOST + "/RecuperarFirma";//document.getElementById('retrieveService').value;
+var jnlp = Constants.URL_BASE_JNLP;
+MiniApplet.setServlets(storage, retrieve);
+MiniApplet.setJnlpService (jnlp); // URL donde esta el generador de JNLP
+if (navigator.platform.indexOf("Linux")!=-1 || navigator.platform.indexOf("Mac")!=-1){
+//En Mac y Linux se fuerza la utilización de servidores intermedios
+MiniApplet.setForceWSMode(true);
+}
+//dominio desde el que se realiza la llamada al servicio
+//MiniApplet.cargarAppAfirma('miniapplet.js');
+//MiniApplet.setForceWSMode(true);
+MiniApplet.cargarAppAfirma(HOST+'/valide/js/miniapplet.js',MiniApplet.KEYSTORE_MOZILLA);
+
+
+
+		</script>		
+		
+		<fieldset><legend>Configuraci&oacute;n de la firma</legend>
+		<div style="margin: 2px">
+		 <label for="keystore">Keystore</label>&nbsp;
+		 <script type="text/javascript" >
+		     document.write('<select id="keystore">');			 
+			 document.write('<option value="'+ MiniApplet.KEYSTORE_MOZILLA +'">'+ MiniApplet.KEYSTORE_MOZILLA +'</option>');
+			 document.write('<option value="'+ MiniApplet.KEYSTORE_WINDOWS +'">'+ MiniApplet.KEYSTORE_WINDOWS +'</option>');
+			 document.write('<option value="'+ MiniApplet.KEYSTORE_APPLE +'">'+ MiniApplet.KEYSTORE_APPLE +'</option>');
+			 document.write('<option value="'+ MiniApplet.KEYSTORE_PKCS12 +'">'+ MiniApplet.KEYSTORE_PKCS12 +'</option>');
+			 document.write('<option value="'+ MiniApplet.KEYSTORE_PKCS11 +'">'+ MiniApplet.KEYSTORE_PKCS11 +'</option>');
+			 document.write('<option value="'+ MiniApplet.KEYSTORE_SHARED_NSS +'">'+ MiniApplet.KEYSTORE_SHARED_NSS +'</option>');
+			 document.write('<option value="'+ MiniApplet.KEYSTORE_JAVA +'">'+ MiniApplet.KEYSTORE_JAVA +'</option>');
+			 document.write('<option value="'+ MiniApplet.KEYSTORE_JCEKS +'">'+ MiniApplet.KEYSTORE_JCEKS +'</option>');
+			 document.write('<option value="'+ MiniApplet.KEYSTORE_JAVACE +'">'+ MiniApplet.KEYSTORE_JAVACE +'</option>');			 
+			 document.write('</select>');
+			       
+	     </script>    
+				 
+		 <input type="button" value="Setear keystore" onclick="doKeystore();"> (Seleccionar el almacen de certificados con el que se trabajara).
+		</div>
+		<div style="margin: 2px">
+		 <label for="format">Formato</label>&nbsp;&nbsp;
+		 <select id="format">
+		 <option value="CAdES" selected>CAdES</option>
+		 <option value="CAdEStri">CAdEStri</option>
+		 <option value="Adobe PDF">PAdES</option>
+		 <option value="PAdEStri">PAdEStri</option>
+		 <option value="XAdES">XAdES</option>
+		 <option value="XAdEStri">XAdEStri</option>
+		 <!-- <option value="FacturaE">FacturaE</option>
+		 <option value="FacturaEtri">FacturaEtri</option> -->
+		 <option value="ODF">ODF</option>
+		 <option value="OOXML">OOXML</option>
+		 <option value="AUTO">AUTO</option>
+		 </select>
+		 <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(El formato AUTO detecta el formato en las operaciones de multifirma. Los que terminan en ' tri ' son trifasicas).</span>
+		</div>
+		
+		<div style="margin: 2px">
+		 <label for="algorithm">Algoritmo</label>
+		 <select id="algorithm">
+		 <option value="SHA1withRSA">SHA1 con RSA</option>
+		 <option value="SHA512withRSA">SHA512 con RSA</option>
+		 </select>
+		</div>
+
+		<div style="margin: 2px">
+		 <label for="newParam">ExtraParams</label>
+		 <input id="newParam" type="text"><input type="button" value="Agregar" onclick="addExtraParam(document.getElementById('newParam').value);">&nbsp;
+		 <input type="button" value="Limpiar" onclick="cleanExtraParams();">&nbsp;
+		 <span>(Insertar las propiedades validas de una en una para cada tipo de formato de firma).</span>
+		 <br>
+         <script type="text/javascript" >
+			 document.write('<textarea id="params" cols="50" rows="5" readonly>serverUrl='+ Constants.URL_BASE_TRIFASICA +'</textarea>');
+			 		       
+	     </script> 
+		</div>
+		<div style="margin: 2px">
+		<input type="button" value="Mostrar Log Inicial" onclick="showAppletLog();">
+		</div>
+		</fieldset>
+		
+		<fieldset><legend>Operaciones de Firma</legend>
+		 <div>
+		 <input id="data" type="hidden">
+		 </div>
+		 <!-- <div><span>Fichero de datos: </span><span id="dataFilename"></span></div>
+		 <input type="button" value="Examinar" onclick="browse('Cargar datos a firmar', document.getElementById('data'), document.getElementById('dataFilename'));">&nbsp;
+		 <input type="button" value="Limpiar" onclick="cleanDataField(document.getElementById('data'), document.getElementById('dataFilename'));"><br/><br/>
+
+		 <input id="signature" type="hidden">
+		 <div><span>Fichero de firma: </span><span id="signatureFilename"></span></div>
+		 <input type="button" value="Examinar" onclick="browse('Cargar datos a firmar', document.getElementById('signature'), document.getElementById('signatureFilename'));">&nbsp;
+		 <input type="button" value="Limpiar" onclick="cleanDataField(document.getElementById('signature'), document.getElementById('signatureFilename'));"> -->
+		<div style="margin: 2px">
+		 <label for="urlParam">-url/path dentro del dominio del servidor a firmar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		 <input id="urlParam" type="text" size="50pt">
+		 <input type="button" value="Descargar url y firmar" onclick="downloadAndSign();"> El formato no debe ser PAdES		 
+		</div>
+		<div style="margin: 2px">
+		 <label for="urlArchivoParam">-url del archivo dentro del dominio del servidor a firmar</label>
+		 <input id="urlArchivoParam" type="text" size="50pt">
+		 <input type="button" value="Descargar archivoB64,firmar y guardar" onclick="downloadFileB64AndSignAndSave();"> El formato debe ser PAdES
+		</div>	
+		<div style="margin: 2px">
+		 <label>-Abrir dialogo para firmar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		 <input type="button" value="Firmar" onclick="doSign();">
+		</div>	
+		<div style="margin: 2px">
+		 <label>-Abrir dialogo para firmar y guardar</label>
+		 <input type="button" value="Firmar y guardar" onclick="doSignAndSave();">
+		</div>	
+		</fieldset>		
+		<br/>
+
+		<input type="button" value="Firmar Batch" onclick="doSignBatch();" disabled="disabled">&nbsp;
+		<input type="button" value="Cofirmar" onclick="doCoSign();" disabled="disabled">&nbsp;
+		<input type="button" value="Contrafirmar" onclick="doCounterSign();" disabled="disabled">
+		<input type="button" value="Seleccionar certificado" onclick="doSelectCert();">
+		<br/>
+		<br/>
+		
+		<div>
+		 <span>Consola</span>
+		 <br>
+		 <textarea id="console" cols="150" rows="10">
+		 </textarea>
+		</div>
+		
+		<div>
+		 <span>Resultado</span><input type="button" value="Guardar" onclick="saveSignature();">
+		 <br>
+		 <textarea id="result" cols="150" rows="10">
+		 </textarea>
+		</div>
+		
+	</body>
+</html>	

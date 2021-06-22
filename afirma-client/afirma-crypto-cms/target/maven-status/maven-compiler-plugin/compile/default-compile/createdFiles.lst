@@ -1,0 +1,7 @@
+es\gob\afirma\signers\cms\AOCMSSigner.class
+es\gob\afirma\signers\cms\CmsUtil.class
+es\gob\afirma\signers\cms\CoSigner.class
+es\gob\afirma\signers\cms\GenSignedData.class
+es\gob\afirma\signers\cms\ValidateCMSSignedData.class
+es\gob\afirma\signers\cms\AOCMSExtraParams.class
+es\gob\afirma\signers\cms\CounterSigner.class

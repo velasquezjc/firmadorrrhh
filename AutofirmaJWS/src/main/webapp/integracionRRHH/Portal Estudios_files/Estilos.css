@@ -1,0 +1,770 @@
+﻿/*ESTILO GENERAL*/
+
+.body-detalle {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	background-color: #CCC
+
+}
+
+.contenedor_principal
+{
+    position: absolute;
+	left: 50%;
+	min-height: 100%;
+	width: 1024px;
+	margin-left: -512px;	
+	background-color: #FFF;
+	margin-top: 35px;
+}
+
+.tabla_protocolo
+{
+    background-color: #9CB3D6;
+    padding: 2px ;
+    border-radius: 3px;
+	-webkit-box-shadow: 3px 3px 19px rgba(0,0,0,0.2);
+    -moz-box-shadow: 3px 3px 19px rgba(0,0,0,0.2);
+    box-shadow: 3px 3px 19px rgba(0,0,0,0.2); 
+}
+
+/*.titulo_gradiente
+{
+    float:left;
+    margin:5px; 
+    color: #FFFFFF;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 15px;
+}*/
+
+#plantillas
+{
+    display:none;
+}
+/*FIN ESTILO GENERAL*/
+
+
+/*ESTILO BARRA MENU*/
+
+.barra_menu_fondo {
+    background-color: #003;
+	height: 120px;
+}
+
+.barra_menu_fondo a {
+    text-decoration: none;
+}
+
+.barra_menu_contenedor {
+    position: absolute;
+	left: 50%;
+	width: 1024px;
+	margin-left: -512px;
+	margin-top: 10px;
+}
+
+.barra_menu_logo_sistema {
+	float: left;
+	margin-left: 15px;	
+}
+
+.barra_menu_contenedor_logos_derecha
+{
+    float:right;
+    margin-right: 15px;  
+} 
+
+.barra_menu_logo_ministerio {
+    margin-left: 25px;
+}
+
+.barra_menu_bloque_inferior
+{
+    margin-top: 85px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 15px;	
+}
+.barra_menu_label_bienvenido {
+
+	color: #FFF;
+	clear: both;
+	display:inline;
+}
+.barra_menu_label_usuario {
+	color: #09F;
+	display:inline;
+}
+
+.barra_menu_botones_menu_usuario
+{
+    float:right;
+    margin-right: 15px;
+}
+
+.barra_menu_boton_menu_usuario {
+	margin-left:5px;
+}
+
+/*FIN ESTILO BARRA MENU*/
+
+
+
+/*ESTILO DETALLE VIATICO*/
+.detalle_viatico_label_usuario {
+    padding-top: 50px;
+}
+
+.detalle_viatico_separador
+{
+    
+    }
+    
+.detalle_viatico_contenedor_datos_viajante
+{
+    float:right;
+    margin-right:10px;
+    margin-bottom:50px;
+}
+    
+.detalle_viatico_datos_viajante
+{
+    display:inline-block;    
+    margin-right:10px;
+}
+    
+.detalle_viatico_dato_viajante
+{
+    font-family: "Humnst777 BT";
+	font-size: 12px;
+	font-weight: bold;
+	text-align: right;
+	color: #000;
+}
+    
+.detalle_viatico_foto_viajante
+{
+    display:inline-block;   
+    vertical-align:top; 
+}
+
+.detalle_viatico_contenedor_detalle
+{
+    clear:both;
+    margin-left:34px;
+    margin-right:10px;
+    margin-top:40px;
+}
+
+.detalle_viatico_contenedor_detalle
+{
+    clear:both;
+    margin-left:34px;
+    margin-right:10px;
+    margin-top:40px;
+}
+
+.detalle_viatico_titulo_detalle 
+{
+	font-family: "Humnst777 BT";
+	font-size: 13px;
+	font-weight: bold;
+	background-color: #FFF
+}
+
+.detalle_viatico_cuerpo_detalle 
+{
+    margin-top:10px; 
+}
+
+.detalle_viatico_titulo_tabla_detalle 
+{
+	font-family: "Humnst777 BT" !important;	
+	font-size: 15px !important;	
+	background-color: #003 !important;	
+	color:#FFF !important;	
+	text-align:center !important;
+}
+
+.detalle_viatico_celda_tabla_detalle 
+{
+	font-family: "Humnst777 BT" !important;	
+	font-size: 11px !important;	
+	background-color: #CCC !important;	
+	color:#000 !important;
+	vertical-align:middle !important;
+	text-align:center !important;
+}
+
+.detalle_viatico_tabla_firmantes
+{
+    width:100%;
+}
+
+.tablas_alumnos
+{
+    width:80%;
+}
+
+.detalle_viatico_contenedor_datos_firmante
+{
+    border:1px solid;
+    margin-bottom:4px;
+}
+
+.detalle_viatico_dato_firmante {
+	display: inline;
+	font-family: "Humnst777 BT";
+	font-size: 12px;
+}
+
+.detalle_viatico_alerta_rendiciones_pendientes {
+	padding-left: 900px;
+	margin-top: -15px;
+	font-family: "Humnst777 BT";
+	font-size: 13px;
+	font-weight: bold; 
+	color: #F00 
+
+}
+.detalle_viatico_alerta_viatico_menos_72 {
+	padding-left: 940px;
+	margin-top: -18px;
+	font-family: "Humnst777 BT";
+	font-size: 13px;
+	font-weight: bold;
+	color: #36F
+}
+.detalle_viatico_contenedor_referencias
+{
+     float:right;
+     text-align:right;
+     font-family: "Humnst777 BT";
+     font-size: 10px;
+     font-weight: bold;
+     margin-top:10px;
+    }
+    
+.detalle_viatico_referencia_rendiciones_pendientes 
+{	
+    color: #F00
+}
+
+.detalle_viatico_referencia_viatico_menos_72 
+{
+    color: #36F 
+}
+
+.detalle_viatico_boton_imprimir
+{
+    margin-top:10px;
+    display:inline-block;
+}
+
+.detalle_viatico_boton_modificar_solicitud
+{
+    margin-top:10px;
+    display:inline-block;
+}	
+
+.detalle_viatico_contenedor_transicion_combo_boton
+{	   	
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.detalle_viatico_transicion_combo
+{	   	
+    width:100%;
+    max-width:805px;
+    display:inline-block;
+}
+
+.detalle_viatico_transicion_boton
+{	   
+    margin-left:10px;	
+    width:148px !important;
+    margin-top: -9px;
+    display:inline-block;
+}
+
+.detalle_viatico_contenedor_transicion_comentarios
+{
+    margin-bottom:50px;
+}
+
+.detalle_viatico_transicion_leyenda_comentarios
+{
+    display:inline-block;    
+    width:140px;
+    vertical-align:top;
+}
+
+.detalle_viatico_transicion_comentarios
+{
+    width:825px;
+    resize:none;
+}
+
+/*FIN ESTILO DETALLE VIATICO*/
+
+
+
+/* ESTILO LISTADO VIATICO */
+
+.listado_viaticos_contenedor_separador{
+	background-color: #FFF;
+	height: 155px;
+}
+
+.listado_viaticos_imagen_separador{
+	padding-top: 50px;
+}
+
+.listado_viaticos_contenedor_viaticos_espera_gestion{
+	background-color: #FFF;
+	margin-top: 20px;
+}
+
+.listado_viaticos_contenedor_tablas
+{
+    margin-left: 34px;
+    margin-right:10px;
+}
+.listado_viaticos_viaticos_espera_gestion{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000;
+}
+
+.listado_viaticos_tabla_viaticos_espera_gestion{
+	margin-top: 7px;
+}
+
+.listado_viaticos_encabezado {
+	font-family: "Humnst777 BT";
+	font-size: 11px;
+	color: #FFF;
+}
+.listado_viaticos_contenido_tabla {
+	font-family: "Humnst777 BT";
+	font-size: 11px;
+	color: #000;
+}
+.listado_viaticos_contenido_tablaVP {
+	font-family: "Humnst777 BT";
+	font-size: 11px;
+	color: #FFF;
+
+}
+
+.listado_viaticos_imprimir_seleccion{
+	margin-top: 20px;
+}
+
+.listado_viaticos_contenedor_viaticos_seguimiento{
+	margin-top: 50px;
+}
+
+.listado_viaticos_tabla_viaticos_seguimiento{
+	margin-top: 7px;
+	background-color: #FFF;
+}
+
+.listado_viaticos_contenedor_asterisco{
+	margin-top: 35px;
+}
+
+.listado_viaticos_txt_asterisco{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000;
+}
+
+/* FIN ESTILO LISTADO VIATICO */
+.AzulTHBIG {
+	font-family: Tahoma;
+	font-size: 18px;
+	color: #5A6573;
+	text-decoration: none;
+}
+
+
+
+/* COMIENZO ESTILO REPORTES VIATICO  */
+
+.contenedor_boton_buscar{
+	margin-left: 250px;
+	margin-top: 30px;
+}
+
+#btn_buscar 
+{   
+    border:0;
+    
+    background-image: url(../Imagenes/Botones/buscar.png);
+}
+
+#btn_buscar:hover
+{
+    border:0;
+    background-image: url(../Imagenes/Botones/buscar_s2.png);
+}
+
+
+
+.btn_blanco_clicked 
+{ 
+    font-size:large; 
+    border:solid 1px white; 
+    border-radius:5px;
+    background-color: white;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 4px;
+    zoom: 1;
+    background-position: 0 -15px;
+    -webkit-transition: background-position 0.1s linear;
+    width: 30px;
+    min-width: 30px;
+    cursor: pointer;
+    -webkit-appearance: button;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-right: 0 none #e6e6e6;
+    border-top: 0 none #e6e6e6;
+    border-bottom: 0 none #b3b3b3;
+    
+    
+}
+
+.btn_verde_clicked
+{
+     font-size:large; 
+     background-color:#00B712;
+     display: inline;
+     text-align: center;
+     vertical-align: middle;
+     border-radius: 4px;
+     zoom: 1; 
+     background-position: 0 -15px;
+    -webkit-transition: background-position 0.1s linear;
+    width: 30px;
+    min-width: 30px;
+    cursor: pointer;
+    -webkit-appearance: button;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-right: 0 none #e6e6e6;
+    border-top: 0 none #e6e6e6;
+    border-bottom: 0 none #b3b3b3;
+}
+
+.btn_amarillo_clicked 
+{
+     font-size:large; 
+     background-color:#FFD800;
+     display: inline;
+     text-align: center;
+     vertical-align: middle;
+     border-radius: 4px;
+     zoom: 1;
+     background-position: 0 -15px;
+    -webkit-transition: background-position 0.1s linear;
+    width: 30px;
+    min-width: 30px;
+    cursor: pointer;
+    -webkit-appearance: button;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-right: 0 none #e6e6e6;
+    border-top: 0 none #e6e6e6;
+    border-bottom: 0 none #b3b3b3;
+}
+
+
+
+
+
+
+.reporte_por_provincia_titulo, .reporte_por_agente_titulo, .protocolo_tabla_titulo
+{  
+	font-family: "Humnst777 BT" !important;	
+	font-size: 10px !important;	
+	background-color: #000033 !important;	
+	color:#FFF !important;	
+	text-align:center !important;
+	height:25px;
+}
+
+
+.reporte_por_provincia_celda_detalle, .reporte_por_agente_celda_detalle, .protocolo_tabla_detalle
+{
+	font-family: "Humnst777 BT" !important;	
+	font-size: 11px !important;	
+	background-color: #CCC !important;	
+	color:#000 !important;
+	vertical-align:middle !important;
+	text-align:center !important;
+	height:20px;
+}
+
+.protocolo_tabla{
+        width: 1000px; 
+        border: 0px; 
+        align: center;
+}
+/* FIN ESTILO REPORTES VIATICOS */
+ 
+    /*=============FORMULARIO CAMBIO DE PASSWORD=============*/
+    
+    #signup
+    {
+        width: 404px;
+        padding-bottom: 2px;
+        display: none;
+        background: #FFF;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
+        -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7);
+        -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);
+}
+
+.form_concursar 
+    {
+        width: 50%;
+        display: none;
+        background: #FFF;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
+        -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7);
+        -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);
+        
+}
+
+#signup-header
+{
+    background: url(../Imagenes/hd-bg.png); 
+    padding: 18px 18px 14px 18px; 
+    border-bottom: 1px solid #CCC; 
+    border-top-left-radius: 5px; 
+    -moz-border-radius-topleft: 5px; 
+    -webkit-border-top-left-radius: 5px; 
+    border-top-right-radius: 5px; 
+    -moz-border-radius-topright: 5px; 
+    -webkit-border-top-right-radius: 5px; 
+}
+
+.form_concursar_header
+{
+    /*background: url(../Imagenes/hd-bg.png); */
+    color:#000;
+    padding: 18px 18px 14px 18px; 
+    border-bottom: 1px solid #CCC; 
+    border-top-left-radius: 5px; 
+    -moz-border-radius-topleft: 5px; 
+    -webkit-border-top-left-radius: 5px; 
+    border-top-right-radius: 5px; 
+    -moz-border-radius-topright: 5px; 
+    -webkit-border-top-right-radius: 5px; 
+}
+
+#signup-header  h2, .form_concursar_header h2  { color: #444; font-size: 1.5em;  margin-bottom: -10px;  }
+#signup-header  p, .form_concursar_header  p  { color: #444; font-size: 1.5em; margin: 0;  }
+
+#signup .txt-fld, .form_concursar .txt-fld
+{
+    position: relative; 
+    /*width: 464px; */
+    padding: 20px 20px; 
+    border-bottom: 1px solid #EEE; 
+    text-align: right; 
+}
+
+#signup .btn-fld, .form_concursar .btn-fld
+{  overflow: hidden; padding: 12px; text-align:center; }
+
+#signup .txt-fld label, .form_concursar  .txt-fld label
+{
+    display: block; 
+    float: left; 
+    width: 130px !important; 
+    padding-top: 8px; 
+    color: #222; 
+    font-size: 1.1em; 
+    text-align: left;  
+}
+
+#signup .txt-fld input, .form_concursar .txt-fld input   
+{
+   /* width: 230px; */
+    padding: 8px; 
+    border-radius: 4px; 
+    -moz-border-radius: 4px; 
+    -webkit-border-radius: 4px; 
+    font-size: 1.2em; color: #222; 
+    background: #F7F7F7; 
+    font-family: "Helvetica Neue"; 
+    outline: none; 
+    height: 35px;
+    border-top: 1px solid #CCC; 
+    border-left: 1px solid #CCC; 
+    border-right: 1px solid #E7E6E6; 
+    border-bottom: 1px solid #E7E6E6; 
+    }
+#signup .txt-fld input.good_input { background: #DEF5E1 url(../img/good.png) 236px center no-repeat; }
+#signup .txt-fld input.error_input { background: #FDE0E0; }
+
+p.error { position: absolute; bottom: 48px; right: 20px; width: 262px; color: #FFF; font-size: 1.1em; padding-bottom: 5px; background: url(../img/error-arw.png) 20px bottom no-repeat; text-align: left; margin: 0; text-shadow: none; }
+p.error span { display: inline-block; background: #D43636; padding: 6px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;  }
+.txt-fld input:focus, .txt-fld textarea:focus { background-color: #FAF9DC; }
+        
+#btn_password {
+	float: right;
+	width: auto;
+	/*font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;*/
+	/*background: #3F9D4A; 
+	border: none;
+  
+  overflow: visible;
+  font-size: 1.4em;
+  color: #FFF;*/
+ padding: 7px 10px;  
+ border-radius: 4px; 
+ -webkit-border-radius: 4px; 
+ -moz-border-radius: 4px; 
+ font-weight: bold; 
+ text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+ }
+        
+.modal_close { position: absolute; top: 12px; right: 12px; display: block; width: 14px; height: 14px; background: url(../Imagenes/modal_close.png); z-index: 2; }
+
+.modal_close_concursar { position: absolute; top: 12px; right: 12px; display: block; width: 30px; height: 30px; background: url(../Imagenes/Botones/cerrar1.png); z-index: 2; }
+
+
+#lean_overlay {
+   position: fixed;
+   z-index:100;
+   top: 0px;
+   left: 0px;
+   height:100%;
+   width:100%;
+   background: #000;
+   display: none;
+}
+
+/*---------------------------------------*/
+        
+
+.estilo_formulario 
+{
+    /*height:550px;*/
+    /*margin-left: 10px;*/
+    margin-bottom:10px; 
+    padding:10px 10px;   
+    -webkit-box-shadow: 3px 3px 19px rgba(0,0,0,0.2);
+    -moz-box-shadow: 3px 3px 19px rgba(0,0,0,0.2);
+    box-shadow: 3px 3px 19px rgba(0,0,0,0.2);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    
+    /*ESTO ES PARA VER EL SOMBREADO EN IE*/
+    background:#fff;
+    position: relative;
+	z-index:99;
+    behavior: url(../Estilos/css3_for_ie/PIE.htc);
+}
+        
+.subtitulos 
+{
+    text-shadow: 2px 2px 5px rgba(150, 150, 150, 1);
+}
+
+.persona_baja_con_funcionalidades, #contenedor_personas_de_baja, #contenedor_usuarios_por_area 
+{
+    font-weight: bold;
+    font-size: 20px;
+    display: inline-block;
+    font-family: Monospace;
+    vertical-align: middle;
+    margin: 0 0 0 37px;
+    }
+    
+#panel_personas_de_baja_con_permisos, #panel_usuarios_por_area {
+    display:block;
+       
+}
+    
+#contenedor_personas_de_baja, #contenedor_usuarios_por_area 
+{
+    display:block;
+    font-size:12px;
+    margin-top:20px;
+} 
+       
+.cabecera_tabla_usuarios
+{
+    color:#fff;
+    background-color: #2184be !important;
+            
+}
+    
+.tabla_usuarios_por_area tr td
+{
+    color: #000;
+    background-color: #fff !important;
+}
+
+.tabla_usuarios_por_area tr:hover {
+    background-color: #FCFCFC !important;
+}
+
+.celda_seleccionada
+{
+    background-color:#EDF1FF !important;
+    user-select: none;
+    cursor:pointer;
+}
+
+/*ESTILO PARA LOADER AJAX
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.loader {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('../Imagenes/Botones/ajax-loader.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .loader {
+    display: block;
+}
+
+span.dynatree_image span.dynatree-icon
+{
+    background-position: 0 0;
+    background-image: url("../Imagenes/candado.png");
+}

@@ -1,0 +1,694 @@
+﻿
+.titulo_gradiente
+{
+    float:left;
+    margin:5px; 
+    color: #FFFFFF;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 15px;
+}
+
+/*COMIENZO ESTILO SACC - ALUMNOS */
+
+.table-striped tbody tr:nth-child(odd) td {
+    background-color: #f5f5f5;
+}
+
+.table tbody tr:hover td, .table tbody tr:hover th {
+    background-color: #E1DFFE;/* #f5f5f5;*/
+}
+
+.celda_seleccionada
+{
+    background-color:rgb(159, 177, 236) !important;
+    user-select: none;
+    cursor:pointer;
+}
+
+.celda_on_hover
+{
+    background-color:#6E89B1 !important;
+    user-select: none;
+    cursor:pointer;
+}
+
+
+.labels_sacc 
+    {
+        width:15%; 
+        text-align:right; 
+        padding-right:2%; 
+        float:left;
+        margin-top: 8px;
+    }
+    
+.label_evaluaciones 
+{
+    width:3%; 
+    text-align:left; 
+    padding-right:2%; 
+    float:left; 
+    margin-top: 8px;
+}
+
+.div_derecho {
+	/*right: 5%;*/
+	width: 49%;
+	margin-right: 10px;
+    display: inline;
+    float: left;
+	margin-top: 10px;
+	overflow: auto;
+    height: 100%;
+
+}
+
+.div_izquierdo {
+    display: inline;
+    float: left;
+	left: 5%;
+	width: 45%;
+	margin-left: 10px;
+	margin-top: 10px;
+    overflow: auto;
+    height: 100%;
+}
+
+.div_derecho_inscripcion {
+	/*right: 5%;*/
+	width: 46%;
+	/*margin-right: 10px;*/
+    display: inline;
+    float: left;
+	margin-top: 10px;
+	overflow: auto;
+    height: 100%;
+
+}
+
+.div_izquierdo_inscripcion {
+    display: inline;
+    float: left;
+	margin-right:-70px;
+	width: 46%;
+	/*margin-left: 10px;*/
+	margin-top: 10px;
+    overflow: auto;
+    height: 100%;
+}
+
+.label_alumno
+{
+    vertical-align: middle;
+    margin-top: 5px;
+    width:200px;
+    text-align:right;
+    border:none;
+}
+
+.label_observaciones
+{
+    vertical-align: middle;
+    width:98%;
+    text-align:left;
+    border:1px solid;
+}
+
+
+.btn_inscripcion_SACC 
+{
+margin-right: 12%;
+text-align: right;
+}
+
+
+/*Seteo personalizado de la barra de navegacion SACC*/
+
+	.navbar 
+	{
+	 /* Fix for IE7's bad z-indexing so dropdowns don't appear below content that follows the navbar*/
+	 position: relative;
+	 z-index: 99999999;
+	 margin-top: -34px;
+	 }
+
+.navbar-inner {
+  background-color: #00001c; /* background color will be black for all browsers */
+  color:#fff;
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
+  margin-top: 45px;
+  margin-bottom: 10px;
+}
+
+.navbar .nav > li > a {
+  color: rgb(189, 189, 189) !important;
+}
+
+.navbar .nav > li > a:hover 
+{
+    color: #fff !important;
+    }
+
+.navbar .nav > li > a:hover {
+  color: #fff;
+  text-decoration: none;
+  /*background-color: #0074cc;*/
+}
+
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover {
+  color: #999;
+  text-decoration: none;
+  /*background-color: #0074cc;*/
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+  /*background-color: #0074cc;*/
+  color: #999;
+}
+
+.navbar .nav li.dropdown.active > .dropdown-toggle:hover {
+  color: #999;
+}
+
+.tabla_macc {
+  background-color: #9CB3D6;
+}
+
+.tabla_macc tr:hover {
+    background-color: #6E89B1 !important;
+}
+
+ .marca_de_agua
+    {
+           background-image: url(../../Imagenes/pantalla_1.jpg);
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           background-position: bottom center;
+           background-color: #fff;
+          
+    } 
+    
+     .subtitulos 
+    {
+        text-shadow: 2px 2px 5px rgba(150, 150, 150, 1);
+    }
+    
+     .estilo_formulario 
+    {
+        
+        height:550px;
+        /*margin-left: 10px;*/
+        margin-bottom:10px; 
+        padding:10px 10px;   
+        -webkit-box-shadow: 3px 3px 19px rgba(0,0,0,0.2);
+        -moz-box-shadow: 3px 3px 19px rgba(0,0,0,0.2);
+        box-shadow: 3px 3px 19px rgba(0,0,0,0.2);
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+
+        /*ESTO ES PARA VER EL SOMBREADO EN IE*/
+        background:#fff;
+        position: relative;
+	    z-index:99;
+        behavior: url(../Estilos/css3_for_ie/PIE.htc);
+    }
+    
+    
+     /*=============FICHA DEL ALUMNO=============*/
+    
+     ul.tabs 
+        {
+            margin: 0;  
+            padding: 0;  
+            float: left;  
+            list-style: none;  
+            height: auto;  
+            width: 90%; 
+        }
+        
+        ul.tabs li 
+        {
+            float: left;  
+            margin-left: 0px;  
+            
+            width:25%;
+            text-align:center;
+            border: 0px solid #000; 
+            overflow: hidden; 
+            position: relative; 
+            border-left:0px; 
+            border-bottom:1px solid;
+            margin-bottom:-2px;
+            
+            background: -webkit-gradient(linear, left top, right top, from(#6E89B1), to(#E6E6FA));
+            background: -webkit-linear-gradient(top, #6E89B1, #E6E6FA);
+            background: -moz-linear-gradient(top, #6E89B1, #E6E6FA);
+            background: -o-linear-gradient(top, #6E89B1, #E6E6FA);
+            background: -ms-linear-gradient(top, #6E89B1, #E6E6FA);
+            background: linear-gradient(top, #6E89B1, #E6E6FA);
+            background-color: #6E89B1;
+            
+            -webkit-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            border-radius: 8px;
+            
+        /*ESTO ES PARA VER EL SOMBREADO EN IE*/
+       
+        position: relative;
+	    z-index:99;
+        behavior: url(../Estilos/css3_for_ie/PIE.htc);
+            
+        }
+        
+        ul.tabs li a 
+        {
+            text-decoration: none; 
+            color: #434C6F; 
+            display: block; 
+            font-size: 20px; 
+            font-weight:bold; 
+            padding: 10px 0px; 
+            /*padding: 10px 20px; */
+        }
+        ul.tabs li a:hover 
+        {
+            background: -webkit-gradient(linear, left top, right top, from(#E6E6FA), to(#6E89B1));
+            background: -webkit-linear-gradient(top, #E6E6FA, #6E89B1);
+            background: -moz-linear-gradient(top, #E6E6FA, #6E89B1);
+            background: -o-linear-gradient(top, #E6E6FA, #6E89B1);
+            background: -ms-linear-gradient(top, #E6E6FA, #6E89B1);
+            background: linear-gradient(top, #E6E6FA, #6E89B1);
+            background-color: #E6E6FA;
+
+             -webkit-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            border-radius: 8px;
+            padding: 10px 0px; 
+        }
+        
+        ul.tabs li.active, html ul.tabs li.active a:hover  
+        {
+            background: -webkit-gradient(linear, left top, right top, from(#E6E6FA), to(#6E89B1));
+            background: -webkit-linear-gradient(top, #E6E6FA, #6E89B1);
+            background: -moz-linear-gradient(top, #E6E6FA, #6E89B1);
+            background: -o-linear-gradient(top, #E6E6FA, #6E89B1);
+            background: -ms-linear-gradient(top, #E6E6FA, #6E89B1);
+            background: linear-gradient(top, #E6E6FA, #6E89B1);
+            background-color: #E6E6FA;
+            
+            
+            }
+ 
+        .Contenedor
+        {
+            
+            border:2px solid #E6E6FA; 
+            overflow: auto; 
+            clear: both; 
+            float: left; 
+            width: 90%; 
+            height:400px;
+            
+           
+            -webkit-border-bottom-right-radius: 8px;
+            -webkit-border-bottom-left-radius: 8px;
+            -moz-border-radius-bottomright: 8px;
+            -moz-border-radius-bottomleft: 8px;
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            /* 
+            background: -webkit-gradient(linear, left top, right top, from(#E6E6FA), to(#6E89B1));
+            background: -webkit-linear-gradient(top, #E6E6FA, #6E89B1);
+            background: -moz-linear-gradient(top, #E6E6FA, #6E89B1);
+            background: -o-linear-gradient(top, #E6E6FA, #6E89B1);
+            background: -ms-linear-gradient(top, #E6E6FA, #6E89B1);
+            background: linear-gradient(top, #E6E6FA, #6E89B1);
+            background-color: #E6E6FA;
+            */
+             -webkit-box-shadow: 3px 3px 19px rgba(0,0,0,0.2);
+            -moz-box-shadow: 3px 3px 19px rgba(0,0,0,0.2);
+            box-shadow: 3px 3px 19px rgba(0,0,0,0.2);
+            /*-webkit-box-shadow: 2px 2px 1px #E6E6FA;
+            -moz-box-shadow: 2px 2px 1px #E6E6FA;
+            -o-box-shadow: 2px 2px 1px #E6E6FA;*/
+            -ms-box-shadow: 2px 2px 1px #E6E6FA;
+            /*box-shadow: 2px 2px 1px #E6E6FA;*/
+            text-shadow: 0px 0px 0px #E6E6FA;
+        }
+        .Contenido 
+        {
+            padding: 15px; 
+            font-size: 12px;        
+        }
+        
+        .imagen 
+        {
+            /*float:left;
+            margin:10px 10px;*/
+            border:2px solid #000;
+            padding:2px;
+            background-color:#f3f3f3;
+           
+            }
+        
+        .contenedor_tabla 
+        {
+
+            }
+            
+        .contenedor_ficha 
+        {
+            width:100%;
+            /*border:1px solid #000;   */
+            font-size:11px;
+            margin-bottom:10px;
+        }
+        
+        .fila_impar, .fila_par 
+        {
+            height:20px; 
+            /*background:#87baed; */
+            /*border:1px solid #000;*/
+        }
+        .fila_impar .contenedor_celda 
+        {
+            background:#6E89B1;
+        }
+            
+        .fila_par .contenedor_celda 
+        {
+            background:#E6E6FA;
+        }
+        
+        .contenedor_celda 
+        {
+            width:40%;
+            float:left;
+            border:1px solid #000;
+            
+        }
+        
+        .titulo 
+        {
+            text-transform:uppercase;
+            font-weight:bold;
+            /*margin-right:20%;*/
+            }
+            
+        .dato 
+        {
+            /*padding-left:100px;*/
+        }
+        .nombre 
+        {
+            font-size:1.5em;
+            font-weight:bold;
+        }
+        .oficina 
+        {
+            font-size:1.2em;
+        }
+            
+        #contenedor_global 
+        {
+            width:80%;
+            text-align:center;
+            margin:0 auto;    
+        }
+        
+        
+        .sub_eval
+        {
+            color:#434C6F !important; 
+            border-bottom:1px solid #434C6F !important;
+            font-size:20px;
+            margin-bottom:5px;
+            
+            }
+            
+            
+            
+  .content ul {
+    margin:0px;
+    padding:0px 20px 0px 20px;
+}
+
+.content ul li {
+    list-style:none;
+    border-bottom:1px solid #d6dde0;
+    padding-top:15px;
+    padding-bottom:15px;
+    font-size:14px;
+}
+
+.content ul li a {
+    text-decoration:none;
+    color:#3e4346;
+}
+
+.content ul li small {
+    color:#8b959c;
+    font-size:9px;
+    text-transform:uppercase;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    position:relative;
+    left:10px;
+    top:0px;
+
+}
+
+.content ul li:last-child {
+
+    border-bottom:none;
+
+}
+
+
+/* ================ Estilos para los Reportes ================*/
+.cbp-spmenu {
+	background: #47a3da;
+	position: fixed;
+}
+
+.cbp-spmenu h3 {
+	color: #afdefa;
+	font-size: 1.9em;
+	padding: 20px;
+	margin: 0;
+	font-weight: 300;
+	background: #0d77b6;
+}
+
+.cbp-spmenu a {
+	display: block;
+	color: #fff;
+	font-size: 1.1em;
+	font-weight: 300;
+}
+
+.cbp-spmenu a:hover {
+	background: #258ecd;
+}
+
+.cbp-spmenu a:active {
+	background: #afdefa;
+	color: #47a3da;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+
+.cbp-spmenu-vertical {
+	width: 240px;
+	height: 100%;
+	top: 0;
+	z-index: 1000;
+}
+
+.cbp-spmenu-vertical a {
+	border-bottom: 1px solid #258ecd;
+	padding: 1em;
+}
+
+/* Vertical menu that slides from the left or right */
+
+.cbp-spmenu-left {
+	left: -240px;
+}
+
+.cbp-spmenu-right {
+	right: -240px;
+}
+
+.cbp-spmenu-left.cbp-spmenu-open {
+	left: 0px;
+}
+
+.cbp-spmenu-right.cbp-spmenu-open {
+	right: 0px;
+}
+
+
+/* Push classes applied to the body */
+
+.cbp-spmenu-push {
+	overflow-x: hidden;
+	position: relative;
+	left: 0;
+}
+
+.cbp-spmenu-push-toright {
+	left: 240px;
+}
+
+.cbp-spmenu-push-toleft {
+	left: -240px;
+}
+
+/* Transitions */
+
+.cbp-spmenu,
+.cbp-spmenu-push {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+/* Example media queries */
+
+@media screen and (max-width: 55.1875em){
+
+	.cbp-spmenu-horizontal {
+		font-size: 75%;
+		height: 110px;
+	}
+
+	.cbp-spmenu-top {
+		top: -110px;
+	}
+
+	.cbp-spmenu-bottom {
+		bottom: -110px;
+	}
+
+}
+
+@media screen and (max-height: 26.375em){
+
+	.cbp-spmenu-vertical {
+		font-size: 90%;
+		width: 190px;
+	}
+
+	.cbp-spmenu-left,
+	.cbp-spmenu-push-toleft {
+		left: -190px;
+	}
+
+	.cbp-spmenu-right {
+		right: -190px;
+	}
+
+	.cbp-spmenu-push-toright {
+		left: 190px;
+	}
+}
+
+/*==========OBSERVACIONES==================*/
+
+.id 
+{
+    display:none;
+}
+    
+ #observacion 
+    {
+        width: 60%;
+        padding-bottom: 2px;
+        /*display: none;*/
+        background: #FFF;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
+        -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7);
+        -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);
+        display: none;
+        top:50px;
+}
+
+
+#observacion-header  
+{
+    background: url(../Imagenes/hd-bg.png); 
+    padding: 18px 18px 14px 18px; 
+    border-bottom: 1px solid #CCC; 
+    border-top-left-radius: 5px; 
+    -moz-border-radius-topleft: 5px; 
+    -webkit-border-top-left-radius: 5px; 
+    border-top-right-radius: 5px; 
+    -moz-border-radius-topright: 5px; 
+    -webkit-border-top-right-radius: 5px; 
+}
+
+#observacion-header  h2 { color: #444; font-size: 1.5em;  margin-bottom: 3px;  }
+#observacion-header  p { color: #444; font-size: 1.5em; margin: 0;  }
+
+#observacion .txt-fld  
+{
+    position: relative; 
+    /*width: 464px; */
+    padding: 14px 20px; 
+    border-bottom: 1px solid #EEE; 
+    float:left;
+    /*text-align: right; */
+}
+#observacion .btn-fld {  overflow: hidden; padding: 12px; text-align:center; }
+
+#observacion .txt-fld label  
+{
+    display: block; 
+    float: left; 
+    width: 130px !important; 
+    padding-top: 8px; 
+    color: #222; 
+    font-size: 1.1em; 
+    text-align: left;  
+}
+
+#observacion .txt-fld input  
+{
+   /* width: 230px; */
+    padding: 8px; 
+    border-radius: 4px; 
+    -moz-border-radius: 4px; 
+    -webkit-border-radius: 4px; 
+    font-size: 1.2em; color: #222; 
+    background: #F7F7F7; 
+    font-family: "Helvetica Neue"; 
+    outline: none; 
+    border-top: 1px solid #CCC; 
+    border-left: 1px solid #CCC; 
+    border-right: 1px solid #E7E6E6; 
+    border-bottom: 1px solid #E7E6E6; 
+    }
+#observacion .txt-fld input.good_input { background: #DEF5E1 url(../img/good.png) 236px center no-repeat; }
+#observacion .txt-fld input.error_input { background: #FDE0E0; }
+
+p.error { position: absolute; bottom: 48px; right: 20px; width: 262px; color: #FFF; font-size: 1.1em; padding-bottom: 5px; background: url(../img/error-arw.png) 20px bottom no-repeat; text-align: left; margin: 0; text-shadow: none; }
+p.error span { display: inline-block; background: #D43636; padding: 6px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;  }
+.txt-fld input:focus, .txt-fld textarea:focus { background-color: #FAF9DC; }
+                
+.modal_close { position: absolute; top: 12px; right: 12px; display: block; width: 14px; height: 14px; background: url(../../Imagenes/modal_close.png); z-index: 2; }
+

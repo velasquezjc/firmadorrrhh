@@ -1,0 +1,113 @@
+.botonFirma {
+	background: -moz-linear-gradient(top, #587BA0, #38577f 15px);
+	background: -webkit-gradient(linear, 0 0, 0 50%, from(#587BA0),
+		to(#38577f) );
+	background-image: linear-gradient(to bottom, #2574AD, #034574);
+	background-color: #38577f;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px; /*azul marino oscuro opaco*/
+	-ms-border-radius: 4px;
+	color: #fff;
+	/*float: center;*/
+	border: none;
+	padding: 3px 12px 3px 12px;/*padding: 5px 18px 5px 18px;*/
+	/*margin: 5px 0 0 0;*/
+	font-family: arial;
+	font-size: 8pt;
+	cursor:hand;
+	font-weight: bold;
+}
+.botonGrisadoFirma {
+	background-color: #ccc;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px; /*azul marino oscuro opaco*/
+	-ms-border-radius: 4px;
+	color:#ffffff;
+	/*float: center;*/
+	border: none;
+	padding: 3px 12px 3px 12px;/*padding: 5px 18px 5px 18px;*/
+	/*margin: 5px 0 0 0;*/
+	font-family: arial;
+	font-size: 8pt;
+	cursor:auto;
+	font-weight: bold;
+}
+.estadoFirmado{
+background-image: url('./Portal Estudios_files/pased.png');
+background-repeat: no-repeat;	
+background-position: center;
+
+}
+.estadoNoFirmado{
+background-image: url('./Portal Estudios_files/archi.gif');
+background-repeat: no-repeat;	
+background-position: center;
+
+}
+.estadoProcesando{
+background-image: url('./Portal Estudios_files/loads.gif');
+background-repeat: no-repeat;	
+background-position: center;
+
+}
+/*objetos para operaciones masivas*/
+.botonFirmaM {
+	background: -moz-linear-gradient(top, #587BA0, #38577f 15px);
+	background: -webkit-gradient(linear, 0 0, 0 50%, from(#587BA0),
+		to(#38577f) );
+	background-image: linear-gradient(to bottom,  #CC0033,  #FF0033);
+	background-color: #38577f;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px; /*azul marino oscuro opaco*/
+	-ms-border-radius: 4px;
+	color: #fff;
+	/*float: center;*/
+	border: none;
+	padding: 4px 10px 4px 10px;/*padding: 5px 18px 5px 18px;*/
+	/*margin: 5px 0 0 0;*/
+	font-family: arial;
+	font-size: 9pt;
+	cursor:hand;
+	font-weight: bold;
+	
+}
+.botonGrisadoFirmaM {
+	background-color: #ccc;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px; /*azul marino oscuro opaco*/
+	-ms-border-radius: 4px;
+	color:#ffffff;
+	/*float: center;*/
+	border: none;
+	padding: 4px 10px 4px 10px;/*padding: 5px 18px 5px 18px;*/
+	/*margin: 5px 0 0 0;*/
+	font-family: arial;
+	font-size: 9pt;
+	cursor:auto;
+	font-weight: bold;
+}
+/**ICONOS para mensajes**/
+
+/*.iconOK{background-color: transparent;  background-image:url("../img/iconOK.png"); background-repeat: no-repeat; border: 0 none;  height:34px; width: 35px; float:left;margin-right: 13px;  margin-top: 10px; }
+.iconOKFirma{ background-color: transparent; background-image: url("../img/iconOK.png"); background-repeat: no-repeat; border: 0 none;  float: left;  font-weight: bold;  height: 34px;  margin-top: 10px; padding-left: 51px; padding-top: 10px; width: 100%;}
+.iconErrorFirma2{ background-color: transparent; background-image: url("../img/msginfo.png"); background-repeat: no-repeat; border: 0 none;  float: left;  font-weight: bold;  height: 34px;  margin-top: 5px; padding-left: 51px; padding-top: 10px; width: 100%;color:green;font-size: 8pt;}
+*/
+.iconInfo{margin-right: 15px; vertical-align: middle;float:left; background-image: url("../Imagenes/recibos/msginfo.png");background-repeat: no-repeat;padding-left: 15pt;color:green;font-size: 8pt; height: 15pt;}
+.iconProcesando{margin-right: 15px; vertical-align: middle;float:left; background-image: url("../Imagenes/recibos/loads.gif");background-repeat: no-repeat;padding-left: 15pt;color:green;font-size: 8pt; height: 15pt;}
+.iconAlerta{margin-right: 15px; vertical-align: middle;float:left; background-image: url("../Imagenes/recibos/msgwarn.png");background-repeat: no-repeat;padding-left: 15pt;color:green;font-size: 8pt; height: 15pt;}
+.iconOKFirmados{margin-right: 15px; vertical-align: middle;float:left; background-image: url("../Imagenes/recibos/pased.png");background-repeat: no-repeat;padding-left: 15pt;color:green;font-size: 8pt; height: 15pt;}
+.iconErrorFirma{ background-color: transparent; background-image: url("../Imagenes/recibos/msginfo.png"); background-repeat: no-repeat; border: 0 none;  float: left;  font-weight: bold;  height: 34px;  margin-top: 5px; padding-left: 51px; padding-top: 10px; width: 100%;color:green;font-size: 8pt;}
+
+.Documento{color:black;}
+.DocumentoCeleste{color:#3399FF;}
+.resultadoValidar{margin-left:51px; font-size:11px;}
+
+/*simulacion de tablas*/
+.Table{ display: table }  
+.Title{ display: table-caption; text-align: center; font-weight: bold; font-size: larger;}  
+.Heading{ display: table-row; font-weight: bold; text-align: center;}  
+.Row{display: table-row;}  
+.Cell{display: table-cell; background-image: linear-gradient(to bottom, #2574AD, #2574AD); color: #fff;font-size: 9pt;font-weight: bold;width:10pt} 
+.Cell2{text-align: right;}
+
+ 

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	 
+ 	<modelVersion>4.0.0</modelVersion>
+    <groupId>es.gob</groupId>
+    <artifactId>jmulticard-android</artifactId>
+    <packaging>aar</packaging>
+	
+	<parent>
+		<groupId>es.gob</groupId>
+		<artifactId>jmulticard-base</artifactId>
+		<version>1.4</version>
+	</parent>
+	
+	<dependencies>
+        <dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>android</artifactId>
+			<version>4.1.1.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.google.android</groupId>
+		    <artifactId>support-v4</artifactId>
+		    <version>r6</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>es.gob</groupId>
+			<artifactId>jmulticard</artifactId>
+			<version>1.4</version>
+		</dependency>
+	</dependencies>
+		
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<sourceDirectory>src</sourceDirectory>
+		
+		<pluginManagement>
+			<plugins>
+				<plugin>
+				    <groupId>com.simpligility.maven.plugins</groupId>
+				    <artifactId>android-maven-plugin</artifactId>
+				    <version>4.1.1</version>
+				</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12.4</version>
+            </plugin>
+        </plugins>
+		</pluginManagement>
+		
+		<plugins>
+            <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.6</source>
+                <target>1.6</target>
+            </configuration>
+        	</plugin>
+            <plugin>
+                <groupId>com.simpligility.maven.plugins</groupId>
+				<artifactId>android-maven-plugin</artifactId>				
+				<configuration>
+                    <sdk>
+						<path>${env.ANDROID_HOME}</path>
+                        <platform>15</platform>
+                    </sdk>
+                    <sign><debug>both</debug></sign>
+				    <resourceDirectory>${basedir}/res</resourceDirectory>
+				    <nativeLibrariesDirectory>${basedir}/libs</nativeLibrariesDirectory>
+				    <androidManifestFile>${basedir}/AndroidManifest.xml</androidManifestFile>
+                </configuration>
+                <extensions>true</extensions>
+            </plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.10.0</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+					<additionalProjectnatures>
+						<projectnature>com.android.ide.eclipse.adt.AndroidNature</projectnature>
+					</additionalProjectnatures>
+					<additionalBuildcommands>
+						<buildcommand>com.android.ide.eclipse.adt.ResourceManagerBuilder</buildcommand>
+						<buildcommand>com.android.ide.eclipse.adt.PreCompilerBuilder</buildcommand>
+						<buildcommand>com.android.ide.eclipse.adt.ApkBuilder</buildcommand>
+					</additionalBuildcommands>
+					<!--
+							This is a workaround : we do not want JRE_CONTAINER, however if
+							we remove it, it will be automatically added, and placed first.
+							So we add it in the second position, so that the project is
+							recognized as an Android project.
+					-->
+					<classpathContainers>
+						<classpathContainer>com.android.ide.eclipse.adt.ANDROID_FRAMEWORK</classpathContainer>
+						<classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
+					</classpathContainers>
+				</configuration>
+			</plugin>
+        </plugins>   
+	</build>
+</project> 

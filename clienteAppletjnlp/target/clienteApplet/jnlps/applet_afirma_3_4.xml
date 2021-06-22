@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!-- JNLP File for SwingSet2 Demo Application -->
+<jnlp spec="1.0+" codebase="$$codebase" href="$$name">
+	<information>
+		<title>Primera prueba de WebStart</title>
+		<vendor>www.adictosaltrabajo.com</vendor>
+		<homepage href="$$context" />
+		<description>Este es un ejemplo simple de Webstart</description>
+		<description kind="short">Ejemplo de WebStart.</description>
+		<security>
+    <all-permissions/>
+  </security>
+  <update check="timeout" policy="always"/>
+  <application-desc main-class="es.gob.afirma.applet.SignApplet" />
+		<offline-allowed />
+	</information>
+	<resources>
+     <j2se version="1.6+" java-vm-args="-Xms512M -Xmx1024M">
+     <jar href="applet_afirma_3_4.jar" main="true">
+     </jar>
+    </j2se>
+  </resources>
+
+</jnlp> 

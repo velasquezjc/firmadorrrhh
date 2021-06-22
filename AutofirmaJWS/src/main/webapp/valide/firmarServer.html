@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html><head>
+	<title>FirmAR - ValidAR</title>
+	
+
+<link rel="stylesheet" type="text/css" href="css/estilos.css" media="screen">
+<link rel="shortcut icon" href="../img/faviconwebserver.ico">
+
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="content-script-type" content="text/javascript"> 
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Cache-Control" content="no-cache,no-store">
+<meta name="lang" content="es">
+<script type="text/javascript" src="js/miniapplet.js"></script>
+<script type="text/javascript" src="js/protocolcheck.js"></script>
+<script type="text/javascript" src="js/funcionesExtrasJNLP.js"></script>
+<script type="text/javascript" src="js/funcionesGenerales.js"></script>
+<!-- <script type="text/javascript" src="js/constantes-server.js"></script> -->
+<script type="text/javascript" src="js/intercomunicacionBrowser-App.js"></script>
+ <script type="text/javascript" >
+ document.write('<script type="text/javascript" src="js/constantes-server.js"><\/script>');
+ </script> 
+			    	
+</head>
+<body>
+	
+	<!-- CONTENEDOR ** -->
+	<div id="contenedor">
+		<div id="cabecera">
+			
+
+<div class="cabecera">
+    
+	<div id="result" style="margin:margin: 0 auto ;width:30% ;text-align:center ;padding: 5px; border: 1px solid orange; border-radius: 5px;    display: inline-block; background-color: rgb(255, 213, 191);">
+Multi-Ministerio Firm<b>AR</b> - Valid<b>AR</b>
+</div>
+	<a href="http://www.desarrollosocial.gob.ar/" class="floatLeft" target="_blank">
+		<img style="padding-top: 15pt"src="../img/logo_admon_a_corto.png" alt="Ministerio de Desarrollo Social" title="Ministerio de Desarrollo Social" class="logo060x">
+	</a> 
+	<a href="http://www.argentina.gob.ar/" title="Gobierno de Argentina">
+		<img height="100pt" width="200pt" src="../img/logoGobEsp.PNG" alt="www.gob.ar" title="Gobierno de Argentina" class="logoGobEsp">
+	</a>
+	<!-- MENÚ CABECERA ** -->
+	<div class="menuSuperior">
+		<div id="menu_cabecera">
+			<ul>
+				<!-- <li><a href="#" title="Mapa Web">Mapa Web</a> | </li> -->
+				<li>
+					<a href="https://contactarFIX.html" title="Contactar">
+						Contactar
+					</a>
+			</li></ul>		
+		</div>
+		
+		<!-- IDIOMA ** -->
+		<div id="idiomas">
+		  <ul>
+			<li><a href="#ejecutar.html?lang=es" title="Selecciona idioma">Bienvenido</a> | </li>
+			<li><a href="#ejecutar.html?lang=en" title="Selecciona idioma">Welcome</a>  </li>
+		  </ul>		
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+		</div>
+		<div id="contenidoTop"></div>
+		<div id="contenido">
+			<div id="cuerpo">
+				<div class="bloqueIzquierdoInterior">
+	                         
+	<div class="menuVertical">
+		<ul>
+		    <li>
+			    <script type="text/javascript" >
+			       document.write('<a href="#" title="Realizar firma" onclick="javascript:Generales.mostrarPanelDerYOcultarClase(\'bloqueDerechoInteriorFirmar\',\'panelDerOcultable\');">Realizar firma</a>');
+			    </script>			
+				<span class="separadorMenu"></span>	
+			</li>
+			<li>
+			    <script type="text/javascript" >
+			        document.write('<a href="#" title="Validar firma" onclick="javascript:Generales.mostrarPanelDerYOcultarClase(\'bloqueDerechoInteriorValidarFirma\',\'panelDerOcultable\');">Validar firma</a>');
+			    </script>
+				<span class="separadorMenu"></span>	
+			</li>
+			<li>
+			    <script type="text/javascript" >
+			       document.write('<a href="#" title="Validar Certificado" onclick="javascript:Generales.mostrarPanelDerYOcultarClase(\'bloqueDerechoInteriorValidarCert\',\'panelDerOcultable\');">Validar Certificado</a>');
+			    </script>
+				<span class="separadorMenu"></span>
+			</li>
+			<li>
+			    <script type="text/javascript" >
+			       document.write('<a href="#" title="Proveedores" onclick="javascript:Generales.mostrarPanelDerYOcultarClase(\'bloqueDerechoInteriorEntidadesValidas\',\'panelDerOcultable\');">Proveedores</a>');
+			    </script>
+				<span class="separadorMenu"></span>	
+			</li>
+			<li>
+			    <script type="text/javascript" >
+			       document.write('<a href="#" title="Verificar Código Seguro de Verificación Generico" onclick="javascript:Generales.mostrarPanelDerYOcultarClase(\'bloqueDerechoInteriorCUV-G\',\'panelDerOcultable\');">Verificar CSV-G</a>');
+			    </script>
+				<span class="separadorMenu"></span>	
+			</li>
+			<li>
+			    <script type="text/javascript" >
+			       document.write('<a href="#" title="Faqs" onclick="javascript:Generales.mostrarPanelDerYOcultarClase(\'bloqueDerechoInteriorFaqs\',\'panelDerOcultable\');">Faqs</a>');
+			       //document.write('<a href="'+Constants.URL_BASE_APP+'/valide/faqs.html" title="Faqs">Faqs</a>');				   
+			    </script>
+				<span class="separadorMenu"></span>	
+			</li>
+		
+		</ul>                                
+	</div>   
+				</div>
+				<!-- ********************sub-capas de contenido -->
+				<div class="bloqueDerechoInterior">
+	
+	<!-- Bloque Derecho Firmar-->
+    <div id="bloqueDerechoInteriorFirmar" class="panelDerOcultable" style="display: inline;">
+<div id="cargandoApplet" class="error cursiva" style="display: none;">
+	<br>
+	Cargando aplicacion en cache para la creación de la firma. Tenga conciencia
+	<br><br>
+	<span>Abra el archivo con java web launcher y ESPERE POR FAVOR...</span>
+</div>
+<div id="pantalla" style="display: block;">
+<form id="sede" action="/valide/ejecutarFirmar/ejecutar-nada-hace.html" method="post">
+	<h2>
+		<img src="../img/icon_realizarFirma.png" alt="validar sede" class="VASub VANormalIE7">
+		<span>Realizar Firma Digital</span>
+	</h2>
+	<p>Una firma digital es un conjunto de datos asociados a un mensaje que
+ permite asegurar la identidad del firmante y la integridad del mensaje.</p>
+	<div class="separadorSeccion"></div>
+	<fieldset>
+	<p id="firmaProceso1">Para realizar una firma pulsa el botón "Firmar" y seleccione el documento. A continuación puede guardar el documento firmado.</p>
+	<p id="firmaProcesoAND" style="display:none; font-size:19px; color:#AE083B;padding:15px 3px 3px 15px; font-weight:normal"><br>Existe una versión del cliente que le permite generar firmas digitales en su dispositivo.<br><br>Para ello, descargue la app o aplicación <a href="https://play.google.com/store/apps/details?id=es.gob.afirma">Cliente móvil @firma</a> y verifique el funcionamiento en el siguiente enlace<br><br></p><center><a id="firmaMovil" href="https://valide.redsara.es/firmaMovil" style="display:none; font-size:18px; padding:15px 3px 3px 15px; font-weight:normal">Realizar Firma Digital (Firm@Movil)</a></center><p></p><p></p>
+	<p id="firmaProcesoIOS" style="display:none; font-size:19px; color:#AE083B;padding:15px 3px 3px 15px; font-weight:normal"><br>Existe una versión del cliente que le permite generar firmas digitales en su dispositivo.<br><br>Para ello, descargue la app o aplicación <a href="https://itunes.apple.com/es/app/cliente-firma-movil/id627410001">Cliente móvil @firma</a> y verifique el funcionamiento en el siguiente enlace<br><br></p><center><a id="firmaMovil" href="https://valide.redsara.es/firmaMovil" style="display:none; font-size:18px; padding:15px 3px 3px 15px; font-weight:normal">Realizar Firma Digital (Firm@Movil)</a></center><p></p><p></p>
+	<br>
+	<div id="botones" class="botoneraCentro">
+		<input class="botonP marginR15" id="botonFirmar" value="Firmar" onclick="javascript:firmar();" type="button">
+		<input class="botonGrisadoM marginR15" id="saveFile" value="Guardar Firma" onclick="javascript:guardarFirma();" disabled="disabled" type="button"><br>
+	</div>
+	<div id="divmensaje">&nbsp;</div>
+	<br><br>
+	<div id="clienteEscritorio">
+		<div class="barraSeparadora"></div>
+        <h3 class="marginB10"><img src="../img/w_flecha.png" style="vertical-align:middle" width="30">&nbsp;
+            <a href="Descargas.html" class="enlace2" target="_blank">
+                Descárgate el cliente de firma (versión Escritorio)
+            </a>
+        </h3>
+		<p>El cliente de firma (versión Escritorio) es una aplicación de firma
+ que instalas en tu ordenador y que te permite elegir el tipo de firma 
+que quieres realizar para firmar directamente desde tu ordenador sin 
+necesidad de estar conectado a internet.<br></p>
+	</div>
+	</fieldset>
+	<div class="nota" id="nota">
+		<p>Nota: La firma digital se realiza mediante una aplicacion java web start descargado
+ en su navegador. Dicha aplicacion ha sido firmada por xxx. para Impulso 
+de la Administración Digital por su seguridad.<a href="https://requisitos.html" class="enlace">Pulsa aquí para ver los requisitos de funcionamiento</a></p>
+	</div>
+	<div class="nota" id="nota2" style="display:none">
+		<p>Nota: La firma digital se realiza mediante una aplicación 
+firmada por xxx. para Impulso de la Administración Digital por su
+ seguridad.<a href="https://valide/valide/requisitos.html?mobile=true" class="enlace">Pulsa aquí para ver los requisitos de funcionamiento</a></p>
+	</div>
+	
+</form>
+	
+
+</div>
+				</div>	  
+	<!-- fin Bloque Derecho Firmar-->
+	
+	<!-- Bloque derecho validar firma -->
+	<div id="bloqueDerechoInteriorValidarFirma" style="display: none;" class="panelDerOcultable">
+	<form id="validarFirmaForm" action="" method="post" enctype="multipart/form-data" style="display:inline">	
+	<h2>
+		<img src="../img/icon_firma.png" title="Validar Firma " alt="Validar Firma " class="VASub VANormalIE7">
+		<span>Validar Firma</span>
+	</h2>
+	<p>Puede comprobar la validez de una firma digital utilizando para ello la plataforma ValidAR.</p>
+	<div class="separadorSeccion"></div>
+ 	<span id="validarFirmaForm.errors" class="validacion" style="display:none;width:50%"></span> 
+	
+	<fieldset >
+	<!-- <input id="certificado" name="certificado" type="hidden" value="">
+	<input id="nombreCertificado" name="nombreCertificado" type="hidden" value="">
+	 -->
+	<label for="certificado">
+		1. Selecciona el documento firmado a validar
+	</label>
+	 <br><br>
+	 <!--
+	<div id="botonSelectFile" class="botoneraCentro">
+		<input type="button" class="botonG" value="Seleccionar archivo PDF" onclick="javascript:pideCertificado();">
+	</div>
+	<br> -->
+	<!-- capa de seleccion de archivos externos desde disco -->
+	<div id="selectDOCExterno">
+	<!-- <a class="enlace" href="javascript:void(0)" onclick="javascript:cleanCertificate()" title="Mostrar acceso dispositivo">Si tu certificado digital está en un dispositivo de almacenamiento o en su disco duro, selecciona este link.</a>
+	<br><br> -->
+	<div id="divFileDOC" class="marginT10" style="display:inline">
+	<input id="ficheroDOC" name="fileDataDOC" type="file" value="" onchange="javascript:cleanMensajesValidadorFirmaError();"><br></div>
+	<div class="nota"><p>Tamaño máximo de fichero admitido (8 MBs)</p></div>
+	</div>	
+
+    <!-- mensaje donde va el cargando cargando -->
+    <div id="divMensajeSign" style="display:inline">&nbsp;</div>
+    
+	<!-- <div class="captcha">
+		<label for="codigoSeguridad">
+			2. Introduce el código de seguridad
+		</label>
+		<br><br>
+		<div class="ValidarCodSeguridad">
+			<div class="codSeguridad">
+				<div class="imgSeguridad">
+					<img src="./VALIDeCert_files/kaptcha.jpg" alt="2. Introduce el código de seguridad" title="2. Introduce el código de seguridad" id="captcha">
+				</div>
+				<span class="centrado">
+					<label class="tituloFieldset">
+						Escribe el código de seguridad
+					</label>
+					<br>
+				</span>	
+				<input id="codigoSeguridad" name="codigoSeguridad" type="text" value="">
+			</div>
+		
+			<div class="imgIconosSeguridad">
+				<img src="./VALIDeCert_files/ejecutar_icon_audio.png" class="marginB4 cursorPointer" alt="Escuchar código de seguridad" title="Escuchar código de seguridad" onclick="javascript:playCaptcha();">
+				<img src="./VALIDeCert_files/ejecutar_icon_actualizar.png" class="cursorPointer" alt="Actualizar código de seguridad" title="Actualizar código de seguridad" onclick="javascript:reloadCaptcha();">
+			</div>
+		</div>
+		<div class="centrado" id="playAudio"></div>
+		<br>
+	</div> -->
+	
+	
+	<div class="clear"></div>
+	<div class="botoneraCentro"><br>
+		<input id="botonValidarSign" class="botonP" type="button" value="Validar" onclick="javascript:validarFirma();">
+		<br>
+	</div>
+	</fieldset>
+	
+	<div class="nota">
+		<p>
+			Nota: Los formatos de firma soportados por el sistema son aquellos admitidos por la yyy. Se pueden consultar los formatos admitidos revisando el documento 
+			<a title="Formatos admitidos por la plataforma firmAR." href="http://administracionelectronica.gob.ar/aFirma-Anexo-FORMATSIGN" class="enlace"> 
+				Formatos admitidos por la plataforma firmAR.
+			</a>
+			
+			Si su formato de firma no se valida correctamente, pero si se encuentra entre los recogidos en la 
+			<a title="Página de RRHH del Miniserio de Desarrollo Social" href="https://rrhh.desarrollosocial.gov.ar/formatosValidos/" class="enlace"> 
+				Página de soporte firmaSOP
+			</a>, sugerimos se ponga en contacto con el servicio de soporte. 
+		</p>
+	</div>
+	
+   </form>   
+   
+  
+	<form id="resultFirmaForm" action="" method="post" enctype="multipart/form-data" style="display:none">	
+	<h2>
+		<img src="../img/icon_firma.png" title="Validar Firma " alt="Validar Firma" class="VASub VANormalIE7">
+		<span>Resultado de Validar Firma </span>
+	</h2>
+	<div class="separadorSeccion"></div>
+	<input id="botonValidarOtraFirma" class="botonG" type="button" value="Validar Otra Firma" onclick="javascript:mostrarPanelInicialValidacionSign();">
+	<br><br>
+ 	
+	<fieldset>
+	<div class="msgValidaCert">
+		<img class="iconStatus" src="../img/iconOK.png" alt="OK" title="OK">	
+			<div class="VAMiddle">					
+				<span class="resultMajor">Firma v&aacute;lida</span>		
+			</div>		
+		<div class="clear"></div>
+	</div>
+	<br>
+<!-- 	lista de firmantes -->    
+	<div id ="resumenFirmantes" class="resultadoValidar">        
+	</div>
+	
+	<br>
+	<div class="barraSeparadora"></div>
+	<h4 class="colorRojo">
+	    Detalle de la V&aacute;lidaci&oacute;n		
+	</h4>
+	<br>
+	<br>
+	<span class="destacadoFieldset subtitulo">Firmantes:</span>
+	<br>
+	<br>
+
+    <!-- 	lista de firmantes con informacion detallada-->
+	<div > 	    
+	    <div id ="detallesFirmantes" class="textAlignLeft">
+	    </div> 
+	    <div class="barraSeparadora"></div>
+		<div class="textAlignLeft">
+			<p>
+			<span class="destacadoFieldset">Observaciones:</span>
+			Las firmas son v&aacute;lidas                      
+			</p>
+			<p>
+			<span class="destacadoFieldset">Hora de Consulta:</span>
+			<span id="respSignFechaConsulta">&nbsp;</span>
+			</p>
+		</div>    
+	</div>
+	
+	
+</fieldset>
+	
+   </form>
+	</div><!-- fin Bloque derecho validar firma -->
+	  		
+	<!-- Bloque Derecho Validar Certificado-->
+    <div id="bloqueDerechoInteriorValidarCert" style="display: none;" class=panelDerOcultable>
+    <form id="validarCertificadoForm" action="" method="post" enctype="multipart/form-data" style="display:inline">	
+	<h2>
+		<img src="../img/icon_certificado.png" title="Validar Certificado " alt="Validar Certificado " class="VASub VANormalIE7">
+		<span>Validar Certificado</span>
+	</h2>
+	<p>Puedes comprobar la validez de un certificado digital emitido por un prestador de servicios de certificación reconocido.</p>
+	<div class="separadorSeccion"></div>
+ 	<span id="validarCertificadoForm.errors" class="validacion" style="display:none;width:50%"></span> 
+	
+	<fieldset >
+	<input id="certificado" name="certificado" type="hidden" value="">
+	<input id="nombreCertificado" name="nombreCertificado" type="hidden" value="">
+	<label for="certificado">
+		1. Selecciona tu certificado
+	</label>
+	<br><br>
+	<div id="botonSelect" class="botoneraCentro">
+		<input type="button" class="botonG" value="Seleccionar Certificado" onclick="javascript:pideCertificado();">
+	</div>
+	<br>
+	<!-- capa de seleccion de certificados externos desde disco -->
+	<div id="selectCertExterno">
+	<a class="enlace" href="javascript:void(0)" onclick="javascript:cleanCertificate()" title="Mostrar acceso dispositivo">Si tu certificado digital está en un dispositivo de almacenamiento o en su disco duro, selecciona este link.</a>
+	<br><br>
+	<div id="divFile" class="marginT10" style="display:none"><input id="fichero" name="fileData" type="file" value="" onchange="javascript:cleanMensajesError();"><br><br><br></div>
+	</div>
+	<!-- mensaje donde se indica la carga de un certificado desde el almacen de certificados -->
+	<div id="certificados" class="marginT10" style="text-align:center; font-weight:bold"><span class="aliasCertificado">&nbsp;</span><br><br><br></div>
+    
+
+    <!-- mensaje donde va el cargando cargando -->
+    <div id="divMensajeCert">&nbsp;</div>
+    
+	<!-- <div class="captcha">
+		<label for="codigoSeguridad">
+			2. Introduce el código de seguridad
+		</label>
+		<br><br>
+		<div class="ValidarCodSeguridad">
+			<div class="codSeguridad">
+				<div class="imgSeguridad">
+					<img src="./VALIDeCert_files/kaptcha.jpg" alt="2. Introduce el código de seguridad" title="2. Introduce el código de seguridad" id="captcha">
+				</div>
+				<span class="centrado">
+					<label class="tituloFieldset">
+						Escribe el código de seguridad
+					</label>
+					<br>
+				</span>	
+				<input id="codigoSeguridad" name="codigoSeguridad" type="text" value="">
+			</div>
+		
+			<div class="imgIconosSeguridad">
+				<img src="./VALIDeCert_files/ejecutar_icon_audio.png" class="marginB4 cursorPointer" alt="Escuchar código de seguridad" title="Escuchar código de seguridad" onclick="javascript:playCaptcha();">
+				<img src="./VALIDeCert_files/ejecutar_icon_actualizar.png" class="cursorPointer" alt="Actualizar código de seguridad" title="Actualizar código de seguridad" onclick="javascript:reloadCaptcha();">
+			</div>
+		</div>
+		<div class="centrado" id="playAudio"></div>
+		<br>
+	</div> -->
+	
+	<div class="clear"></div>
+	<div class="botoneraCentro"><br>
+		<input id="botonValidarCert" class="botonP" type="button" value="Validar" onclick="javascript:validarCertificado();">
+		<br>
+	</div>
+	</fieldset>
+	
+	<div class="nota">
+		<p>
+			Nota: Los certificados soportados por el sistema son aquellos admitidos por la yyy. Se pueden consultar los certificados admitidos revisando el documento 
+			<a title="Certificados admitidos por la plataforma firmAR." href="http://administracionelectronica.gob.ar/aFirma-Anexo-ENTES" class="enlace"> 
+				Certificados admitidos por la plataforma firmAR.
+			</a>
+			
+			Si su certificado no se valida correctamente, pero si se encuentra entre los recogidos en la 
+			<a title="Página de la ONTI" href="https://sedes.gob.ar/prestadores/" class="enlace"> 
+				Página de la yyy
+			</a>
+				, rogamos te pongas en contacto con el servicio de soporte. 
+		</p>
+	</div>
+	
+   </form>   
+   
+    
+	<form id="resultCertificadoForm" action="" method="post" enctype="multipart/form-data" style="display:none;">	
+	<h2>
+		<img src="../img/icon_certificado.png" title="Validar Certificado " alt="Validar Certificado " class="VASub VANormalIE7">
+		<span>Resultado de Validar Certificado </span>
+	</h2>
+	<div class="separadorSeccion"></div>
+	<input id="botonValidarOtro" class="botonG" type="button" value="Validar Otro Certificado" onclick="javascript:mostrarPanelInicialValidacionCert();">
+	<br><br>
+ 	
+	<fieldset>
+	<div class="msgValidaCert">
+		<img class="iconStatus" src="../img/iconOK.png" alt="OK" title="OK">	
+			<div class="VAMiddle">					
+				<span class="resultMajor">Certificado v&aacute;lido</span>		
+			</div>		
+		<div class="clear"></div>
+	</div>
+<!-- 	<div class="msgValida"></div> -->
+	<div class="resultadoValidar">
+			<br>
+			<span class="destacadoFieldset ancho210">
+				Nombre/Apellid. Firmante:
+			</span>
+			<span id="respCertNyapFirmante">&nbsp;</span>
+			<br>
+			<span class="destacadoFieldset ancho210">
+				CUIT/CUIL Firmante:
+			</span>
+			<span id="respCertSNFirmante">&nbsp;</span>	
+		</div>
+	<div class="barraSeparadora"></div>
+	<h4 class="colorRojo">
+		Informaci&oacute;n del certificado
+	</h4>
+<!-- 	informacion detallada del certificado del firmante -->
+	<BR><BR>
+	<div class="textAlignLeft">
+	<p>
+	<span class="destacadoFieldset">Emisor:</span>
+	<span id="respCertEmisor">&nbsp;</span>
+	</p>
+	<p>
+	<span class="destacadoFieldset">Firmante:</span>
+	<span id="respCertFirmante">&nbsp;</span>
+	</p>
+	<p>
+	<span class="destacadoFieldset">Correo:</span>
+	<span id="respCertCorreo">&nbsp;</span>
+	</p>
+	<p>
+	<span class="destacadoFieldset">V&aacute;lido Desde:</span>
+	<span id="respCertValidoDesde">&nbsp;</span>
+	</p>
+	<p>
+	<span class="destacadoFieldset">V&aacute;lido Hasta:</span>
+	<span id="respCertValidoHasta">&nbsp;</span>
+	</p>
+	<p>
+	<span class="destacadoFieldset">N&uacute;mero de Serie:</span>
+	<span id="respCertNumSerie">&nbsp;</span>
+	</p>
+	<p>
+	<span class="destacadoFieldset">Pol&iacute;tica de certificaci&oacute;n:</span>
+	<span id="respCertPoliticaCert">&nbsp;</span>
+	</p>
+	<p>
+	<span class="destacadoFieldset">Usos del certificado:</span>
+	<span id="respCertUsosCert">&nbsp;</span>
+	</p>
+    </div>
+
+<div class="barraSeparadora"></div>
+<div class="textAlignLeft">
+<p>
+	<span class="destacadoFieldset">Observaciones:</span>
+	El certificado es v&aacute;lido, incluyendo su estado de revocaci&oacute;n                       
+</p>
+<p>
+	<span class="destacadoFieldset">Hora de Consulta:</span>
+	<span id="respCertFechaConsulta">&nbsp;</span>
+</p>
+</div>
+	
+</fieldset>
+	
+   </form>
+</div>		<!-- fin bloque derecho validar certificado-->		
+ 
+    <!-- bloque derecho entidades licenciantes validas -->
+    <div id="bloqueDerechoInteriorEntidadesValidas" style="display: none;" class="panelDerOcultable">
+    <form id="validarSedeForm" action="/valide/ejecutarValidarSede/ejecutar-hacer-nada.html" method="post">
+	<h2>
+		<img src="../img/icon_sede.png" alt="validar sede" class="VASub VANormalIE7">
+		Proveedores
+	</h2>
+	<p>Proveedores de servicios de certificai&oacute;n de firma digital v&aacute;lidos.</p>
+	<p>Los certificados emitidos por los mismos son los que se pueden validar contra el servicio de validaci&oacute;n.</p>
+	
+	<div class="separadorSeccion"></div>
+	
+    <fieldset>
+		<span class="tituloFieldset"><!--Dirección de Internet a validar--></span>
+		
+		<p><B>-Autoridad Certificante de Firma Digital.</B></p>    
+        <p>Nombre: Pol&iacute;tica &Uacute;nica de Certificaci&oacute;n de la Oficina Nacional de Tecnolog&iacute;as de
+Informaci&oacute;n.</p> 
+        <p> Versi&oacute;n: 2.0 </p> 
+        <p>Fecha de aplicaci&oacute;n: Diciembre de 2014</p> 
+        <p>Sitio de publicaci&oacute;n: <a href="http://pki.jgm.gov.ar/cps/cps.pdf" title="Pol&iacute;tica de Certificaci&oaute;n">http://pki.jgm.gov.ar/cps/cps.pdf</a></p> 
+        <p>OID: 2.16.32.1.1.3</p> 
+        <p>Lugar: Ciudad Aut&oacute;noma de Buenos Aires, Rep&uacute;blica Argentina</p> 
+
+	<div class="clear"></div>	
+	</fieldset>
+</form>
+    </div><!-- fin bloque derecho entidades licenciantes validas -->
+	
+	<!-- bloque derecho verificar Codigo unico de validacion -->		
+	<div id="bloqueDerechoInteriorCUV-G" style="display: none;" class="panelDerOcultable">
+	</div>
+	<!-- fin bloque derecho verificar Codigo unoco de validacion -->	
+					
+	<!-- Bloque Derecho Faqs-->	
+	<div id="bloqueDerechoInteriorFaqs" style="display: none;" class="panelDerOcultable">
+	    <img src="imgfake/faqs0.PNG" alt="validar certificado" class="">
+	</div>	
+					
+</div>		<!-- fin bloque derecho interior -->		
+				<!-- fin subcapa de contenido -->
+				
+				 <div class="clear"></div>
+			</div><!-- FIN DE CUERPO -->
+		</div><!-- FIN DE CONTENIDO -->
+		<div id="contenidoBottom"></div>
+		<div id="pie">
+			
+<!-- LOGOS PIE ** -->
+<span style="float:left; margin:13px 0 0 33px">
+    <img src="../img/logo_eu.jpg" alt="FEDER" width="30">
+</span>	
+<div id="logos" style="width:280px; margin-top:15px">
+	<img src="../img/btn_w3c_aa.gif" class="logo_w3c" alt="W3C AA">
+	<img src="../img/btn_w3c_css.gif" class="logo_w3c" alt="W3C CSS">
+	<img src="../img/btn_w3c_xhtml.gif" class="logo_w3c" alt="W3C HTML">
+</div>
+<!-- FIN DE LOGOS PIE ** -->
+<!-- MENÚ PIE ** -->
+<div id="menu_pie" style="margin-top:30px">
+	<ul>
+		<li><a href="accesibilidad.html" title="Accesibilidad">Accesibilidad</a> | </li>
+		<li><a href="guiaNavegacion.html" title="Mapa Web">Mapa Web</a> | </li>
+		<li><a href="requisitos.html" title="Requisitos">Requisitos</a> | </li>
+		<li><a href="condiciones.html" title="Condiciones de Uso">Condiciones de Uso</a> </li>
+	</ul>		
+</div><!-- FIN DE MENÚ PIE ** -->
+
+		</div>
+	</div> <!-- FIN DE CONTENEDOR -->
+	
+	<!-- js de los servicios de firma -->
+<script type="text/javascript" defer="defer">
+
+	var signature; //variable que almacenara la firma resultante
+	var mobile = false;
+	var filename;
+	var divMensaje = document.getElementById('divmensaje');
+	var btn_firmar = document.getElementById('botonFirmar');
+	var btn_save = document.getElementById('saveFile');
+	//var saveExtension = "*.csig";
+	//var saveDescription = "Firma avanzada CAdES (*.csig)";
+	
+	var autofirma = true; //para saber si se ejecuta por la aplicacion instalada
+	
+	//pregunto si es un entorno mobil para poder mostrar los enlaces para descarga del
+	//aplicativo para el mobil
+	if ((MiniApplet.isAndroid()==true) || (MiniApplet.isIOS()==true)) {
+		mobile = true;
+	}
+
+	//para saber si se descargo o no la aplicacion inicialmente, osea precarga app jnlp inicial
+	function isLoad() {
+        //MODIFICAR para que sepa a traves de una variable si realmente se descargo 
+        //la aplicacion jnlp, por ejemplo con la llamada a un servicio inicial de echo
+		/*var tempCliente2 = document.getElementById("hiddenIframe");
+		var appLoaded;
+		try {
+			appLoaded = tempCliente2 != null ;//&& MiniApplet.echo() != "Cliente JavaScript"; 
+		}
+		catch (e) {
+			appLoaded = false;
+		}
+		if (appLoaded) {
+			return true;
+		}
+		else {
+			return false;
+		}*/return true;
+		
+	}
+	
+	function firmar() {
+
+		if (isLoad()== false) {
+			autofirma = false;
+		}
+		else {
+			autofirma = true;// se ejecuta directamente por protocolo
+		}
+		//btn_firmar.disabled = true; comento estas lineas porque en caso que no 
+		//descargue y ejecute la app 
+		//nunca se ejecutaran las funciones de success y error		
+		//btn_firmar.classList.remove('botonP');
+		//btn_firmar.classList.add('botonGrisadoP');
+		
+		btn_save.disabled = true;
+		divMensaje.innerHTML='&nbsp;';
+
+		var dataB64 = null;
+		var format = "AUTO"; //se puede firmar cualquier tipo de docmento soportado
+		var algorithm = "SHA1withRSA";
+		var params="";
+		try {
+		
+			if (mobile==false) {
+			
+				/*params = "mode=implicit";
+				
+				if (autofirma==true) {
+					dataB64 = null;
+				}
+				else {
+					var fichero = MiniApplet.getFileNameContentBase64("Selecciona un archivo ", "", "");
+					
+					var separatorIdx = fichero.indexOf("|");
+					if ((separatorIdx + 1) < fichero.length) {
+						filename = fichero.substring(0, separatorIdx);
+						dataB64 = fichero.substring(separatorIdx + 1);
+						
+						var extension = getExtension(filename) + "";
+						extension = extension.toUpperCase();
+						
+						if (extension == "PDF") {
+							saveExtension = "*.pdf";
+							saveDescription = "Adobe PDF (*.pdf)";
+						}
+						else if (extension == "XML" || extension == "XSIG") {
+							saveExtension = "*.xsig";
+							saveDescription = "Firma XML (*.xsig, *.xml)";
+						}
+					}
+				}				
+				MiniApplet.sign(dataB64, "SHA256withRSA", format, params, successCallback, errorCallback);*/
+				
+				//doSign();
+				MiniApplet.sign(
+						dataB64,
+						algorithm,
+						format,
+						params,
+						successCallback,
+						errorCallback);
+			}
+			
+		}
+		catch (e) {
+			//Se muestra el mensaje de error si NO es de cancelación de la operación
+			//por ejemplo mal tipo de algoritmo enviado,etc
+			//el canceled no es por parte del usuario sino por ejemplo por no hallarse
+			//por lo menos un certificado en el almacen seleccionado, igualmente modifique 
+			//este error para que por lo menos me permita seleccionar otro certificado sin
+			//emitir esta excepcion
+			if ((e.message.indexOf("PrivilegedActionException")==-1) && 
+			    (e.message.indexOf("AOCancelledOperationException")==-1) && 
+			    (e.message.indexOf("Error calling method on NPObject")==-1) && 
+				(e.message.indexOf("Operacion cancelada por el usuario")==-1)) {
+				divMensaje.innerHTML='<div class="iconErrorFirma">Error al firmar</div><br><div style="width:300pt">&nbsp;' + e.message + '</div>';
+			}
+			btn_firmar.disabled = false;
+			btn_firmar.classList.remove('botonGrisadoP');
+			btn_firmar.classList.add('botonP');
+			
+		}
+		
+	}
+	
+	function guardarFirma(){		
+	
+		btn_save.classList.remove('botonM');
+		btn_save.classList.add('botonGrisadoM');
+		
+		if (mobile==false) {
+			if (autofirma==true) {
+				MiniApplet.saveDataToFile(signature, "Guardar firma", null, null, null, successSaveCallback, errorSaveCallback);
+			}
+			else {//se ejecuta por applet
+				/*var saveFile = MiniApplet.saveDataToFile(signature, "Guardar firma", null, null, saveDescription);
+				if (saveFile==true) {
+					divMensaje.innerHTML='<div class="iconOKFirma">Fichero firmado y almacenado correctamente</div><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;' + filename;
+				}*/
+			}
+		}
+	}
+	
+	/*function getExtension(filename){
+		return (/[.]/.exec(filename)) ? /[^.]+$/.exec(filename) : undefined;
+	}*/
+
+	function mostrarPantalla()	{
+	
+		if (isLoad()== false) {
+			autofirma = false;
+		}
+		
+		document.getElementById("cargandoApplet").style.display = "none";
+		document.getElementById("pantalla").style.display = "block";
+		if (mobile==true) {
+			document.getElementById("firmaProceso1").style.display = "none";
+			document.getElementById("botones").style.display = "none";
+			document.getElementById("divmensaje").style.display = "none";
+			
+			if (MiniApplet.isAndroid()) {
+				document.getElementById("firmaProcesoAND").style.display = "inline";
+			}
+			else if (MiniApplet.isIOS()) {
+				document.getElementById("firmaProcesoIOS").style.display = "inline";
+			}
+			document.getElementById("firmaMovil").style.display = "inline";
+			document.getElementById("saveFile").style.display = "none";
+			document.getElementById("clienteEscritorio").style.display = "none";
+			document.getElementById("nota").style.display = "none";
+			document.getElementById("nota2").style.display = "inline";
+		}
+	}
+
+	function successCallback(signatureB64, certificateB64) {
+	
+		//en realidad el algoritmo por default es utf-8 pero igualmente no se 
+		//toma en cuenta el segundo parametro, abria que eliminarlo si el algoritmo
+		//es por default utf-8
+		var fichero = signatureB64;//MiniApplet.getTextFromBase64 (signatureB64, "utf-8");
+		//MODIF: hacer que la aplicacion envie el (nombre del archivo firmadob64 | datos64)
+		var filename = "";
+		/*var separatorIdx = fichero.indexOf("|");
+		if ((separatorIdx + 1) < fichero.length) {
+			filename = fichero.substring(0, separatorIdx);
+			dataB64 = fichero.substring(separatorIdx + 1);
+			
+			var extension = getExtension(filename) + "";
+			extension = extension.toUpperCase();
+			
+			if (extension == "PDF") {
+				saveExtension = "*.pdf";
+				saveDescription = "Adobe PDF (*.pdf)";
+			}
+			else if (extension == "XML" || extension == "XSIG") {
+				saveExtension = "*.xsig";
+				saveDescription = "Firma XML (*.xsig, *.xml)";
+			}
+		}*/
+		
+		signature = signatureB64;
+		
+		if (autofirma == false) {
+			divMensaje.innerHTML='<div class="iconOKFirma">Fichero firmado correctamente</div><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'+ filename;
+		}
+		else {
+			divMensaje.innerHTML='<br><div class="iconOKFirma">Fichero firmado correctamente</div><br>&nbsp;';
+		}
+		btn_firmar.disabled = false;
+		btn_firmar.classList.remove('botonGrisadoP');
+		btn_firmar.classList.add('botonP');
+		btn_save.disabled = false;
+		btn_save.classList.remove('botonGrisadoM');
+		btn_save.classList.add('botonM');
+		
+	}
+	
+	function errorCallback(errorType, errorMessage) {
+		if ((errorMessage) && 
+(errorMessage.indexOf("AOCancelledOperationException")==-1) && 
+(errorMessage.indexOf("Operacion cancelada por el usuario")==-1)) {
+			if (errorMessage.indexOf("El almacen no contenia entradas")!=-1) {
+				divMensaje.innerHTML='<img class="iconStatus" src="../img/iconFALLO.png">No existen certificados en el almacén de su navegador<br><br>';
+			}
+			else {
+				divMensaje.innerHTML='<div class="iconErrorFirma">Error al firmar</div><br><div style="width:300pt">' + errorMessage + '</div>';
+			}
+		}
+		btn_firmar.disabled = false;
+		btn_firmar.classList.remove('botonGrisadoP');
+		btn_firmar.classList.add('botonP');
+		btn_save.classList.remove('botonM');
+		btn_save.classList.add('botonGrisadoM');
+	}
+
+	function successSaveCallback() {
+		btn_save.classList.remove('botonGrisadoM');
+		btn_save.classList.add('botonM');
+		divMensaje.innerHTML='<div class="iconOKFirma">Fichero anteriormente firmado --> Almacenado correctamente</div><br>&nbsp;';
+	}
+
+	function errorSaveCallback(errorType, errorMessage) {
+		if ((errorMessage) && (errorMessage.indexOf("Operacion cancelada por el usuario")!=-1)) {
+			divMensaje.innerHTML='<div class="iconErrorFirma">Operacion de guardado cancelada</div><br><div style="width:300pt">' + '</div>';	}
+		    
+		else {
+				divMensaje.innerHTML='<div class="iconErrorFirma">Error al guardar</div><br><div style="width:300pt">' + errorMessage + '</div>';
+				
+		}
+		//btn_firmar.disabled = false;
+		btn_save.classList.remove('botonGrisadoM');
+	    btn_save.classList.add('botonM');
+	}
+	
+	function waiting(comando, segundos) {
+			var waiting;
+			var intento;
+
+			if (waiting) {
+					return true;
+			}
+			else {
+					if (segundos==0) {
+						eval(comando);
+					}
+					else {
+						segundos = segundos - 1;
+					}
+
+					var func = function() 
+					{ 
+						this.waiting(comando, segundos);
+					}
+					setTimeout(func, 1000);
+			}
+	}	
+
+ 
+</script>
+
+<!-- muestra un panel de precarga de aplicacion y luego muestra el panel principal
+por el momento no se usa y directamente se carga la pagina inicial
+si no se lo va a usar,se debe quitar el panel de mensaje de precarga
+de aplicacion html y quitar este script -->
+<script type="text/javascript" async>
+//descargo la aplicacion asincronicamente pero no hace nada, es solo para tenerla en cache
+//ver que al ser asincrona no puedo usar la variable HOST
+
+//NOTA: las lineas de abajo la comente hasta que sepa como predescargar jnlp por unica vez si no esta ya en cache java
+//AppJNLP.downloadAppJnlp('jnlp://www.milocal.com:8443/autofirma.jsp');
+mostrarPantalla();
+
+//NOTA: modificar la funcion de arriba para poder enviar la funcion a ser llamada cuando
+//finaliza la descarga de la aplicacion, por default se ejecuta la funcion
+//mostrarPantalla(), y el iframe se llama hiddenIframe
+//seteo que se hara cuando termine de cargar el jnlp
+//var iframe = document.getElementById("hiddenIframe"); //document.querySelector("#hiddenIframe");
+//if (!iframe) {
+    //el iframe aun no se creo. pero deberia haberse creado en la llamada de arriba
+//}else{
+	//iframe.onload= mostrarPantalla();
+//}
+
+</script>
+
+
+<!-- js de funciones compartidas por la validacion de certificados y la validacion de firma -->
+<script type="text/javascript" defer="defer">
+var MAX_BYTES = 1048576*8; //8Megas maximo tamaño de bytes permitidos a subir
+var MAX_BYTES_CERT = 1024*10; //10 KB maximo tamaño de bytes permitidos a subir
+var sizeDoc; //longitud en bytes del archivo firmado seleccionado
+var sizeCert; //longitud en bytes del certificado seleccionado
+
+//funciones para la carga de ficheros
+window.addEventListener('load', inicio, false);
+
+function inicio() {
+	// Check for the various File API support.
+	//if (window.File && window.FileReader && window.FileList && window.Blob) {
+	if (window.File && window.FileReader) {
+	  // Great success! All the File APIs are supported.
+	  document.getElementById('fichero').addEventListener('change', cargar, false);
+	 
+	  //VALFIRMA
+	  document.getElementById('ficheroDOC').addEventListener('change', cargarDoc, false);  
+	  
+	} else {
+	  //alert('The File APIs are not fully supported in this browser.');
+	  //oculto la seleccion del fichero, por no soportar la api File
+	  //debido a que si no la soporta, estaria obligado a hacer el submit del form
+	  //para que se pueda tener acceso al contenido del archivo pero
+	  //aqui se usa web service con json por eso no lo hago
+	  document.getElementById('selectCertExterno').style.display='none';
+	  
+	  //VALFIRMA:muestro el error de falta de soporte
+	  document.getElementById('divMensajeSign').innerHTML= 'Debe actualizar su navegador';
+		
+	}   
+}
+
+function cargar(ev) {
+   /* document.getElementById('datos').innerHTML='Nombre del archivo:'+ev.target.files[0].name+'<br>'+
+                                               'Tamaño del archivo:'+ev.target.files[0].size+'<br>'+  
+                                               'Tipo MIME:'+ev.target.files[0].type;
+    */
+    var arch=new FileReader();
+    arch.addEventListener('load',leer,false);
+    arch.readAsArrayBuffer(ev.target.files[0]);
+    //guardo la longitud del archivo seleccionado
+    sizeCert = ev.target.files[0].size;
+    //verifico el tamaño del archivo
+	if(sizeCert > MAX_BYTES_CERT){
+		divMensajesRequisitosCert.innerHTML='El archivo supera los 10 KB.';
+		divMensajesRequisitosCert.style.display='block';
+	}
+}
+
+function leer(ev) {
+    //document.getElementById('editor').value=ev.target.result;
+    contenidoCertExterno = ev.target.result;
+}
+function cargarDoc(ev) {
+	   /* document.getElementById('datos').innerHTML='Nombre del archivo:'+ev.target.files[0].name+'<br>'+
+	                                               'Tamaño del archivo:'+ev.target.files[0].size+'<br>'+  
+	                                               'Tipo MIME:'+ev.target.files[0].type;
+	    */
+	    var arch2=new FileReader();
+	    arch2.addEventListener('load',leerDoc,false);
+	    arch2.readAsArrayBuffer(ev.target.files[0]);
+	    //guardo la longitud del archivo seleccionado
+	    sizeDoc = ev.target.files[0].size;
+	    //verifico el tamaño del archivo
+		if(sizeDoc > MAX_BYTES){
+			divMensajesRequisitos.innerHTML='El archivo supera los 8 Megas.';
+			divMensajesRequisitos.style.display='block';
+		}
+	}
+
+	function leerDoc(ev) {
+	    //document.getElementById('editor').value=ev.target.result;
+	    contenidoSignExterno = ev.target.result;
+	}
+	
+	
+</script>
+
+<!-- js de los servicios de validacion de certificados -->
+<script type="text/javascript" defer="defer">
+var btn_validarCert = document.getElementById('botonValidarCert');
+var divMensajeCert = document.getElementById('divMensajeCert');
+var divMensajesRequisitosCert = document.getElementById('validarCertificadoForm.errors');
+
+//guardo el contenido del archivo de disco en una var pero tamien puede
+//ubicarse en un input hidden
+//<input id="certificado" name="certificado" type="hidden" value="">
+var contenidoCertExterno ="";
+
+function cleanCertificate() {
+	//muestro el boton para seleccionar un archivo desde disco
+	document.getElementById('divFile').style.display='inline';
+	//vacio el certificado seleccionado por medio de la app local
+	document.getElementById('certificado').value='';
+	//oculto el mensaje de que se selecciono desde la app local
+	document.getElementById('certificados').style.display='none';
+	//limpio los mensajes de error
+	cleanMensajesError();
+}
+function mostrarPanelInicialValidacionCert(){
+	//oculto el panel del resultado
+	document.getElementById('resultCertificadoForm').style.display='none';
+	//muestro el panel de seleccion de certificado 
+	document.getElementById('validarCertificadoForm').style.display='block';
+	  
+}
+function pideCertificado() {
+
+	//limpio los mensajes de error
+	cleanMensajesError();
+	
+   	document.getElementById('fichero').value = '';
+   	document.getElementById('divFile').style.display = 'none';
+	document.getElementById('certificados').innerHTML = '<span class="aliasCertificado">&nbsp;</span><br/><br/><br/>';
+	document.getElementById('certificados').style.display = "inline";
+	MiniApplet.selectCertificate(null,showCertCallback,showErrorCallback);
+}
+
+function cleanMensajesError(){
+	//limpio los mensajes de requisitos antes de validar,pj debe seleccionar un archivo}
+	divMensajesRequisitosCert.style.display='none';
+	//limpio el mensaje de la validacion anterior
+    divMensajeCert.innerHTML='&nbsp;';
+}
+
+function showCertCallback(certificateB64) {
+   	document.getElementById('nombreCertificado').value = '';
+		var txtHTML = '<span class="aliasCertificado">Ha seleccionado un certificado del almacén de claves de windows</span><br/><br/><br/>';
+	document.getElementById('certificado').value = certificateB64;
+	document.getElementById('certificados').innerHTML = txtHTML;
+}
+
+function showErrorCallback(errorType, errorMessage) {
+   	document.getElementById('nombreCertificado').value = '';
+		var txtHTML = '<span class="aliasCertificado">&nbsp;</span><br/><br/><br/>';
+	document.getElementById('certificado').value = '';
+	document.getElementById('certificados').innerHTML = txtHTML;
+}
+
+function validarCertificado(){
+	var cert = null;
+	var validezCert = false; //validez del certificado
+	
+	/**NOTA: por default no reseteo el valor del certificado seleccionado
+	despues de una solicitud de validacion**/
+	
+  	
+	if((document.getElementById('certificado').value == '')&&(document.getElementById('fichero').value=='')){
+		//entonces no se selecciono ningun archivo
+		divMensajesRequisitosCert.innerHTML='Debe seleccionar un certificado.';
+		divMensajesRequisitosCert.style.display='block';
+	}else{
+		if(document.getElementById('certificado').value != ''){
+			//se selecciono un certificado desde la app local
+			//por lo tanto estoy seguro que era un certificado valido
+			cert = document.getElementById('certificado').value;
+		}else{
+				//se selecciono un certificado desde disco
+				//NOTA: la carga del contenido del fichero es asincrona asi
+				//que puede darse que no termine antes de realizar el evento
+				//validarCertificado
+				//alert(contenidoCertExterno);
+		
+			    //verifico el tamaño del archivo
+			    if(sizeCert > MAX_BYTES_CERT){
+					divMensajesRequisitosCert.innerHTML='El archivo supera los 10 KB.';
+					divMensajesRequisitosCert.style.display='block';
+					return false;
+				}
+			    cert = Base64.encodeArrayBuffer(contenidoCertExterno,false); 			
+		}
+	
+       //deshabilito el boton 
+       btn_validarCert.disabled = true;
+       btn_validarCert.classList.remove('botonP');
+	   btn_validarCert.classList.add('botonGrisadoP');
+	   
+       //Muestro un mensaje de procesando
+       divMensajeCert.innerHTML='<div class="iconProcesando">Procesando Solicitud ...</div>';
+       
+       //realizo la operacion de validacion 
+       var httpRequest = Generales.getHttpRequest();
+       //url del servicio
+       var urlServiceValidationCert = Constants.SERVICE_VALIDECERT;
+       //indico llamado de forma asincrona, true
+       httpRequest.open("POST", urlServiceValidationCert, true);
+       //le indico al server que los datos que envio son json
+	   httpRequest.setRequestHeader("Content-type", "application/json");
+	   //seteo los parametros en json	  
+	   //var params = "{'certB64':'" + cert+ "'}";
+	   //Pruebo directamente con el b64 del certificado del gde porque no puedo 
+	   //seleccionar otro validador
+//	   var params =  "MIIH4TCCBcmgAwIBAgIKE3bNmgAAAATA4jANBgkqhkiG9w0BAQUFADCCAUwxCzAJBgNVBAYTAkFSMSkwJwYDVQQIDCBDaXVkYWQgQXV0w7Nub21hIGRlIEJ1ZW5vcyBBaXJlczEzMDEGA1UECwwqU3Vic2VjcmV0YXLDrWEgZGUgVGVjbm9sb2fDrWFzIGRlIEdlc3Rpw7NuMSkwJwYDVQQLDCBTZWNyZXRhcsOtYSBkZSBHZXN0acOzbiBQw7pibGljYTE5MDcGA1UECwwwT2ZpY2luYSBOYWNpb25hbCBkZSBUZWNub2xvZ8OtYXMgZGUgSW5mb3JtYWNpw7NuMSowKAYDVQQKDCFKZWZhdHVyYSBkZSBHYWJpbmV0ZSBkZSBNaW5pc3Ryb3MxGTAXBgNVBAUTEENVSVQgMzA2ODA2MDQ1NzIxMDAuBgNVBAMMJ0F1dG9yaWRhZCBDZXJ0aWZpY2FudGUgZGUgRmlybWEgRGlnaXRhbDAeFw0xNjAyMTkxOTAzMThaFw0xOTAyMTgxOTAzMThaMIGyMRkwFwYDVQQFExBDVUlUIDMwNzE1MTE3NTY0MQswCQYDVQQGEwJBUjEkMCIGA1UEChMbTUlOSVNURVJJTyBERSBNT0RFUk5JWkFDSU9OMTMwMQYDVQQLEypTRUNSRVRBUklBIERFIE1PREVSTklaQUNJT04gQURNSU5JU1RSQVRJVkExLTArBgNVBAMTJEdFU1RJT04gRE9DVU1FTlRBTCBFTEVDVFJPTklDQSAtIEdERTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKSz2BbXVQ5CCzdUS9f26qEjO78FH+r/FxLnErRaBuKLK+GMtD1t5t13ItTWYyRTmOhYTLOgqjqexoGTz4gqg2uv1LRSeRIVdq9uzsr5LbSa0LHTS081B0p+i02l9Z/ob/LIvEMIhi7rzMVf8Rf0p5q+oiz70vggix2DxyjDR1HWLuBcNaTW0/hQYh73udm0DoZR5zgHgfx21GELszsWYrXOj4oczUxx4E8QPJZe592uZzipbs9C14pYJKJD8nwtOT/3buWO+xpnN0vz6juHXCN4w7s1xWY9mpiZP1FvQay1lpIjI60x63xPYL3i91eTAxNVqIwLl5Gb8nJpLsKZsA0CAwEAAaOCAlowggJWMAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgTwMB0GA1UdJQQWMBQGCCsGAQUFBwMEBggrBgEFBQcDAjAdBgNVHQ4EFgQUVs+yipMD9/AsP2QsvYGLqbeD5SYwHwYDVR0jBBgwFoAUjBv9LmxwbDOSGm0kzJvMP5nF66gwVwYDVR0fBFAwTjBMoEqgSIYgaHR0cDovL3BraS5qZ20uZ292LmFyL2NybC9GRC5jcmyGJGh0dHA6Ly9wa2ljb250LmpnbS5nb3YuYXIvY3JsL0ZELmNybDCB0AYIKwYBBQUHAQEEgcMwgcAwMgYIKwYBBQUHMAKGJmh0dHA6Ly9wa2kuamdtLmdvdi5hci9haWEvY2FmZE9OVEkuY3J0MDYGCCsGAQUFBzAChipodHRwOi8vcGtpY29udC5qZ20uZ292LmFyL2FpYS9jYWZkT05USS5jcnQwJgYIKwYBBQUHMAGGGmh0dHA6Ly9wa2kuamdtLmdvdi5hci9vY3NwMCoGCCsGAQUFBzABhh5odHRwOi8vcGtpY29udC5qZ20uZ292LmFyL29jc3AwPQYJKwYBBAGCNxUHBDAwLgYmKwYBBAGCNxUIhpHLRN+2T4LBmxeF24Ybg/nMWIEuhfXvfoHE2V0CAWQCAQcwQwYDVR0gBDwwOjA4BgVgIAEBAzAvMC0GCCsGAQUFBwIBFiFodHRwOi8vcGtpLmpnbS5nb3YuYXIvY3BzL2Nwcy5wZGYwJwYJKwYBBAGCNxUKBBowGDAKBggrBgEFBQcDBDAKBggrBgEFBQcDAjANBgkqhkiG9w0BAQUFAAOCAgEAl0512zIKWabAPicEjMp6PzrbfTkkYjEj/mL8LmIekDJ6weYH57kkf+XcMlX+sMrc2wyJeGmnp9kyQnVpgcOlmBUszivzteMosfLk/fNMAS6jjFT/kQiffn0zoLxObYQjnF7fZDtaZe8YvjUVNLMC6UJ7iYfxiCqOz9ps2yBV5KAMMhXpNNRhoUkr3LUZuU6H5zD2pmW6J9UmauN+GAmOw4l5GWK1lNytMnTaQaI0QUd4U3tMCRY+J/tGg2WXunt0QP6Ir7jXWx5Skpry8hx9nwu7tOUTa7BovFucuf4cMqw+A4Hgu7Tvhl/gipL6cqZdMoGPB2DvyusmaCUHRxIJV6mYgHCkWbx8je6rvvtmfPMZ/rJp1BhX7SwlXAJ8HJfB2k+8gWa5CSsD+J4p3sN4AL7Oph58CGtxjj7UdFxm+GMrgbD3g1bqpAR3224PfS6BQL81ibuJ7R4v6a2P2VNghfq1vXdDKom/JgiB6INDVG2+C8hAe8y9oq0io59zFPed4PJdmNE1gm4YGnxJxXsgimOvcewZ0vVV1i1j3/w/6h/b9VnHDf9y6LN5l2Wpc7f+4A00pNzPfM/1Ssr6bui/xU1CEQVWtJ+XlEx+vTWW2lRmr6AIWeZYzOL5SG7t3SFyKtyctxO6V2p6Cg3Ha1fn5FhzRquF5xAYdD/DTiB2K/c=";
+//var params ="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";
+	   var params=cert;
+	   
+       //cuando obtengo respuesta realizo la siguiente funcion
+       httpRequest.onreadystatechange = function() {
+		   if (httpRequest.readyState == 4 && httpRequest.status == 200 ) {
+			 
+			   //recupero la respuesta en forma de objeto json
+			   //este contine result,reason,etc
+			   var resp= JSON.parse(httpRequest.responseText);
+			   
+			   //verifico si el resultado es OK			   
+			   //en caso de exito muestro datos del certificado
+		       //en caso de error muestro el error
+		       if(resp.result == "OK"){
+		    	   //remuevo el cargando
+				   //divMensajeCert.innerHTML='<div id="divmensajeCert">&nbsp;</div>';
+				   divMensajeCert.innerHTML='&nbsp;';
+				   //oculto el panel de seleccion de certificado
+				   document.getElementById('validarCertificadoForm').style.display='none';
+				   
+				   //alert(res.reason);
+				   //cargo los datos del resultado
+				   document.getElementById('respCertNyapFirmante').innerHTML= resp.certsFirmantes[0].asunto_CN;
+				   document.getElementById('respCertSNFirmante').innerHTML= resp.certsFirmantes[0].asunto_SerialNumber;
+				   document.getElementById('respCertEmisor').innerHTML= resp.certsFirmantes[0].emisor;
+				   document.getElementById('respCertFirmante').innerHTML= resp.certsFirmantes[0].firmante;
+				   document.getElementById('respCertCorreo').innerHTML= resp.certsFirmantes[0].correo;
+				   document.getElementById('respCertValidoDesde').innerHTML= resp.certsFirmantes[0].valido_desde;
+				   document.getElementById('respCertValidoHasta').innerHTML= resp.certsFirmantes[0].valido_hasta;
+				   document.getElementById('respCertNumSerie').innerHTML= resp.certsFirmantes[0].num_serie;
+				   document.getElementById('respCertPoliticaCert').innerHTML= resp.certsFirmantes[0].politica_cert;
+				   document.getElementById('respCertUsosCert').innerHTML= resp.certsFirmantes[0].uso_certificado;
+				   document.getElementById('respCertFechaConsulta').innerHTML= resp.certsFirmantes[0].fecha_consulta;
+					  
+				   //muestro el panel del resultado
+				   document.getElementById('resultCertificadoForm').style.display='block';
+				   
+				   
+		       }else{	
+		    	   //oculto el mensaje de seleccion de certificado desde repositorio
+		    	   //en caso de seleccion desde el mismo
+		    	   //document.getElementById('certificados').style.display='none';
+		    	   
+		    	   //muestro un mensaje de error
+		    	   divMensajeCert.innerHTML='<div class="iconErrorCertificado">El certificado NO es v&aacute;lido. <BR><BR>Motivo: '+resp.reason+'</div>';
+		    	   //oculto el panel del resultado
+				   document.getElementById('resultCertificadoForm').style.display='none';
+				   
+			   }
+			   
+		       //habilito el boton 
+		       btn_validarCert.disabled = false;
+		       btn_validarCert.classList.remove('botonGrisadoP');
+			   btn_validarCert.classList.add('botonP');
+			   
+			   //reseteo el valor del certificado
+			   
+		   }
+				
+       } 
+	   //envio la peticion
+       httpRequest.send(params);
+    
+	}
+
+}
+
+
+</script>
+
+<!-- js de los servicios de validacion de firma -->
+<script type="text/javascript" defer="defer">
+var btn_validarSign = document.getElementById('botonValidarSign');
+var divMensajeSign = document.getElementById('divMensajeSign');
+var divMensajesRequisitos = document.getElementById('validarFirmaForm.errors');
+//guardo el contenido del archivo de disco en una var pero tambien puede
+//ubicarse en un input hidden
+//<input id="fff" name="fff" type="hidden" value="">
+var contenidoSignExterno ="";
+
+function mostrarPanelInicialValidacionSign(){
+	//oculto el panel del resultado
+	document.getElementById('resultFirmaForm').style.display='none';
+	//muestro el panel de seleccion de documento firmado 
+	document.getElementById('validarFirmaForm').style.display='block';
+	  
+}
+
+function cleanMensajesValidadorFirmaError(){
+	//limpio los mensajes de requisitos antes de validar,pj debe seleccionar un archivo
+	divMensajesRequisitos.style.display='none';
+	//limpio los mensajes de invalidez de las firmas del documento
+	divMensajeSign.innerHTML='&nbsp;';
+	
+}
+
+function validarFirma(){
+	var doc = null;
+	var validezSign = false; //validez de la firma
+	
+	/**NOTA: por default no reseteo el valor del documento seleccionado
+	despues de una solicitud de validacion**/
+	
+	if(document.getElementById('ficheroDOC').value==''){
+		//entonces no se selecciono ningun archivo  
+		divMensajesRequisitos.innerHTML='Debe seleccionar un archivo firmado.';
+		divMensajesRequisitos.style.display='block';
+	}else{		
+		//verifico el tamaño del archivo
+		if(sizeDoc > MAX_BYTES){
+			divMensajesRequisitos.innerHTML='El archivo supera los 8 Megas.';
+			divMensajesRequisitos.style.display='block';
+		}else{
+			//se selecciono un archivo desde disco
+			//NOTA: la carga del contenido del fichero es asincrona asi
+			//que puede darse que no termine antes de realizar el evento
+			//validarFirma
+			//alert(contenidoCertExterno);
+					
+		    doc = Base64.encodeArrayBuffer(contenidoSignExterno,false); 			
+			
+		
+	       //deshabilito el boton 
+	       btn_validarSign.disabled = true;
+	       btn_validarSign.classList.remove('botonP');
+		   btn_validarSign.classList.add('botonGrisadoP');
+		   
+	       //Muestro un mensaje de procesando
+	       divMensajeSign.innerHTML='<BR><div class="iconProcesando">Procesando Solicitud ...</div>';
+	       
+	       //realizo la operacion de validacion 
+	       var httpRequest = Generales.getHttpRequest();
+	       //url del servicio
+	       var urlServiceValidationSign = Constants.SERVICE_VALIDESIGN;
+	       //indico llamado de forma asincrona, true
+	       httpRequest.open("POST", urlServiceValidationSign, true);
+	       //le indico al server que los datos que envio son json
+		   httpRequest.setRequestHeader("Content-type", "application/json");
+		   //seteo los parametros en json	  
+		   //var params = "{'certB64':'" + cert+ "'}";
+		   //Pruebo directamente con el b64 del certificado del gde porque no puedo 
+		   //seleccionar otro validador
+//		   var params =  "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";
+	//var params ="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";
+		   var params=doc;
+		   
+	       //cuando obtengo respuesta realizo la siguiente funcion
+	       httpRequest.onreadystatechange = function() {
+			   if (httpRequest.readyState == 4 && httpRequest.status == 200 ) {
+				 
+				   //recupero la respuesta en forma de objeto json
+				   //este contine result,reason,etc
+				   var resp= JSON.parse(httpRequest.responseText);
+				   
+				   //verifico si el resultado es OK			   
+				   //en caso de exito muestro datos de los certificados de los firmantes
+			       //en caso de error muestro el error
+			       if(resp.result == "OK"){
+			    	   //remuevo el cargando
+					   divMensajeSign.innerHTML='&nbsp;';
+					   //oculto el panel de seleccion de documento
+					   document.getElementById('validarFirmaForm').style.display='none';
+					 
+					   //genero la lista de certificados
+					   var listaResu = "";
+					   var listaCert = "";
+					   var itemResu,itemCert;				  
+					   var i,j,p1,p2,p3,p4;
+					   var certs;
+					   var longitud;//tamaño de la lista de certificados
+					   var d = [];//lista de elementos de cada certificado
+					   var itemsLabels = ["Nombre/Apellid. Firmante: ","CUIT/CUIL Firmante: ","Emisor: ","Firmante: ","Correo: ","V&aacute;lido Desde: ","V&aacute;lido Hasta: ","N&uacutemero de Serie: ","Pol&iacute;tica de certificaci&oacute;n: ","Usos del certificado: "]; //lista de labels de los items de los certificados 
+					   var horaDeConsulta; //la hora de consulta se tomara del primer detalle de la lista de certificados
+					   var separacion;//html de separacion entr detalles de los firmantes
+					   var subtitResu;//subtitulo de los resumenes de los firmantes
+					   
+					   certs = resp.certsFirmantes;
+					   p1 = '<h5>';
+					   p2 = '</h5><br>';
+					   p3 = '<p><span class="destacadoFieldset">';
+					   p4 = '</span>';
+					   p5 = '</p>';
+					   separacion = '<div class="barraSeparadora"></div>';
+					   longitud = Object.keys(certs).length;
+					   subtitResu = '<p class="fontSize11 destacadoFieldset">Firmantes:</p><br>';
+					   listaResu = listaResu + subtitResu;
+					   
+					   //genero la lista de resumen de los firmantes y la de los detalles de los certificados de los firmantes
+					   for (i = 0; i < longitud; i++) {
+		
+					     //obtengo los campos del certificado
+					     d[0]= certs[i].asunto_CN;
+						 d[1]= certs[i].asunto_SerialNumber;
+						 d[2]= certs[i].emisor;
+						 d[3]= certs[i].firmante;
+						 d[4]= certs[i].correo;
+						 d[5]= certs[i].valido_desde;
+						 d[6]= certs[i].valido_hasta;
+						 d[7]= certs[i].num_serie;
+						 d[8]= certs[i].politica_cert;
+						 d[9]= certs[i].uso_certificado;
+						 //d[10]= certs[i].fecha_consulta;
+						 //agrego el cn del certificado a la lista resumen de certificados de los firmantes
+						 itemResu = p1 + d[0] + p2;//p1.concat(d1,p2);
+					     listaResu = listaResu + itemResu;//listaResu.concat(itemResu);
+					     
+	            		 //genero un detalle sin la informacion de hora de consulta
+					     for (j = 0; j < d.length-1; j++) {
+					    	 itemCert = p3+itemsLabels[j]+p4+d[j]+p5;
+						     listaCert = listaCert + itemCert;
+					     }
+	            		 //agrego la separacion si no es el ultimo firmante
+	            		 if(i < longitud-1){
+	            			 listaCert = listaCert + separacion;
+	            		 }
+						 
+					   };
+					   //seteo la hora de consulta
+					   document.getElementById('respSignFechaConsulta').innerHTML= certs[0].fecha_consulta;
+					   
+					   //cargo los datos de la lista resumen
+					   document.getElementById('resumenFirmantes').innerHTML= listaResu;
+					  
+					   //cargo la lista de los detalles de los certificados de los firmantes
+					   document.getElementById('detallesFirmantes').innerHTML= listaCert;
+					 
+					   //muestro el panel del resultado
+					   document.getElementById('resultFirmaForm').style.display='block';
+					   
+					   
+			       }else{	
+			    	    
+			    	   //muestro un mensaje de error
+			    	   divMensajeSign.innerHTML='<div class="iconErrorCertificado">El documento firmado NO es v&aacute;lido. <BR><BR>Motivo: '+resp.reason+'</div>';
+			    	   //oculto el panel del resultado
+					   document.getElementById('resultFirmaForm').style.display='none';
+					   
+				   }
+				   
+			       //habilito el boton 
+			       btn_validarSign.disabled = false;
+			       btn_validarSign.classList.remove('botonGrisadoP');
+				   btn_validarSign.classList.add('botonP');
+				   
+				   //reseteo el valor del documento
+				   
+			   }
+					
+	       } 
+		   //envio la peticion
+	       httpRequest.send(params);
+			
+			
+		}
+		
+    
+	}
+
+}
+
+</script>
+
+<!-- js configuracion del miniapplet-->
+<script type="text/javascript" >
+var HOST = Constants.URL_BASE_APP;
+var storage = "http://www.milocal.com:8080" + "/AlmacenarFirma"; //document.getElementById('storageService').value;
+var retrieve = HOST + "/RecuperarFirma";//document.getElementById('retrieveService').value;
+var jnlp = Constants.URL_BASE_JNLP;//document.getElementById('jnlpService').value;
+MiniApplet.setServlets(storage, retrieve);
+MiniApplet.setJnlpService (jnlp); // URL donde esta el generador de JNLP
+if (navigator.platform.indexOf("Linux")!=-1 || navigator.platform.indexOf("Mac")!=-1){
+//En Mac y Linux se fuerza la utilización de servidores intermedios
+MiniApplet.setForceWSMode(true);
+}
+//dominio desde el que se realiza la llamada al servicio
+//MiniApplet.cargarAppAfirma('miniapplet.js');
+//MiniApplet.setForceWSMode(true);
+MiniApplet.cargarAppAfirma(HOST+'valide/js/miniapplet.js',MiniApplet.KEYSTORE_MOZILLA);
+
+//////////////////////////////////////////////////////
+	//MiniApplet.cargarMiniApplet("https://valide.redsara.es/valide/applet");
+	
+//MiniApplet.setServlets("https://valide.redsara.es/firmaMovil/afirma-signature-storage/StorageService","https://valide.redsara.es/firmaMovil/afirma-signature-retriever/RetrieveService");
+    
+/*	if (navigator.userAgent.toUpperCase().indexOf("FIREFOX") != -1) {
+		if (navigator.javaEnabled() == false) {
+			autofirma = true;
+			mostrarPantalla();// mostrar despues de la carga
+		} else {
+			waiting("mostrarPantalla()", 10);
+		}
+	} 
+		if ((navigator.javaEnabled() == false) || (isLoad() == false)) {
+			autofirma = true;
+		}		
+		mostrarPantalla();*/
+	
+</script>
+
+</body></html>

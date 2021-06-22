@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Application-Name: Cliente @firma
+Implementation-Title: es.gob.afirma
+Implementation-Version: build08
+Built-By: qwerty
+Specification-Vendor: Gobierno de Espana
+Specification-Title: Cliente @firma
+Application-Library-Allowable-Codebase: *
+Implementation-Vendor: Gobierno de Espana
+Permissions: all-permissions
+Caller-Allowable-Codebase: *
+Codebase: *
+Trusted-Library: true
+Name: es/gob/afirma
+Build-Jdk: 1.8.0_251
+Created-By: Maven Integration for Eclipse
+Specification-Version: 3.4
+

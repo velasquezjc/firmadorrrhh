@@ -1,0 +1,91 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ar.com.validacion.ws.rest</groupId>
+  <artifactId>validacion</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>validacion Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>com.sun.jersey</groupId>
+    	<artifactId>jersey-core</artifactId>
+    	<version>1.19</version>
+    </dependency>
+    <dependency>
+    	<groupId>com.sun.jersey</groupId>
+    	<artifactId>jersey-json</artifactId>
+    	<version>1.19</version>
+    </dependency>
+    <dependency>
+    	<groupId>com.sun.jersey</groupId>
+    	<artifactId>jersey-servlet</artifactId>
+    	<version>1.19</version>
+    </dependency>
+    <dependency>
+    	<groupId>es.gob.afirma</groupId>
+    	<artifactId>afirma-crypto-validation</artifactId>
+    	<version>3.3.2-SNAPSHOT</version> 
+    </dependency>
+    <dependency>
+    	<groupId>es.gob.afirma</groupId>
+    	<artifactId>afirma-core</artifactId>
+    	<version>3.3.2-SNAPSHOT</version>
+    </dependency>
+    
+    <!-- <dependency>
+			<groupId>com.madgag.spongycastle</groupId>
+			<artifactId>core</artifactId>
+			<version>1.54.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.madgag.spongycastle</groupId>
+			<artifactId>prov</artifactId>
+			<version>1.54.0.0</version>
+		</dependency> -->
+		
+		<dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk15on</artifactId>
+        <version>1.57</version>
+    </dependency>
+     <!-- <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcmail-jdk15on</artifactId>
+        <version>${bouncycastle.version}</version>
+    </dependency>  -->
+    <dependency>
+    	<groupId>com.jsoniter</groupId>
+    	<artifactId>jsoniter</artifactId>
+    	<version>0.9.15</version>
+     </dependency>
+    
+  </dependencies>
+  <build>
+    <!-- <finalName>validacion</finalName> pone el nombre dle war-->
+     <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <warName>ValidacionWS</warName>
+                    <!--  <packagingExcludes>WEB-INF/web.xml</packagingExcludes>-->
+                </configuration>
+            </plugin>
+        </plugins> 
+        
+  </build>
+</project>

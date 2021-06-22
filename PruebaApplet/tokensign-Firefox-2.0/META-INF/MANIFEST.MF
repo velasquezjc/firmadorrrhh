@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: addiaz
+Build-Jdk: 1.7.0_79
+Main-Class: com.everis.tramelec.main.FirmaDigitalMain
+Application-Library-Allowable-Codebase: http://*.gcba.gob.ar/*
+ 								http://*.gcaba.everis.int/* http://*.buenosaires.gob.ar/*
+Application-Name: firmadigital-applet
+Caller-Allowable-Codebase: http://*.gcba.gob.ar/*
+ 								http://*.gcaba.everis.int/* http://*.buenosaires.gob.ar/*
+Codebase: http://*.gcba.gob.ar/* http://*.gcaba.everis.int/*
+ 								http://*.buenosaires.gob.ar/*
+Permissions: all-permissions
+Trusted-Only: true
+

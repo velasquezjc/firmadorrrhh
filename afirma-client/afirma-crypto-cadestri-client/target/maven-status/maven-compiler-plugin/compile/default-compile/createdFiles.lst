@@ -1,0 +1,5 @@
+es\gob\afirma\signers\cadestri\client\ProtocolConstants.class
+es\gob\afirma\signers\cadestri\client\AOCAdESTriPhaseSigner.class
+es\gob\afirma\signers\cadestri\client\PreSigner.class
+es\gob\afirma\signers\cadestri\client\PostSigner.class
+es\gob\afirma\signers\cadestri\client\asic\AOCAdESASiCSTriPhaseSigner.class

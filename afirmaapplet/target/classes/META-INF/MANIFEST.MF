@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Implementation-Title: es.gob.afirma
+Implementation-Version: build11
+Built-By: qwerty2
+Specification-Vendor: Gobierno de Espana
+Application-Name: MiniApplet @firma
+Created-By: Maven Integration for Eclipse
+Caller-Allowable-Codebase: *
+Implementation-Vendor: Gobierno de Espana
+Trusted-Library: true
+Application-Library-Allowable-Codebase: *
+Build-Jdk: 1.7.0_71
+Name: es/gob/afirma
+Permissions: all-permissions
+Specification-Title: MiniApplet Afirma
+Specification-Version: v1.4
+Codebase: *
+

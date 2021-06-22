@@ -1,0 +1,7 @@
+es\gob\afirma\signers\multi\cades\asic\AOCAdESASiCSCoSigner.class
+es\gob\afirma\signers\multi\cades\AOCAdESCoSigner.class
+es\gob\afirma\signers\multi\cades\CAdESCoSigner.class
+es\gob\afirma\signers\multi\cades\CAdESMultiUtil.class
+es\gob\afirma\signers\multi\cades\CAdESCounterSigner.class
+es\gob\afirma\signers\multi\cades\asic\AOCAdESASiCSCounterSigner.class
+es\gob\afirma\signers\multi\cades\AOCAdESCounterSigner.class

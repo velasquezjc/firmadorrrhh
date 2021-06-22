@@ -1,0 +1,993 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0059)https://rrhh.desarrollosocial.gob.ar/Portal/Documentos.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>
+	Portal Estudios
+</title><meta name="viewport" content="width=device-width">
+        <!-- CSS media query on a link element -->
+             
+          <!--   <link rel="stylesheet" href="./Portal Estudios_files/bootstrap.css" type="text/css">
+            <link rel="stylesheet" href="./Portal Estudios_files/bootstrap-responsive.css" type="text/css">
+            <link rel="stylesheet" href="./Portal Estudios_files/jquery-ui-1.10.2.custom.min.css">
+            <link rel="stylesheet" href="./Portal Estudios_files/Estilos.css" type="text/css">
+            <link rel="stylesheet" href="./Portal Estudios_files/EstilosSACC.css" type="text/css">
+             <link rel="stylesheet" href="./Portal Estudios_files/alertify.core.css" type="text/css">
+            <link rel="stylesheet" href="./Portal Estudios_files/alertify.default.css" type="text/css">
+            <link rel="stylesheet" href="./Portal Estudios_files/opentip.css" type="text/css">
+            <link rel="stylesheet" href="./Portal Estudios_files/animate.css" type="text/css">
+            <script type="text/javascript" src="./Portal Estudios_files/jquery-latest.min.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/underscore-min.js"></script>-->
+            <script type="text/javascript" src="./Portal Estudios_files/jquery-1.9.1.js"></script>
+           <!--  <script type="text/javascript" src="./Portal Estudios_files/jquery.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/alertify.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/jquery-ui-1.10.2.custom.min.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/jquery.ui.datepicker-es.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/FuncionesDreamWeaver.js"></script>   
+            <script type="text/javascript" src="./Portal Estudios_files/Grilla.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/InputAutocompletable.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/placeholder_ie.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/InputSoloNumeros.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/bootstrap-dropdown.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/linq.min.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/list.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/jquery.leanModal.min.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/bootstrap-collapse.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/bootstrap-transition.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/ProveedorAjax.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/Validaciones.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/Colecciones.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/PolyfillsIE.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/Combos.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/opentip-jquery-excanvas.min.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/Promesa.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/Backend.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/Repositorio.js"></script>
+            <script type="text/javascript" src="./Portal Estudios_files/HabilitadorDeControles.js"></script> -->
+            <link rel="stylesheet" href="./Portal Estudios_files/estilosPortalSecciones.css"><style type="text/css"></style></head>
+          
+            
+<script type="text/javascript" src="../valide/js/miniapplet.js"></script>
+<script type="text/javascript" src="../valide/js/protocolcheck.js"></script>
+<script type="text/javascript" src="../valide/js/funcionesExtrasJNLP.js"></script>
+<script type="text/javascript" src="../valide/js/constantes.js"></script>
+<script type="text/javascript" src="../valide/js/intercomunicacionBrowser-App.js"></script>
+            
+  <script type="text/javascript" >
+var HOST = Constants.URL_BASE_APP;
+var storage = "http://www.milocal.com:8080" + "/AlmacenarFirma"; //document.getElementById('storageService').value;
+var retrieve = HOST + "/RecuperarFirma";//document.getElementById('retrieveService').value;
+//var jnlp = Constants.URL_BASE_JNLP;//document.getElementById('jnlpService').value;
+//seteo jnlp a mano porque sino se cachea las constantes js, y si se modifican no tienen efecto
+var jnlp = "https://www.milocal.com:8443/AutofirmaJWS/autofirma.jsp";
+MiniApplet.setServlets(storage, retrieve);
+MiniApplet.setJnlpService (jnlp); // URL donde esta el generador de JNLP
+if (navigator.platform.indexOf("Linux")!=-1 || navigator.platform.indexOf("Mac")!=-1){
+//En Mac y Linux se fuerza la utilización de servidores intermedios
+MiniApplet.setForceWSMode(true);
+}
+//dominio desde el que se realiza la llamada al servicio
+//MiniApplet.cargarAppAfirma('miniapplet.js');
+MiniApplet.cargarAppAfirma(HOST+'valide/js/miniapplet.js',MiniApplet.KEYSTORE_WINDOWS);
+
+
+	
+</script>   
+      
+<script type="text/javascript" defer="defer">
+  //var archivo; //variable que almacenara el documento a firmar.
+  //NOTA: ver que tan grande puede ser? en memoria
+  //NOTA2: solo usar estas variables globales si se realiza de a una vez la firma
+  //variables que hacer referencia a objetos de una misma fila
+  var idEstadoF = null;
+  var idCheckBoxF = null;
+  var idDocF = null;
+  //cantidad TOTAL de operaciones de firma realizada
+  var totalFirmas = 0;
+  var totalFirmasRealizadas = 0;
+  var totalOperaciones = 0; //cantidad de operaciones de firmas realizadas ya sea si salieron bien o fallaron
+  function downloadedErrorCallback(e) {
+		showLog("Error en la descarga de los datos: " + e);
+		totalOperaciones++;
+	}
+	//descargar archivo binario pdf o imagen y firmar
+	/*function firmarFileB64ServerExterno(urlDocumento,idEstado,idBoton) {
+		try {
+			var data = urlDocumento;
+			MiniApplet.downloadRemoteDataB64ServerExterno(
+					data,
+					downloadedFileSuccessCallback,
+					downloadedErrorCallback,idEstado,idBoton);
+			
+		} catch(e) {
+			showLog("Error en la descarga de los datos: " + e);
+		}
+	}*/
+	function downloadedFileSuccessCallback(data) {
+		//document.getElementById("data").value = data;
+		//(data != undefined && data != null && data != "") ? data : document.location
+		var archivoB64 = data;		
+		firmar(archivoB64);
+	}
+	
+  function firmar(archivoB64) {
+	  var indice,idCheckBox,idEstado,idDoc;	
+	  var lista=document.getElementsByClassName("chk_listado");
+	  //indice checklist seleccionado
+	  indice = siguienteSeleccion("chk_listado");
+	  //obtengo el id del checkbox que luego sera utilizado para obtener los otros objetos de la misma fila
+	  idCheckBox = lista[indice].id;
+	  idEstado = "estado_"+idCheckBox;	
+	  idDoc = "doc_"+idCheckBox;
+		  
+	  var dataB64 = archivoB64;
+	  var estado = document.getElementById(idEstado);
+      var checkbox = document.getElementById(idCheckBox);
+		
+      idEstadoF = idEstado;//usados de forma global
+      idCheckBoxF = idCheckBox;
+      idDocF = idDoc;
+    
+    	  
+		//deshabilitar todos los demas botones para que no intenten 
+		//descargar otros files paralelamente, puede ser motivo de bug 
+		//en caso de firmas de varios megas de archivos
+				
+		//divMensaje.innerHTML='&nbsp;';
+		
+		var format = "AUTO";
+		var algorithm = "SHA1withRSA";
+		var params="";
+		params= params + "signaturePositionOnPageLowerLeftX = 60"+ "\n";
+		params= params + "signaturePositionOnPageLowerLeftY = 60"+ "\n";
+		params= params + "signaturePositionOnPageUpperRightX = 550"+ "\n";
+		params= params + "signaturePositionOnPageUpperRightY = 130"+ "\n";
+		params= params + "signaturePage = -1"+ "\n";
+		//nota: por el momento no se puede enviar texto enriquecido  /n /r /t
+		params= params + "layer2Text = Firmado Digitalmente conforme Ley 25.506 por: $$SUBJECTCN$$ el día $$SIGNDATE=dd/MM/yyyy HH:mm:ss$$ certificado emitido por $$ISSUERCN$$ con serial $$CERTSERIAL$$"+ "\n";
+		params= params + "layer2FontFamily = 0"+ "\n";
+		params= params + "layer2FontSize = 10"+ "\n";
+		params= params + "layer2FontStyle = 0"+ "\n";
+		params= params + "layer2FontColor = black"+ "\n";
+			
+		//atributos de la firma		
+	    params= params + "signReason = conforme"+ "\n";
+	    params= params + "signatureProductionCity = Bs.As."+ "\n";
+	    params= params + "signerContact = rrhh@desa.gov.ar"+ "\n";
+	    //Se indica que el tipo de firma es CADES con modo explicito
+	    params= params + "signatureSubFilter = ETSI.CAdES.detached"+ "\n";
+	    
+	    //FIX:Politica  .Agregar filtros y politica en produccion
+	    
+	    //filtro certificados a solo los del emisor no es case sensitive
+		//filtro los certificados en base al subject (asunto). son mis datos de certificado
+		
+	    //APLICAR los siguientes filtros en produccion
+		//ejemplo de filtro para solo de onti y no expirados
+		//filters=issuer.rfc2254:(O=Jefatura de Gabinete de Ministros);nonexpired:
+		//indicacion de la politica de firma, cambiar por los valores finales del doc de a politica de firma 
+		//policyIdentifier=2.16.724.1.3.1.1.2.1.8
+		//policyIdentifierHash=V8lVVNGDCPen6VELRD1Ja8HARFk=
+		//policyIdentifierHashAlgorithm=http://www.w3.org/2000/09/xmldsig#sha1
+		//policyQualifier=http://rrhh.gob.ar/politicafirma/politica_firma_v1.0.pdf
+		
+	    //cuando existe un solo certificado en la lista lo auto selecciono
+		params= params + "headless=true";//+ "\n";	
+		
+		try {		
+			//setear estados de la imagen y el checkbox
+			//checkbox.disabled = true;
+			//checkbox.checked = false;
+			
+			//NOTA: con disabled ya es suficiente no es necesario cambiar de estilo a gris, porque aun asi hay que deshabilitar el boton
+			//NOTA2: pero si se actualiza la pagina por alguna razon si se dejo el boton deshabilitado va a quedar asi, es como que el navegador reusa el objeto boton del DOM, FIX: hay que hacer enter en la url asi recarga directamente la pagina
+			//NOTA3: en caso de que se cancele el launch desde el inicio los botones no pueden detectar este evento y quedaran en proceso pero sin hacer nada, FIX:?????
+		   // btn_firmar.disabled = true; 
+			
+			estado.classList.remove('estadoNoFirmado');
+			estado.classList.add('estadoProcesando');
+						
+			/*MiniApplet.sign(
+						dataB64,
+						algorithm,
+						format,
+						params,
+						successCallback,
+						errorCallback);*/
+		    
+			MiniApplet.signAndSaveToFile(
+					"SIGN",
+					dataB64,
+					algorithm,
+					format,
+					params,
+					"archivoFirmado.pdf",
+					successCallback,
+					errorCallback);
+		}
+		catch (e) {
+			//Se muestra el mensaje de error si NO es de cancelación de la operación
+			//por ejemplo mal tipo de algoritmo enviado,etc
+			//el canceled no es por parte del usuario sino por ejemplo por no hallarse
+			//por lo menos un certificado en el almacen seleccionado, igualmente modifique 
+			//este error para que por lo menos me permita seleccionar otro certificado sin
+			//emitir esta excepcion
+			if ((e.message.indexOf("PrivilegedActionException")==-1) && 
+			    (e.message.indexOf("AOCancelledOperationException")==-1) && 
+			    (e.message.indexOf("Error calling method on NPObject")==-1) && 
+				(e.message.indexOf("Operacion cancelada por el usuario")==-1)) {
+				/*divMensaje.innerHTML='<div class="iconErrorFirma">Error al firmar</div><br><div style="width:300pt">&nbsp;' + e.message + '</div>';*/
+			}
+			
+			checkbox.disabled = false;
+			estado.classList.remove('estadoProcesando');
+			estado.classList.add('estadoNoFirmado');
+			
+			totalOperaciones++;
+			
+		}
+		
+	}
+    
+    //verifico si aun hay firmas por realizar
+	function verificarContinuacionProceso(){
+		var btn_firmar = document.getElementById("botonFirmas");
+		   
+		//compruebo si se realizaron todas las operaciones
+		if (totalOperaciones != totalFirmas){
+			//divMensaje.innerHTML='<div class="iconInfo">No se pudieron procesar todos los documentos.</div>';
+			firmarFileB64ServerExternoMasivo();
+		}else{
+			//ya se realizaron todas las operaciones
+			//compruebo si se realizaron todas las operaciones de firma
+			if (totalFirmasRealizadas == totalFirmas){
+				divMensaje.innerHTML='<div class="iconOKFirmados">Archivos firmados correctamente.</div>';
+			}else{
+				var archivosNoFirmados = totalOperaciones-totalFirmasRealizadas;
+				divMensaje.innerHTML='<div class="iconAlerta">No se pudieron procesar '+archivosNoFirmados+' documentos.</div>';				
+			}
+			//reseteo las variables globales
+			totalOperaciones = 0;
+			totalFirmasRealizadas = 0;
+			totalFirmas = 0;
+			
+			//ya no hay elementos a procesar
+			btn_firmar.disabled = false;
+			btn_firmar.classList.remove('botonGrisadoFirmaM');
+			btn_firmar.classList.add('botonFirmaM');
+			
+			
+		}
+	}
+
+	function successCallback(signatureB64, certificateB64) {
+		;
+		//en realidad el algoritmo por default es utf-8 pero igualmente no se 
+		//toma en cuenta el segundo parametro, abria que eliminarlo si el algoritmo
+		//es por default utf-8
+		var fichero = signatureB64;//MiniApplet.getTextFromBase64 (signatureB64, "utf-8");
+		var estado = document.getElementById(idEstadoF);
+	    var checkbox = document.getElementById(idCheckBoxF);
+	    var doc = document.getElementById(idDocF);
+	  	   
+		signature = signatureB64;
+			
+		/*divMensaje.innerHTML='<br><div class="iconOKFirma">Fichero firmado correctamente</div><br>&nbsp;';*/
+		
+		checkbox.checked = false;
+		estado.classList.remove('estadoProcesando');
+		estado.classList.add('estadoFirmado');
+		
+		doc.onclick = function() { crearClickDoc(checkbox.value,true);};
+		
+		//seteo el enlace al nuevo documento firmado
+		
+		
+		totalOperaciones++;
+		totalFirmasRealizadas++;
+		
+		verificarContinuacionProceso();
+		
+	}
+	
+	function errorCallback(errorType, errorMessage) {
+		var estado = document.getElementById(idEstadoF);
+	    var checkbox = document.getElementById(idCheckBoxF);
+	    
+		if ((errorMessage) && 
+(errorMessage.indexOf("AOCancelledOperationException")==-1) && 
+(errorMessage.indexOf("Operacion cancelada por el usuario")==-1)) {
+			if (errorMessage.indexOf("El almacen no contenia entradas")!=-1) {
+				/*divMensaje.innerHTML='<img class="iconStatus" src="../img/iconFALLO.png">No existen certificados en el almacén de su navegador<br><br>';*/
+			}
+			else {
+				/*divMensaje.innerHTML='<div class="iconErrorFirma">Error al firmar</div><br><div style="width:300pt">' + errorMessage + '</div>';*/
+			}
+		}
+		checkbox.disabled = false;
+		/*NO se puede dejar checked en true porque al hacer las llamadas recursivamente
+		lo va a volver a tomar al objeto y asi hasta que se termine de realizar
+		la cantidad de operaciones seteada en el principio*/
+		checkbox.checked = false;
+		estado.classList.remove('estadoProcesando');
+		estado.classList.add('estadoNoFirmado');
+		
+		totalOperaciones++;
+		verificarContinuacionProceso();
+	}
+	//la siguiente funcion se ejecuta desde protocolchec al agragar un iframe para cargar la app jnlp
+	function mostrarPantalla()	{
+		
+		/*document.getElementById("cargandoApplet").style.display = "none";
+		document.getElementById("pantalla").style.display = "block";
+		if (mobile==true) {
+			document.getElementById("firmaProceso1").style.display = "none";
+			document.getElementById("botones").style.display = "none";
+			document.getElementById("divmensaje").style.display = "none";
+			
+			if (MiniApplet.isAndroid()) {
+				document.getElementById("firmaProcesoAND").style.display = "inline";
+			}
+			else if (MiniApplet.isIOS()) {
+				document.getElementById("firmaProcesoIOS").style.display = "inline";
+			}
+			document.getElementById("firmaMovil").style.display = "inline";
+			document.getElementById("saveFile").style.display = "none";
+			document.getElementById("clienteEscritorio").style.display = "none";
+			document.getElementById("nota").style.display = "none";
+			document.getElementById("nota2").style.display = "inline";
+		}*/
+	}
+	
+	//seleccionar o deselecciona todos los checkbox
+	function seleccionarTodos(checkbox){
+		//obtengo la lista de checkbox con un nombre de clase determinado
+		var lista=document.getElementsByClassName("chk_listado");
+		var i;
+		if (checkbox.checked){
+			
+		   for (i = 0; i < lista.length; i++) {
+			   if(lista[i].disabled == false){
+				   lista[i].checked = true;
+			   }			
+		   }
+		}else{
+			 for (i = 0; i < lista.length; i++) {
+				 if(lista[i].disabled == false){
+					   lista[i].checked = false;
+				   }
+			 }
+			
+		}
+	}
+	
+	//crea el enlace para visualizar el doc
+	//NOTA:doc siempre debe tener xxxxxx.b64 o xxx.html como nombre
+	function crearClickDoc(doc,firmado){
+		var url,target,forma_de_la_ventana;
+		var i,temp;
+		//quitar extension del string
+		i = doc.indexOf('.b64');
+		if(i==-1){i=doc.indexOf('.html');}
+		temp = doc.substring(0,i);  
+			
+		if(firmado){
+			url = temp +'-firmado'+ '.pdf';
+		}else{
+			url = temp + '.pdf';
+		}
+		
+		target = '_blank';
+		forma_de_la_ventana = 'width=620,height=400,fullscreen=yes,scrollbars=NO';
+		
+		window.open(url,target,forma_de_la_ventana);
+		
+	}
+	
+	
+	//retorna el primer elemento seleccionado deuna lista de checkbox con clase id
+	function siguienteSeleccion(clase){
+		//obtengo la lista de checkbox con un nombre de clase determinado
+		var lista=document.getElementsByClassName("chk_listado");
+		var pri; //guarda el primer indice seleccionado
+		var ok = true; //para solo guardar un elemento
+		
+		//compruebo si minimamente hay un checkbox
+		if(lista.length!=0){
+		
+		//compruebo que haya algo para firmar
+		for (i = 0; i < lista.length; i++) {
+			//si hay algo seleccionado
+			if(lista[i].checked){		
+				if(ok){pri=i; ok=false;break;};
+			}
+		}
+		return i;
+		}else{
+			return -1;
+		}
+	}
+	
+	//seteo las variables para poder realizar las operaciones recursivamente
+	function iniciarOperaciones(){
+		//obtengo la lista de checkbox con un nombre de clase determinado
+		var lista=document.getElementsByClassName("chk_listado");	
+		var btn_firmar = document.getElementById("botonFirmas");
+		var i,checkbox;;
+		
+		//compruebo si minimamente hay un checkbox
+		if(lista.length!=0){
+		
+		//compruebo que haya algo para firmar
+		for (i = 0; i < lista.length; i++) {
+			//si hay algo seleccionado
+			if(lista[i].checked){
+				totalFirmas++;	
+				//deshabilito la seleccion asi no se permite que se saltee su firma en caso de una seleccion posterior cuando
+				//se esta ejecutando el proceso, si se requiere ese comportamiento ver
+				//que el totalFirmas se calcula al principio para un correcto display de
+				//mensajes agregar un evento cuando se click en un checkbox y este esta
+				//seleccionado asi se actualiza el totalFirmas
+				idCheckBox = lista[i].id;
+				//deshabilito el checkbox asi no lo modifican
+				checkbox = document.getElementById(idCheckBox);
+				checkbox.disabled = true;
+			}
+		}
+		if (totalFirmas>0){
+			//deshabilito el boton
+			btn_firmar.disabled = true;
+			btn_firmar.classList.remove('botonFirmaM');
+			btn_firmar.classList.add('botonGrisadoFirmaM');
+			
+			//seteo el estatus de la operacion
+			divMensaje.innerHTML='<div class="iconProcesando">Procesando Documentos ...</div>';
+			firmarFileB64ServerExternoMasivo(); 
+		
+		}else{
+			divMensaje.innerHTML='<div class="iconInfo">Debe seleccionar al menos un documento.</div>';
+		}
+		}
+		
+		/*a medida que se va firmando los archivos se setean las propiedades
+		de los checkbox seteados asi la lista de seleccionados disminuye en 
+		cada iteracion*/
+	}
+	
+	
+	//NOTA: los checkbox,idEstado de una misma fila deben llamarse
+	/*para la fila numero x:
+	objeto(checkBox_x).id= f1
+	objeto(idEstado_x).id= estado_f1;
+	objeto(idDoc_x).id= doc_f1;
+	en resumen los demas ids de una misma fila deben derivarse del id del checkbox
+	*/
+	//firma iterativamente los archivos seleccionados
+	function firmarFileB64ServerExternoMasivo() {
+		
+			//obtengo la lista de checkbox con un nombre de clase determinado
+			var lista=document.getElementsByClassName("chk_listado");
+			var btn_firmar = document.getElementById("botonFirmas");
+			var i,data,idCheckBox,idEstado,checkbox;
+			var indice;		
+			//indice checklist seleccionado
+			indice = siguienteSeleccion("chk_listado");
+			
+			//si hay un elemento seleccionado
+			if (indice != -1){
+										
+			
+			//obtengo el primer elemento y empiezo el bucle en dos niveles,
+			//de esta forma las ejecuciones iteradas son asincronas			
+			//seteo la url del documento a firmar
+					    data = lista[indice].value;
+						//obtengo el id del checkbox que luego sera utilizado para obtener los otros objetos de la misma fila
+						idCheckBox = lista[indice].id;
+						idEstado = "estado_"+idCheckBox;						
+      
+						//deshabilito el checkbox asi no lo modifican
+						checkbox = document.getElementById(idCheckBox);
+						checkbox.disabled = true;
+						
+						try {
+							   MiniApplet.downloadRemoteDataB64(
+									data,
+									downloadedFileSuccessCallback,
+									downloadedErrorCallback);
+							} catch(e) {
+								divMensaje.innerHTML='<div class="iconErrorFirma">Error en la descarga del archivo '+ data +'</div>';
+								totalOperaciones++;
+								//deschequeo el checkbox asi se puede continuar
+								checkbox.checked = false;
+								firmarFileB64ServerExternoMasivo();
+								
+						}
+			}	
+			else{//se entra por aqui se antes se produjo una excepcion en este mismo metodo
+				//y ademas ya no hay checkbox seleccionados
+				//ya no hay elementos a procesar
+				btn_firmar.disabled = false;
+				btn_firmar.classList.remove('botonGrisadoFirmaM');
+				btn_firmar.classList.add('botonFirmaM');
+				
+			}
+						
+										
+	
+	}
+	function firmarFileB64ServerExternoMasivo2() {
+		
+		//obtengo la lista de checkbox con un nombre de clase determinado
+		var lista=document.getElementsByClassName("chk_listado");
+		var i,data,idCheckBox,idEstado,idBoton,checkbox;
+		
+		//compruebo que haya algo para firmar
+		for (i = 0; i < lista.length; i++) {
+			//si hay algo seleccionado
+			if(lista[i].checked){
+				//seteo el estatus de la operacion
+				divMensaje.innerHTML='<div class="iconProcesando">Procesando Documentos ...</div>';
+				
+			}
+		}
+			for (i = 0; i < lista.length; i++) {
+				//si esta seleccionado
+				if(lista[i].checked){
+					totalFirmas++;						
+		
+					//seteo la url del documento a firmar
+					data = lista[i].value;
+					//obtengo el id del checkbox que luego sera utilizado para obtener los otros objetos de la misma fila
+					idCheckBox = lista[i].id;
+					idEstado = "estado_"+idCheckBox;						
+  
+					//deshabilito el checkbox asi no lo modifican
+					checkbox = document.getElementById(idCheckBox);
+					checkbox.disabled = true;
+					
+					try {
+						   MiniApplet.downloadRemoteDataB64ServerExterno(
+								data,
+								downloadedFileSuccessCallback,
+								downloadedErrorCallback,idEstado,idCheckBox);
+						} catch(e) {
+							showLog("Error en la descarga de los datos: " + e);
+					}
+				}
+				//lista[i].style.backgroundColor = "red";
+				//alert(lista[i].value);
+				//alert(lista[i].id);
+			}								
+
+}
+	
+	function colorCeleste(o){
+		var obj = document.getElementById(o.id);
+		obj.classList.remove('Documento');
+		obj.classList.add('DocumentoCeleste');
+	}
+	
+	function colorNegro(o){
+		var obj = document.getElementById(o.id);
+		obj.classList.remove('DocumentoCeleste');
+		obj.classList.add('Documento');
+	}
+	
+  </script>    
+            
+            
+            
+<body>
+    <form method="post" action="https://rrhh.desarrollosocial.gob.ar/Portal/Documentos.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTMzNjEwNjQyOWRkp+uVq00opNIT/zaTXWK30Ro5qGVg0PW203f9fK54BfM=">
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="FC3B2A38">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAM5Y+lr9OaEaQ7K//w8xGk1pnZyyDB2rwTleLKVnNvvE78deDCe+i2HgQzzlr4muY5kIzA3jwkYB4cistDz3CTEbhU/gExANwriXVY25R14+Q==">
+</div>
+    
+
+    <title></title>
+    
+    <link id="link1" rel="stylesheet" href="./Portal Estudios_files/EstilosBarraMenu.css" type="text/css">
+    <link id="link2" rel="stylesheet" href="./Portal Estudios_files/BarraMenuUsuarios.css" type="text/css">
+    <link href="./Portal Estudios_files/vex.css" rel="stylesheet">
+    <link href="./Portal Estudios_files/vex-theme-os.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Portal Estudios_files/bootstrap.min.css">
+    <link href="./Portal Estudios_files/vex.css" rel="stylesheet">
+    <link href="./Portal Estudios_files/vex-theme-os.css" rel="stylesheet">
+    <!-- <script type="text/javascript" src="./Portal Estudios_files/BarraMenu.js"></script>
+    <script type="text/javascript" src="./Portal Estudios_files/BotonDesplegable.js"></script>
+    <script type="text/javascript" src="./Portal Estudios_files/VistaThumbnail.js"></script>
+    <script type="text/javascript" src="./Portal Estudios_files/SubidorDeImagenes.js"></script>
+    <script type="text/javascript" src="./Portal Estudios_files/vex.combined.min.js"></script>
+ -->
+<div id="barra_menu_contenedor" class="no-print">
+    <div id="contenedor_imagen">
+        <img src="./Portal Estudios_files/logo_sistema.png" id="img_logo_sistema" alt="logosistema">
+        <img src="./Portal Estudios_files/logo_ministerio.png" id="img_logo_minis" alt="logosistema">
+        <img src="./Portal Estudios_files/logo_direccion.png" id="img_logo_direccion" alt="logosistema">
+        <div id="barra_menu_nombre_sistema">
+        </div>
+    </div>
+    <div id="barra_navegacion"> 
+        <div id="boton_home">
+            <img src="./Portal Estudios_files/Home-icono.png" id="home_imagen" alt="homeicono">
+        </div>
+        <div id="contenedor_imagen_usuario">
+            <img src="./Portal Estudios_files/portal_empleado.png" id="foto_usuario_icono" alt="fotouser">
+            <div id="imagen">
+            </div>
+        </div>
+        <div id="contenedor_menu_usuarios" class="menu_usuario sombrita" style="display: none;">
+            <div class="flechita">
+            </div>
+            <div id="contenedor_foto_usuario">
+                <img id="foto_usuario_generica" src="./Portal Estudios_files/portal_empleado.png" alt="fotousuariogenerica" class="foto_menu_estilo">
+                <div id="foto_usuario_menu" class="foto_menu_estilo" style="display: none;">
+                </div>
+                <div id="barrita_cambio_imagen">
+                    <div>
+                        Cambiar</div>
+                    <div>
+                        Imágen</div>
+                </div>
+            </div>
+            
+            <div id="nombre_user" class="cabecera_menu_usuario">Juan Carlos</div>
+            <div id="apellido_user" class="cabecera_menu_usuario">VELASQUEZ QUIROZ</div>
+            <div id="dni_user" class="cabecera_menu_usuario">29064932</div>
+            <div id="email_user" class="cabecera_menu_usuario">vela.mil@gmail.com</div>
+            <div id="info_usuario">
+                <a id="cambiar-email_usuario" class="" name="signup">Modificar correo</a>
+                
+                <a id="go" rel="leanModal" class="" name="signup" href="https://rrhh.desarrollosocial.gob.ar/Portal/Documentos.aspx#signup">Cambiar Contraseña</a>
+                
+
+
+
+
+
+
+
+
+
+                <div id="signup">
+			        <div id="signup-ct">
+				        <div id="signup-header">
+					        <h2 style="color:#fff;">Cambio de Contraseña</h2>
+					        <p></p>
+					        <a class="modal_close" href="https://rrhh.desarrollosocial.gob.ar/Portal/Documentos.aspx#"></a>
+				        </div>
+							<div id="contenido_form">
+				              <div class="txt-fld">
+				                <label for="">Contraseña actual</label>
+                                <input id="pass_actual" type="password" class="posicionamiento_input_cambio_pass">
+                               
+				              </div>
+				              <div class="txt-fld">
+				                <label for="">Nueva Contraseña</label>
+                                 <input id="pass_nueva" type="password" class="posicionamiento_input_cambio_pass">
+                               
+				               
+				              </div>
+				              <div class="txt-fld">
+				                <label for="">Repetir Contraseña</label>
+                                <input id="pass_nueva_repetida" type="password" class="posicionamiento_input_cambio_pass">
+                               
+				              </div>
+				              <div class="btn-fld">
+                              <p><span style="font-weight:bold;">Advertencia:</span> Ingresar al menos 8 dígitos (números y letras)</p>
+                               
+				                <input type="button" class="btn btn-primary" id="pass" value="Cambiar">
+                              </div>
+                            </div>	         
+			        </div>
+                </div> 
+
+                <input name="BarraMenu$FormPassword$urlAjax" type="text" id="BarraMenu_FormPassword_urlAjax" style="display:none;">
+
+              
+
+                <div id="cerrar-sesion_usuario">
+                    <input type="submit" name="BarraMenu$CerrarSessionLinkButton" value="Cerrar Sesión" id="BarraMenu_CerrarSessionLinkButton" class="btn btn-primary">
+                </div>
+            </div>
+        </div>
+        <div id="contenedor_imagen_cuadrados" class="sombrita-iconos">
+            <img src="./Portal Estudios_files/cuadraditos.png" id="menu_cuadrados" alt="fotousuariomenu">
+        </div>
+        <div id="contenedor_menu_cuadrados" class="menu_usuario sombrita" style="display: none;">
+            <div class="flechita">
+            </div>
+        <a href="https://rrhh.desarrollosocial.gob.ar/SeleccionDeArea.aspx"><img src="./Portal Estudios_files/Administración_de_Areas.png" class="redondeo-modulos" style="margin: 5px;"></a><a href="https://rrhh.desarrollosocial.gob.ar/FormularioConcursar/PanelDeControl.aspx"><img src="./Portal Estudios_files/POSTULAR.png" class="redondeo-modulos" style="margin: 5px;"></a></div>
+        <!--mensajes-->
+        <div id="contenedor_imagen_mensajes">
+            
+            <div id="notificacion_punto_rojo" style="display: none;">0</div>
+            <img src="./Portal Estudios_files/mensajes-icono.png" id="menu_mensajes" alt="fotousuariomenu">
+        </div>
+        <div id="contenedor_menu_mensajes" class="menu_usuario sombrita-iconos" style="display: none;">
+            <div class="flechita">
+            </div>
+            <div class="contenedor_de_alertas_y_mensajes"></div>
+        </div>
+    </div>
+    <div id="plantillas_barra_menu" style="display: none">
+        <div class="ui_mensaje_alerta mensaje_alerta sombra-mensaje">
+            <p class="titulo_mensaje_alerta">
+                Mensaje 1</p>
+            <p class="contenido_mensaje_alerta">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mi nunc, euismod
+                eget est nec, consequat porttitor est. Maecenas ante elit, bibendum in volutpat
+                sit amet, imperdiet ac neque. Quisque dapibus eros sit amet mauris venenatis molestie.
+                Integer feugiat felis dolor, pellentesque tincidunt nulla efficitur quis. Pellentesque
+                pretium velit id neque accumsan, vitae aliquam augue mollis. Fusce ut diam malesuada,
+                placerat tortor et, efficitur massa. Praesent sagittis tortor et enim accumsan laoreet.
+                Praesent ut sapien ac leo porta finibus eget vitae lacus. Aliquam at arcu felis.
+                Morbi sit amet consectetur ex. Maecenas in nisi turpis.</p>
+        </div>
+
+        <div id="contenedor_chat_mensajes">
+            <div id="titulo_chat">
+            </div>
+            <div id="cuerpo_chat">
+                <div id="plantilla_mensaje">
+                </div>
+            </div>
+            <input id="btn_enviar" type="button" class="btn btn-primary" value="Enviar">
+            <input id="btn_cerrar" type="button" class="btn btn-primary" value="Cerrar">
+            <input id="bnt_finalizar" type="button" class="btn btn-primary" value="Finalizar">
+        </div>
+    </div>
+</div>
+    <div>
+     <div class="container-fluid">
+        <h1 style="text-align:center; margin:30px; "></h1>
+        <div style="margin: 0 auto;" class="row">
+            <div style="text-align:center;" class="caja_izq"> <div class="imagen">   
+    </div>
+    <div style="text-align:center;">
+        <p id="nombre_empleado" class="">VELASQUEZ QUIROZ, Juan Carlos</p>
+       <!-- <p class=""><span id="cargo">Analista en Gestión de la información</span></p>-->
+    </div>
+    <hr>
+   <!-- <h3 class="h3_caja_izq">Accesos directos</h3>-->
+    <div class="div_texto_caja_izq">
+        <ul>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/consultas.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/Consultas.aspx" id="link_consultas">Consultas</a></li>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/datos_personales.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/DatosPersonales.aspx">Datos Personales</a></li>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/perfil_prof.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/Perfil.aspx">Carrera Administrativa</a></li>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/estudios.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/Documentos.aspx">Documentos Legajo</a></li>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/beneficios_y_pagos.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/Recibo.aspx">Beneficios</a></li>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/licencias.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/Licencias.aspx">Licencias</a></li>
+            <li class="no_disponible"><img alt="icono" src="./Portal Estudios_files/notificaciones.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/Documentos.aspx#">Capacitaciones</a></li>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/viaticos.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/Portal/Organigrama.aspx">Organigrama</a></li>
+            <li class=""><img alt="icono" src="./Portal Estudios_files/capacitacion.png" class="icon_menu_izq"><a href="https://rrhh.desarrollosocial.gob.ar/MenuPrincipal/Menu.aspx">Aplicaciones</a></li>
+        </ul>
+    </div>
+</div>
+<style TYPE="text/css">  
+.botonFirma {
+	background: -moz-linear-gradient(top, #587BA0, #38577f 15px);
+	background: -webkit-gradient(linear, 0 0, 0 50%, from(#587BA0),
+		to(#38577f) );
+	background-image: linear-gradient(to bottom, #2574AD, #034574);
+	background-color: #38577f;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px; /*azul marino oscuro opaco*/
+	-ms-border-radius: 4px;
+	color: #fff;
+	/*float: center;*/
+	border: none;
+	padding: 3px 12px 3px 12px;/*padding: 5px 18px 5px 18px;*/
+	/*margin: 5px 0 0 0;*/
+	font-family: arial;
+	font-size: 8pt;
+	cursor:hand;
+	font-weight: bold;
+}
+.botonGrisadoFirma {
+	background-color: #ccc;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px; /*azul marino oscuro opaco*/
+	-ms-border-radius: 4px;
+	color:#ffffff;
+	/*float: center;*/
+	border: none;
+	padding: 3px 12px 3px 12px;/*padding: 5px 18px 5px 18px;*/
+	/*margin: 5px 0 0 0;*/
+	font-family: arial;
+	font-size: 8pt;
+	cursor:auto;
+	font-weight: bold;
+}
+.estadoFirmado{
+background-image: url('./Portal Estudios_files/pased.png');
+background-repeat: no-repeat;	
+background-position: center;
+
+}
+.estadoNoFirmado{
+background-image: url('./Portal Estudios_files/archi.gif');
+background-repeat: no-repeat;	
+background-position: center;
+
+}
+.estadoProcesando{
+background-image: url('./Portal Estudios_files/loads.gif');
+background-repeat: no-repeat;	
+background-position: center;
+
+}
+/*objetos para operaciones masivas*/
+.botonFirmaM {
+	background: -moz-linear-gradient(top, #587BA0, #38577f 15px);
+	background: -webkit-gradient(linear, 0 0, 0 50%, from(#587BA0),
+		to(#38577f) );
+	background-image: linear-gradient(to bottom,  #CC0033,  #FF0033);
+	background-color: #38577f;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px; /*azul marino oscuro opaco*/
+	-ms-border-radius: 4px;
+	color: #fff;
+	/*float: center;*/
+	border: none;
+	padding: 4px 10px 4px 10px;/*padding: 5px 18px 5px 18px;*/
+	/*margin: 5px 0 0 0;*/
+	font-family: arial;
+	font-size: 9pt;
+	cursor:hand;
+	font-weight: bold;
+	
+}
+.botonGrisadoFirmaM {
+	background-color: #ccc;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px; /*azul marino oscuro opaco*/
+	-ms-border-radius: 4px;
+	color:#ffffff;
+	/*float: center;*/
+	border: none;
+	padding: 4px 10px 4px 10px;/*padding: 5px 18px 5px 18px;*/
+	/*margin: 5px 0 0 0;*/
+	font-family: arial;
+	font-size: 9pt;
+	cursor:auto;
+	font-weight: bold;
+}
+/**ICONOS para mensajes**/
+
+/*.iconOK{background-color: transparent;  background-image:url("../img/iconOK.png"); background-repeat: no-repeat; border: 0 none;  height:34px; width: 35px; float:left;margin-right: 13px;  margin-top: 10px; }
+.iconOKFirma{ background-color: transparent; background-image: url("../img/iconOK.png"); background-repeat: no-repeat; border: 0 none;  float: left;  font-weight: bold;  height: 34px;  margin-top: 10px; padding-left: 51px; padding-top: 10px; width: 100%;}
+.iconErrorFirma2{ background-color: transparent; background-image: url("../img/msginfo.png"); background-repeat: no-repeat; border: 0 none;  float: left;  font-weight: bold;  height: 34px;  margin-top: 5px; padding-left: 51px; padding-top: 10px; width: 100%;color:green;font-size: 8pt;}
+*/
+.iconInfo{margin-right: 15px; vertical-align: middle;float:left; background-image: url("../img/msginfo.png");background-repeat: no-repeat;padding-left: 15pt;color:green;font-size: 8pt; height: 15pt;}
+.iconProcesando{margin-right: 15px; vertical-align: middle;float:left; background-image: url("../img/loads.gif");background-repeat: no-repeat;padding-left: 15pt;color:green;font-size: 8pt; height: 15pt;}
+.iconAlerta{margin-right: 15px; vertical-align: middle;float:left; background-image: url("../img/msgwarn.png");background-repeat: no-repeat;padding-left: 15pt;color:green;font-size: 8pt; height: 15pt;}
+.iconOKFirmados{margin-right: 15px; vertical-align: middle;float:left; background-image: url("../img/pased.png");background-repeat: no-repeat;padding-left: 15pt;color:green;font-size: 8pt; height: 15pt;}
+.iconErrorFirma{ background-color: transparent; background-image: url("../img/msginfo.png"); background-repeat: no-repeat; border: 0 none;  float: left;  font-weight: bold;  height: 34px;  margin-top: 5px; padding-left: 51px; padding-top: 10px; width: 100%;color:green;font-size: 8pt;}
+
+.Documento{color:black;}
+.DocumentoCeleste{color:#3399FF;}
+
+</style> 
+            <div class="caja_der papel">   
+                <legend style="margin-top: 20px;">Solicitudes de Firma</legend>
+                
+                 <div><table class="tablex table-stripedx table-bordered table-condensed" style="cursor: pointer;width:100%">
+				 <tbody class="list">
+				 <tr><td style="background-image: linear-gradient(to bottom, #2574AD, #2574AD); color: #fff;font-size: 9pt;font-weight: bold;width:10pt" >Operación</td>
+				 <td style="text-align: right"><input id="botonFirmas" class="botonFirmaM" type="button" value="Firmar Seleccionados" onclick="javascript:iniciarOperaciones();return false;" />
+				 </td></tr>
+				 <tr><td style="background-image: linear-gradient(to bottom, #2574AD, #2574AD); color: #fff;font-size: 9pt;font-weight: bold;" >Estatus</td><td><div id="divmensaje">&nbsp;</div></td></tr>
+				 </tbody></table></div><br/>
+				 
+                 <div id="tabla_documentos"><table class="tablex table-striped table-bordered table-condensed" style="cursor: pointer;width:100%"><thead class="estilo_tabla_portal"><tr>
+				 <th style="background-image: linear-gradient(to bottom, #2574AD, #034574); " data-sort="Folio">Fecha Solicitud</th>
+				 <th style="background-image: linear-gradient(to bottom, #2574AD, #034574); " data-sort="Documento">Documento</th>
+				 <th style="background-image: linear-gradient(to bottom, #2574AD, #034574); " data-sort="xxx">Estado</th>
+				 <th style="background-image: linear-gradient(to bottom, #2574AD, #034574); width:75pt;" data-sort="xxx">
+				 <div><input class="chk_listado2"  onclick="javascript:seleccionarTodos(this);" type="checkbox" name="chk_todos" id="fx" style="text-align: left; float: left;margin-top: 2px;"/>
+				 </div>&nbsp;Selección</th>
+				 </tr></thead>
+				 <tbody class="list">
+				 <tr><td class="Folio">00-001/006</td><td id="doc_f1" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 10</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-001/006</td><td id="doc_f2" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 11</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-007/007</td><td id="doc_f3" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',false);return false;">Recibo 12</td>
+				 <td id="estado_f3" class="estadoNoFirmado"></td>
+				 <td style="text-align: center">
+				 <input class="chk_listado"  type="checkbox" name="chk_registro_3" id="f3" value="https://www.milocal.com:8443/AutofirmaJWS/prueba.b64" />
+				 </td></tr>
+
+				 <tr><td class="Folio">00-008/008</td><td id="doc_f4" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 13</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-009/009</td><td id="doc_f5" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 14</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-010/010</td><td id="doc_f6" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 15</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-011/011</td><td id="doc_f7" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',false);return false;">Recibo 16</td>
+				 <td id="estado_f7" class="estadoNoFirmado"></td>
+				 <td style="text-align: center">
+				 <input class="chk_listado"  type="checkbox" name="chk_registro_7" id="f7" value="https://www.milocal.com:8443/AutofirmaJWS/prueba.b64"/>
+				 </td></tr>
+
+				 <tr><td class="Folio">00-012/012</td><td id="doc_f8" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',false);return false;">Recibo 17</td>
+				 <td id="estado_f8" class="estadoNoFirmado"></td>
+				 <td style="text-align: center">
+				 <input class="chk_listado"  type="checkbox" name="chk_registro_8" id="f8" value="https://www.milocal.com:8443/AutofirmaJWS/prueba.b64"/>				 				 
+				 </td></tr>
+
+				 <tr><td class="Folio">00-013/013</td><td id="doc_f9" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba2.b64',false);return false;">Recibo 18</td>
+				 <td id="estado_f9" class="estadoNoFirmado"></td>
+                 <td style="text-align: center">
+				 <input class="chk_listado"  type="checkbox" name="chk_registro_9" id="f9" value="https://www.milocal.com:8443/AutofirmaJWS/prueba2.b64"/>				 				 
+				 </td>
+				 </tr>
+
+				 <tr><td class="Folio">00-014/014</td><td id="doc_f10" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 19</td>
+				 <td class="estadoFirmado"></td><td></td>
+				 </tr>
+
+				 <tr><td class="Folio">00-015/017</td><td id="doc_f11" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 20</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-018/018</td><td id="doc_f12" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 20x</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-019/019</td><td id="doc_f13" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 21</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-020/020</td><td id="doc_f14" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 22</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-021/021</td><td id="doc_f15" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 23</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-022/022</td><td id="doc_f16" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 24</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-023/024</td><td id="doc_f17" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 25</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-025/025</td><td id="doc_f18" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 26</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-026/026</td><td id="doc_f19" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 27</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-027/028</td><td id="doc_f20" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/AutofirmaJWS/prueba.b64',true);return false;">Recibo 28</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-029/029</td><td id="doc_f21" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 29</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 <tr><td class="Folio">00-030/030</td><td id="doc_f22" class="Documento" onmouseover="colorCeleste(this);" onmouseout="colorNegro(this);" onclick="javascript:crearClickDoc('https://www.milocal.com:8443/AutofirmaJWS/prueba.b64',true);return false;">Recibo 30</td><td class="estadoFirmado"></td><td></td></tr>
+
+				 </tbody></table></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+
+<!-- <script type="text/javascript" src="./Portal Estudios_files/Legajo.js"></script> -->
+<!-- <script type="text/javascript" src="./Portal Estudios_files/Spin.js"></script>
+<script type="text/javascript" src="./Portal Estudios_files/VistaThumbnail.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function ($) {
+
+        //para cargar el menu izquierdo 
+        $(".caja_izq").load("SeccionIzquierda.htm", function () {
+            Backend.start(function () {
+                Legajo.getNombre();
+                Legajo.getDocumentos();
+            });
+        });
+
+    });
+
+</script>  -->
+<script type="text/javascript">
+//se debe setear el divmensaje despues de procesar todo el documento html
+//si se lo llama antes puede que lo setee a null devido a que aun puede
+//que no se haya seteado creado el objeto con tal id
+  var divMensaje = document.getElementById('divmensaje');
+</script> 
+
+<div id="lean_overlay"></div></body></html>

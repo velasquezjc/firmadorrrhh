@@ -1,0 +1,2 @@
+# Certificado raiz del emisor
+issuerCertFile=/validation/AC_argentina/AC_firma_digital-SHA1.cer

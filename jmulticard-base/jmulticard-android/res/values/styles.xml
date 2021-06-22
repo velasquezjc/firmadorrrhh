@@ -1,0 +1,8 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+
+    <style name="WhiteBackground">
+        <item name="android:background">#FFFFFF</item>
+    </style>
+</resources>

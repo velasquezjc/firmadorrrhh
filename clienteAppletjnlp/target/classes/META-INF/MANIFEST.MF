@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Build-Jdk: 1.7.0_79
+Application-Library-Allowable-Codebase: *
+Application-Name: firmadigital-applet
+Caller-Allowable-Codebase: *
+Permissions: all-permissions
+Trusted-Only: true
+

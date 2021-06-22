@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>firmadigital-applet</artifactId>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<parent>
+		<groupId>ar.com.everis.commons</groupId>
+		<artifactId>commons-ar</artifactId>
+		<version>3.2.9-SNAPSHOT</version>
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>plugin</groupId>
+			<artifactId>plugin</artifactId>
+			<version>1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20090211</version>
+		</dependency>
+		
+		
+		<dependency>
+	<groupId>org.bouncycastle</groupId>
+	<artifactId>bcprov-jdk15on</artifactId>
+	<version>1.54</version>
+</dependency>
+		
+		
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2.1</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.everis.tramelec.main.FirmaDigitalMain</mainClass>
+							<addClasspath>false</addClasspath>
+						</manifest>
+						<manifestEntries>
+							<Application-Name>${project.artifactId}</Application-Name>
+							<Trusted-Only>true</Trusted-Only>
+							<Permissions>all-permissions</Permissions>
+							<Application-Library-Allowable-Codebase>http://*.gcba.gob.ar/*
+								http://*.gcaba.everis.int/* http://*.buenosaires.gob.ar/*</Application-Library-Allowable-Codebase>
+							<Caller-Allowable-Codebase>http://*.gcba.gob.ar/*
+								http://*.gcaba.everis.int/* http://*.buenosaires.gob.ar/*</Caller-Allowable-Codebase>
+							<Codebase>http://*.gcba.gob.ar/* http://*.gcaba.everis.int/*
+								http://*.buenosaires.gob.ar/*</Codebase>
+						</manifestEntries>
+					</archive>
+
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<finalName>tokensign</finalName>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- bind to the packaging phase -->
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

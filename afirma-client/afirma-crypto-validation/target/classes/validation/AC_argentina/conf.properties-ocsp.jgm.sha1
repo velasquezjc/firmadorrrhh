@@ -1,0 +1,9 @@
+# Certificado raiz del emisor
+issuerCertFile=/validation/AC_argentina/AC_firma_digital-SHA1.cer
+
+# Si hay que firmar o no la peticion OCSP
+signOcspRequest=false
+
+# URL del responder OCSP
+responderUrl=http://pki.jgm.gov.ar/ocsp
+#falta implementar en caso de que haya mas de una url de consulta. Ej:http://pkicont.jgm.gov.ar/ocsp

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: test.es.gob.jmulticard.apdu.connection.cwa14890.TestKeyGeneration
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 sec

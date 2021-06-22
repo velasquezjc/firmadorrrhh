@@ -1,0 +1,507 @@
+#foto_usuario_icono
+{
+    height: 100%;
+    width: 100%;
+}
+
+#contenedor_imagen_usuario
+{
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    right: 29px;
+    top: -29px;
+    cursor: pointer;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#contenedor_imagen_usuario #imagen
+{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: solid #ffffff 6px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.datos_usuario
+{
+    display: inline-block;
+}
+
+#info_usuario
+{
+    position: absolute;
+    width: 180px;
+    left: 148px;
+    top: 10px;
+    text-align: left;
+    height: 144px;
+}
+
+.menu_usuario
+{
+    position: absolute;
+    top: 64px;
+    width: 215px;
+    height: 342px;
+    background-color: #f5f5f5;
+}
+
+
+
+
+.sombrita
+{
+    border-radius: 12px !important;
+    border-color: Black;
+    -webkit-border-radius: 500px;
+    box-shadow: 15px 20px 25px rgba(0,0,0,0.7) !important;
+    -webkit-box-shadow: 20px 20px 25px rgba(0,0,0,0.7);
+    -moz-box-shadow: 20px 20px 25px rgba(0,0,0,0.7);
+}
+
+.sombrita-iconos
+{
+    box-shadow: 3px 5px 8px rgba(0,0,0,0.7) !important;
+    -webkit-box-shadow: 3px 5px 8px rgba(0,0,0,0.7);
+    -moz-box-shadow: 3px 5px 8px rgba(0,0,0,0.7);
+}
+
+
+#contenedor_menu_usuarios
+{
+    z-index: 99999;
+    border-radius: 30px;
+    right: 41px;
+    width: 346px;
+    height: 199px;
+}
+
+#barrita_acciones_usuario
+{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 40px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-top: 1px black dashed;
+}
+
+.foto_menu_estilo
+{
+    height:100%;
+    width:100%;
+}
+
+#contenedor_foto_usuario
+{
+    position: absolute;
+    width: 120px;
+    cursor: pointer;
+    left: 17px;
+    top: 17px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 80px !important;
+    border-color: Black;
+    -webkit-border-radius: 500px;
+    box-shadow: 11px 8px 27px rgba(0,0,0,0.7) !important;
+    -webkit-box-shadow: 11px 8px 27px rgba(0,0,0,0.7);
+    -moz-box-shadow: 11px 8px 27px rgba(0,0,0,0.7);
+}
+
+#barrita_cambio_imagen
+{
+    position: absolute;
+    bottom: 0px;
+    background-color: black;
+    color: white;
+    height: 20%;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    transition: height 0.2s;
+    font-size: 12px;
+    opacity: 0.6;
+    padding-top: 3px;
+}
+
+.datos_usuario
+{
+    display: block;
+}
+
+.cabecera_menu_usuario
+{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: left;
+}
+
+#nombre_user
+{
+    top: 11px;
+    left: -9px;
+}
+#apellido_user
+{
+    top: 34px;
+    left: 9px;
+}
+#dni_user
+{
+    top: 64px;
+    left: 12px;
+    font-size: 1.2em !important;
+}
+#email_user
+{
+    top: 93px;
+    left: 7px;
+    font-size: 0.9em !important;
+    font-style: italic;
+}
+
+#cambiar-email_usuario
+{
+    position: absolute;
+    top: 116px;
+    left: 1px;
+    cursor: pointer;
+}
+#link_area
+{
+    position: absolute;
+    top: 240px;
+    left: 24px;
+    cursor: pointer;
+    /*height: 34px !important;
+    width: 159px !important;*/
+}
+
+#cambiar_contrasenia
+{
+    position: absolute;
+    left: 15px;
+    bottom: 11px;
+}
+#BarraMenu_CerrarSessionLinkButton
+{
+    border-radius: 0px;
+    border-bottom-right-radius: 12px;
+    height: 40px;
+    width: 50%;
+    position: absolute;
+    padding: 0 !important;
+    right: 0px;
+    bottom: 0px;
+}
+
+#usuario
+{
+    position: absolute;
+    top: 155px;
+    left: 5px;
+}
+
+
+#contenedor_menu_cuadrados
+{
+    right: 118px;
+    width: 25%;
+    height: auto;
+    padding: 10px 5px;
+    float: left;
+    z-index: 9999;
+    border-radius: 40px;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 53px;
+}
+
+#menu_cuadrados
+{
+    height: 42px;
+}
+
+#contenedor_imagen_cuadrados
+{
+    height: 26px;
+    width: 30px;
+    position: absolute;
+    right: 136px;
+    top: -8px;
+    cursor: pointer;
+}
+
+#contenedor_menu_mensajes
+{
+    right: 169px;
+    width: 35%;
+    height: auto;
+    z-index: 9999;
+    border-radius: 4%;
+    position: absolute;
+    top: 53px;
+}
+
+#menu_mensajes
+{
+    position: absolute;
+    left: 0px;
+    height: 40px;
+    right: 0px;
+    top: -2px;
+    bottom: 0px;
+    cursor: pointer; /* background-size: 100%; */
+}
+
+
+#contenedor_imagen_mensajes
+{
+    height: 48px;
+    width: 50px;
+    position: absolute;
+    right: 166px;
+    top: -6px;
+    cursor: pointer;
+    background-size: 100%;
+}
+
+#contenedor_imagen_tareas {
+    height: 48px;
+    width: 50px;
+    position: absolute;
+    right: 217px;
+    top: -3px;
+    cursor: pointer;
+    background-size: 100%;
+}
+
+#menu_tareas
+{
+    position: absolute;
+    left: 0px;
+    height: 40px;
+    right: 0px;
+    top: -6px;
+    bottom: 0px;
+    cursor: pointer; /* background-size: 100%; */
+    display: none;
+}
+
+#sub_barrita_negra
+{
+    height: 30px;
+    background-color: #1c2431;
+}
+
+#contenedor_menu_tareas
+{
+    right: 220px;
+    width: 35%;
+    height: auto;
+    z-index: 9999;
+    border-radius: 4%;
+    position: absolute;
+    top: 53px;
+}
+
+
+#boton_home
+{
+    cursor: pointer;
+    height: 39px;
+    position: absolute;
+    left: 14px;
+    top: -9px;
+}
+
+#boton_home img
+{
+    height: 100%;   
+    height: 40px;     
+}
+
+.contenedor_de_alertas_y_mensajes
+{
+    display: flex;
+    flex-direction: column;
+    border-color: Blue;
+    justify-content: flex-start;
+    height: 100%;
+
+}
+
+.ui_mensaje_alerta
+{
+    /*height: 82px;*/
+    width: 96%;
+    cursor: pointer;
+    padding: 1%;
+    margin: 2%;
+    border-style: dotted;
+    border-width: 2px;
+    position: relative
+}
+
+
+
+.titulo_mensaje_alerta
+{
+    margin-bottom: 5px;
+    font-size: 1.3em;
+    margin: 0 !important;
+}
+
+.contenido_mensaje_alerta
+{
+    margin-bottom: 2%;
+    overflow: hidden;
+}
+
+.mensaje_alerta #btn_ok
+{
+    position: absolute;
+    right: 10px;
+    width: 35px;
+    bottom: 10px;
+}
+
+.sombra-mensaje
+{
+    border-color: rgba(0,0,0,0.7);
+    -webkit-border-radius: 5%;
+    box-shadow: 3px 13px 10px rgba(0,0,0,0.7) !important;
+    -webkit-box-shadow: 3px 13px 10px rgba(0,0,0,0.7);
+    -moz-box-shadow: 3px 13px 10px rgba(0,0,0,0.7);
+}
+
+.ui_tipo_ticket
+{
+    height: 54px;
+    width: 96%;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 1%;
+    margin: 2%;
+    border-style: dotted;
+    border-width: 2px;
+    position: relative
+}
+
+.nombre_tipo_ticket
+{
+    font-size: 1.4em;
+    position: absolute;
+    left: 14px;
+    top: 11px;
+}
+
+.cantidad_tickets
+{
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding-top: 4px;
+    padding-left: 11px;
+    font-size: 17px;
+    font-weight: bolder;
+    color: white;
+    position: absolute;
+    right: 11px;
+    top: 10px;
+}
+
+
+.flechita
+{
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid white;
+    top: -9px;
+    right: 12px;
+    position: absolute;
+    z-index: 99999;
+}
+
+.redondeo-modulos
+{
+    border-radius: 50% !important;
+    border-color: Black;
+    width: 65px;
+    -webkit-border-radius: 500px;
+    box-shadow: 5px 10px 15px rgba(0,0,0,0.7) !important;
+    -webkit-box-shadow: 20px 20px 25px rgba(0,0,0,0.7);
+    -moz-box-shadow: 20px 20px 25px rgba(0,0,0,0.7);
+}
+
+#notificacion_punto_verde {
+ /* background: green;*/
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  /*color: #ffffff;*/
+  /* display: inline-block; */
+ /* font-weight: bold;*/
+  /*line-height: 1.2em;*/
+  /* margin-right: -6px; */
+  /*text-align: center;*/
+  width: 1.2em;
+  z-index: 99999;
+  position: absolute;
+  right: 5px;
+  top: 6px;
+}
+#check
+{
+    width: 100%;
+    height: 100%;
+    }
+
+#contador_rojo {
+  background: red;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  /* display: inline-block; */
+  font-weight: bold;
+  line-height: 1.2em;
+  /* margin-right: -6px; */
+  text-align: center;
+  width: 1.2em;
+  height: 1.2em;
+  z-index: 1;
+  position: absolute;
+  right: 5px;
+  top: -5px;
+  display:none;
+}
+
+
+
+/*Chat mensajes*/
+#contenedor_chat_mensajes
+{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: white;
+    margin-top: 50px;
+    margin-left: 25%;
+    }

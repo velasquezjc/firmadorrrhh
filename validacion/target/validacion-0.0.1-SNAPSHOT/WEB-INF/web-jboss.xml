@@ -1,0 +1,60 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+
+
+<!-- Con jboss tuve problemas de despliegue:
+https://stackoverflow.com/questions/4412147/the-resourceconfig-instance-does-not-contain-any-root-resource-classes
+https://stackoverflow.com/questions/6953516/deploying-a-jersey-webapp-on-jboss-as-7
+https://developer.jboss.org/message/744530#744530
+ -->
+<web-app>
+  <display-name>Web Application</display-name>
+  <context-param>
+    <param-name>resteasy.scan</param-name>
+    <param-value>false</param-value>
+  </context-param>
+  <context-param>
+    <param-name>resteasy.scan.providers</param-name>
+    <param-value>false</param-value>
+  </context-param>
+  <context-param>
+    <param-name>resteasy.scan.resources</param-name>
+    <param-value>false</param-value>
+  </context-param>
+  
+  <servlet>
+  <servlet-name>Service Validation</servlet-name>
+  <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+  
+  <!-- <init-param>
+  <param-name>com.sun.jersey.config.property.packages</param-name>
+  <param-value>ar.gov.validacion.ws.rest.service</param-value>
+  </init-param> -->
+   <init-param> 
+  <!--    resuelve el bug Jersey: Couldn't find grammar element for class
+    pasa cuando se envian como objetos son datos primitivos,String,etc 
+    y no objetos:
+    https://stackoverflow.com/questions/15767973/jersey-what-does-couldnt-find-grammar-element-mean
+    -->    
+     <param-name>com.sun.jersey.config.feature.DisableWADL</param-name>
+    <param-value>true</param-value>
+  </init-param>
+  <init-param>
+  <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+  <param-value>true</param-value>
+  </init-param>
+  <init-param>
+        <param-name>com.sun.jersey.spi.container.ContainerResponseFilters</param-name>
+        <param-value>ar.gov.validation.ws.filters.CORSFilter</param-value>
+  </init-param> 
+  
+    
+  <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Service Validation</servlet-name>
+  <url-pattern>/services/*</url-pattern>
+  </servlet-mapping>
+</web-app>

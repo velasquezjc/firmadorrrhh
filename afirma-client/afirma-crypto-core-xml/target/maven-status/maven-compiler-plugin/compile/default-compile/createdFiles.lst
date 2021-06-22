@@ -1,0 +1,10 @@
+es\gob\afirma\signers\xml\InvalidXMLException.class
+es\gob\afirma\signers\xml\style\IsInnerlException.class
+es\gob\afirma\signers\xml\CustomUriDereferencer.class
+es\gob\afirma\signers\xml\style\StyleException.class
+es\gob\afirma\signers\xml\Utils.class
+es\gob\afirma\signers\xml\style\XmlStyleMessages.class
+es\gob\afirma\signers\xml\style\ReferenceIsNotXmlException.class
+es\gob\afirma\signers\xml\style\CannotDereferenceException.class
+es\gob\afirma\signers\xml\style\XmlStyle.class
+es\gob\afirma\signers\xml\XMLConstants.class

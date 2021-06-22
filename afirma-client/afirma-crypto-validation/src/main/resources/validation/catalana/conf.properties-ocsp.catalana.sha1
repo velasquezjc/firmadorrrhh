@@ -1,0 +1,8 @@
+# Certificado raiz del emisor
+issuerCertFile=/validation/catalana/EC-Ciudadania.cer
+
+# Si hay que firmar o no la peticion OCSP
+signOcspRequest=false
+
+# URL del responder OCSP
+responderUrl=http://ocsp.catcert.cat

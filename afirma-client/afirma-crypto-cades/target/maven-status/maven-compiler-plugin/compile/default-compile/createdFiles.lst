@@ -1,0 +1,14 @@
+es\gob\afirma\signers\cades\CAdESSignerMetadata.class
+es\gob\afirma\signers\cades\AOCAdESSigner.class
+es\gob\afirma\signers\cades\CAdESSignerMetadata$CAdESSignerLocation.class
+es\gob\afirma\signers\cades\CAdESUtils.class
+es\gob\afirma\signers\cades\CAdESValidator.class
+es\gob\afirma\signers\cades\asic\CAdESASiCExtraParams.class
+es\gob\afirma\signers\cades\asic\AOCAdESASiCSSigner.class
+es\gob\afirma\signers\cades\CommitmentTypeIndicationBean.class
+es\gob\afirma\signers\cades\CAdESExtraParams.class
+es\gob\afirma\signers\cades\CAdESTriPhaseSigner.class
+es\gob\afirma\signers\cades\AOSigPolicyQualifierInfo.class
+es\gob\afirma\signers\cades\CAdESSignerMetadataHelper.class
+es\gob\afirma\signers\cades\CommitmentTypeIndicationsHelper.class
+es\gob\afirma\signers\cades\GenCAdESEPESSignedData.class
