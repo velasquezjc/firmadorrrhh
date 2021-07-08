@@ -504,7 +504,10 @@ public final class SimpleAfirma implements PropertyChangeListener, WindowListene
 		}   
       	String s = "afirma://signandsave?op=signandsave&cop=SIGN&keystore=PKCS11:C:\\Windows\\System32\\eTPKCS11.dll&algorithm=SHA1withRSA&format=Adobe%20PDF&properties=c2VydmVyVXJsPWh0dHA6Ly93d3cubWlsb2NhbC5jb206ODA4MS9hZmlybWEtc2VydmVyLXRyaXBoYXNlLXNpZ25lci9TaWduYXR1cmVTZXJ2aWNl&filename=archivoFirmado.pdf&dat=";
     	ProtocolInvocationLauncher.launch(s+sValue,true);//por socket si esta en true
-    	System.exit(0);*/
+    	*/
+    	String s = "afirma://signandsave?op=signandsave&cop=SIGN&keystore=PKCS11:C:\\Windows\\System32\\eTPKCS11.dll&algorithm=SHA1withRSA&format=Adobe%20PDF";
+    	ProtocolInvocationLauncher.launch(s,true);//por socket si esta en true
+    	System.exit(0);
     	/**************/
     	LOGGER.info("Entraron cantidad de parametros: "+ args.length);
     	if(args.length>0)LOGGER.info("Parametro de entrada: "+ args[0]);

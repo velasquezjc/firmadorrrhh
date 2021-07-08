@@ -53,7 +53,8 @@ public final class KeyStoreUtilities {
     	"FNMT_P11.dll", //$NON-NLS-1$
     	"UsrPkcs11.dll", //$NON-NLS-1$
     	"UsrPubPkcs11.dll", //$NON-NLS-1$
-    	"TIF_P11.dll" //$NON-NLS-1$
+    	"TIF_P11.dll"   ,
+    	"eTPKCS11.dll" //$NON-NLS-1$
     };
 
     /** Crea las l&iacute;neas de configuraci&oacute;n para el proveedor PKCS#11
