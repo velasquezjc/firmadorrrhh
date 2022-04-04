@@ -2,7 +2,6 @@ es\gob\afirma\standalone\configurator\ConfiguratorUtil$1.class
 es\gob\afirma\standalone\configurator\LookAndFeelManager.class
 es\gob\afirma\standalone\configurator\CertUtil$CertPack.class
 es\gob\afirma\standalone\configurator\ConfiguratorFirefox$1.class
-es\gob\afirma\standalone\configurator\ConfiguratorUtil2$1.class
 es\gob\afirma\standalone\configurator\ConfiguratorWindows.class
 es\gob\afirma\standalone\configurator\ConfiguratorUtil.class
 es\gob\afirma\standalone\configurator\PrintConsole.class
@@ -11,6 +10,7 @@ es\gob\afirma\standalone\configurator\ConfiguratorFirefox$MozillaProfileNotFound
 es\gob\afirma\standalone\configurator\ConfigurationException.class
 es\gob\afirma\standalone\configurator\ConfiguratorFirefox$3.class
 es\gob\afirma\standalone\configurator\IoConsole.class
+es\gob\afirma\standalone\configurator\ConfiguratorUtilViejo$1.class
 es\gob\afirma\standalone\configurator\CertUtilXXX$CertPack.class
 es\gob\afirma\standalone\configurator\GraphicConfiguratorConsole$1.class
 es\gob\afirma\standalone\configurator\ConsoleListener.class
@@ -23,8 +23,8 @@ es\gob\afirma\standalone\configurator\AutoFirmaConfigurator.class
 es\gob\afirma\standalone\configurator\ConfiguratorFirefox$2.class
 es\gob\afirma\standalone\configurator\AutoFirmaConfiguratorSilent.class
 es\gob\afirma\standalone\configurator\CertUtilXXX.class
-es\gob\afirma\standalone\configurator\ConfiguratorUtil2.class
 es\gob\afirma\standalone\configurator\ConfiguratorLinux.class
+es\gob\afirma\standalone\configurator\ConfiguratorUtilViejo.class
 es\gob\afirma\standalone\configurator\CertUtil.class
 es\gob\afirma\standalone\configurator\GraphicConfiguratorConsole$1$1.class
 es\gob\afirma\standalone\configurator\ConsoleManager.class

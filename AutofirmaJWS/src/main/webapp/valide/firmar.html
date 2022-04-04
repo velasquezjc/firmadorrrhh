@@ -569,7 +569,7 @@ Informaci&oacute;n.</p>
 	</div> <!-- FIN DE CONTENEDOR -->
 	
 	<!-- js de los servicios de firma -->
-<script type="text/javascript" defer="defer">
+<script type="text/javascript" >
 
 	var signature; //variable que almacenara la firma resultante
 	var mobile = false;
@@ -628,7 +628,7 @@ Informaci&oacute;n.</p>
 
 		var dataB64 = null;
 		var format = "AUTO"; //se puede firmar cualquier tipo de docmento soportado
-		var algorithm = "SHA1withRSA";
+		var algorithm = "SHA256withRSA";
 		var params="";
 		try {
 		
@@ -1345,11 +1345,13 @@ if (navigator.platform.indexOf("Linux")!=-1 || navigator.platform.indexOf("Mac")
 //En Mac y Linux se fuerza la utilización de servidores intermedios
 MiniApplet.setForceWSMode(true);
 }
+//MiniApplet.setForceAFirma(true);
 //dominio desde el que se realiza la llamada al servicio
 //MiniApplet.cargarAppAfirma('miniapplet.js');
 //MiniApplet.setForceWSMode(true);
-MiniApplet.cargarAppAfirma(HOST+'valide/js/miniapplet.js',MiniApplet.KEYSTORE_WINDOWS);
-
+//    MiniApplet.cargarAppAfirma(HOST+'valide/js/miniapplet.js',MiniApplet.KEYSTORE_WINDOWS);
+MiniApplet.cargarAppAfirma(HOST + 'valide/js/miniapplet.js', MiniApplet.KEYSTORE_PKCS11 + ":C:\\Windows\\System32\\eTPKCS11.dll");
+MiniApplet.setForceAFirma(true);
 //////////////////////////////////////////////////////
 	//MiniApplet.cargarMiniApplet("https://valide.redsara.es/valide/applet");
 	

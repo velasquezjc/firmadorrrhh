@@ -51,10 +51,10 @@
 		</dependency>
 	</dependencies>
 	
-	<scm>
-		<connection>scm:svn:http://svn-ctt.administracionelectronica.gob.es/svn/clienteafirma/project/afirma-desktop/afirma-simple/trunk</connection>
-		<url>http://svn-ctt.administracionelectronica.gob.es/svn/clienteafirma/project/afirma-desktop/afirma-simple/trunk</url>
-	</scm>
+<!-- 	<scm> -->
+<!-- 		<connection>scm:svn:http://svn-ctt.administracionelectronica.gob.es/svn/clienteafirma/project/afirma-desktop/afirma-simple/trunk</connection> -->
+<!-- 		<url>http://svn-ctt.administracionelectronica.gob.es/svn/clienteafirma/project/afirma-desktop/afirma-simple/trunk</url> -->
+<!-- 	</scm> -->
 
 	<build>
 		<plugins>

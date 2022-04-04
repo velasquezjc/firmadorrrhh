@@ -1,0 +1,7 @@
+es\gob\afirma\signfolder\server\proxy\StorageService.class
+es\gob\afirma\signfolder\server\proxy\RetrieveService.class
+es\gob\afirma\signfolder\server\proxy\RetrieveConfig.class
+es\ual\autofirma\jws\AutofirmaJWSServer.class
+es\ual\autofirma\jws\AutofirmaJWS.class
+es\gob\afirma\signfolder\server\proxy\ErrorManager.class
+es\gob\afirma\signfolder\server\proxy\StorageConfig.class

@@ -258,13 +258,13 @@
 				<version>3.3.2-SNAPSHOT</version>
 				
 			</dependency>
-			<dependency>
-      <groupId>javax.jnlp</groupId>
-      <artifactId>jnlp-api</artifactId>
-      <version>7.0</version>
-      <scope>system</scope>
-      <systemPath>${java.home}/lib/javaws.jar</systemPath>
-    </dependency>
+ 			<dependency> 
+      <groupId>javax.jnlp</groupId> 
+      <artifactId>jnlp-api</artifactId> 
+      <version>7.0</version> 
+       <scope>system</scope> 
+       <systemPath>${java.home}/lib/javaws.jar</systemPath> 
+    </dependency> 
 
 	</dependencies>
 
@@ -314,7 +314,7 @@
 										<Main-Class>es.gob.afirma.standalone.SimpleAfirma</Main-Class>
 										<Permissions>all-permissions</Permissions>
 										<Application-Name>Firma Digital MDS</Application-Name>
-<!-- 										<Caller-Allowable-Codebase>https://127.0.0.1 https://clientefirma-pc16.rhcloud.com</Caller-Allowable-Codebase> -->
+										<Caller-Allowable-Codebase>*</Caller-Allowable-Codebase>
 						</manifestEntries>
 					</archive>
 					<excludes>

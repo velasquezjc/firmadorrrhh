@@ -85,7 +85,7 @@ public final class MozillaKeyStoreUtilities {
 		ATOS_CARDOS("Atos CardOS (preinstalado)", "siecap11.dll", false), //$NON-NLS-1$ //$NON-NLS-2$
 		FNMT_64("FNMT-RCM Modulo PKCS#11 64bits", "FNMT_P11_x64.dll", false), //$NON-NLS-1$ //$NON-NLS-2$  
 		FNMT_32("FNMT-RCM Modulo PKCS#11 32bits", "FNMT_P11.dll", false), //$NON-NLS-1$ //$NON-NLS-2$
-		eToken_32("eToken Modulo PKCS#11 32bits", "eTPKCS11.dll", true);
+		eToken_32("eToken Modulo PKCS#11 32bits", "eTPKCS11.dll", false);
 		
 		private String description;
 		private String lib;

@@ -195,6 +195,7 @@ final class AOKeyStoreManagerHelperPkcs11 {
 		final Method configureMethod = Provider.class.getMethod("configure", String.class); //$NON-NLS-1$
 		final Provider ret = (Provider) configureMethod.invoke(p, f.getAbsolutePath());
 		f.delete();
+		Security.addProvider(ret);
 		return ret;
 	}
 

@@ -24,7 +24,7 @@ final class ConfiguratorWindows implements Configurator {
 	static final Logger LOGGER = Logger.getLogger("es.gob.afirma"); //$NON-NLS-1$
 
 	private static final String KS_FILENAME = "firmadigitalkeystore.pfx"; //$NON-NLS-1$
-	private static final String FILE_AUTOFIRMA_CERTIFICATE = "FirmaDigital_ROOT.cer"; //$NON-NLS-1$
+	private static final String FILE_AUTOFIRMA_CERTIFICATE = "FirmaDigital_ROOT_navegador.cer"; //$NON-NLS-1$
 	private static final String KS_PASSWORD = "654321malaracha"; //$NON-NLS-1$
 
 	//private static String CHROME_CONFIG_FILE = "AppData/Local/Google/Chrome/User Data/Local State"; //$NON-NLS-1$

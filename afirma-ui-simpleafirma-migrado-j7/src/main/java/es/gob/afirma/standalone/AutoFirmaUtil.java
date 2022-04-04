@@ -8,18 +8,20 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Method;
 import java.net.Authenticator;
 import java.net.PasswordAuthentication;
 import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.jnlp.ServiceManager;
-import javax.jnlp.UnavailableServiceException;
+/*import javax.jnlp.ServiceManager;
+import javax.jnlp.UnavailableServiceException;*/
 
 import es.gob.afirma.core.misc.AOUtil;
 import es.gob.afirma.core.misc.BoundedBufferedReader;
 import es.gob.afirma.core.misc.Platform;
+//import es.gob.afirma.standalone.configurator.ConfiguratorUtil;
 import es.gob.afirma.standalone.ui.hash.CheckHashDialog;
 import es.gob.afirma.standalone.ui.preferences.PreferencesManager;
 
@@ -31,7 +33,7 @@ public final class AutoFirmaUtil {
 
 	private static final String REG_CMD = "reg"; //$NON-NLS-1$
 	private static final String REG_KEY = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run"; //$NON-NLS-1$
-	private static final String REG_VALUE = "AutoFirma"; //$NON-NLS-1$
+	private static final String REG_VALUE = "AutoFirmaMDS"; //$NON-NLS-1$
 	private static final String REG_VALUE_OPT = "/v"; //$NON-NLS-1$
 
 	private static final Image ICON = Toolkit.getDefaultToolkit().getImage(
@@ -135,8 +137,8 @@ public final class AutoFirmaUtil {
 
 	/** Recupera el directorio en el que se encuentra la aplicaci&oacute;n actual
 	 * modificado del get de arriba asi busca primero en el temp si esta en contexto java web start.
-	 * @return Directorio de ejecuci&oacute;n. */
-	public static File getApplicationDirectory() {
+	 * @return Directorio de ejecuci&oacute;n.    */
+	/*public static File getApplicationDirectoryViejo() {
 		File appDir;
 		try{
 			ServiceManager.lookup("javax.jnlp.ExtendedService");
@@ -153,7 +155,84 @@ public final class AutoFirmaUtil {
 			LOGGER.warning("No se pudo localizar el directorio del fichero en ejecucion: " + e); //$NON-NLS-1$
 		}
 		return null;
+	}*/
+	
+	public static File getApplicationDirectory() {
+
+		if (isJnlpDeployment()) {
+			return getJNLPApplicationDirectory();
+		}
+
+		// Identificamos el directorio de instalacion
+		try {
+			return new File(AutoFirmaUtil.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath()).getParentFile();
+		}
+		catch (final URISyntaxException e) {
+			LOGGER.warning("No se pudo localizar el directorio del fichero en ejecucion: " + e); //$NON-NLS-1$
+		}
+
+		return null;
 	}
+	/**
+	 * Comprueba si estamos en un despliegue JNLP de la aplicaci&oacute;n.
+	 * @return {@code true} si estamos en un despliegue JNLP, {@code false}
+	 * en caso contrario.
+	 */
+	private static boolean isJnlpDeployment() {
+
+		// Para comprobar si estamos en un despliegue JNLP sin crear una dependencia
+		// con javaws, hacemos una llamada equivalente a:
+		//     javax.jnlp.ServiceManager.lookup("javax.jnlp.ExtendedService");
+		// Si falla la llamda, no estamos en un despliegue JNLP
+		try {
+			final Class<?> serviceManagerClass = Class.forName("javax.jnlp.ServiceManager"); //$NON-NLS-1$
+			final Method lookupMethod = serviceManagerClass.getMethod("lookup", String.class); //$NON-NLS-1$
+			lookupMethod.invoke(null, "javax.jnlp.ExtendedService"); //$NON-NLS-1$
+		}
+		catch (final Throwable e) {
+			return false;
+		}
+		return true;
+	}
+	/**
+	 * Obtiene el directorio de aplicaci&oacute;n que corresponde cuando se
+	 * ejecuta la aplicaci&oacute;n mediante un despliegue es JNLP.
+	 * @return Directorio de aplicaci&oacute;n.
+	 */
+	public static File getJNLPApplicationDirectory() {
+		if (Platform.getOS() == Platform.OS.WINDOWS) {
+			final File appDir = getWindowsAlternativeAppDir();
+			if (appDir.isDirectory() || appDir.mkdirs()) {
+				return appDir;
+			}
+		}
+		else if (Platform.getOS() == Platform.OS.MACOSX) {
+			final File appDir = getMacOsXAlternativeAppDir();
+			if (appDir.isDirectory() || appDir.mkdirs()) {
+				return appDir;
+			}
+		}
+		return new File(System.getProperty("java.io.tmpdir")); //$NON-NLS-1$
+	}
+	
+	/**
+	 * Recupera el directorio de instalaci&oacute;n alternativo en los sistemas Windows.
+	 * @return Directorio de instalaci&oacute;n.
+	 */
+	public static File getWindowsAlternativeAppDir() {
+		final String commonDir = System.getenv("ALLUSERSPROFILE"); //$NON-NLS-1$
+		return new File (commonDir, "AutoFirma"); //$NON-NLS-1$
+	}
+	
+	/**
+	 * Recupera el directorio de instalaci&oacute;n alternativo en los sistemas macOS.
+	 * @return Directorio de instalaci&oacute;n.
+	 */
+	public static File getMacOsXAlternativeAppDir() {
+		final String userDir = System.getenv("HOME"); //$NON-NLS-1$
+		return new File (userDir, "Library/Application Support/AutoFirma"); //$NON-NLS-1$
+	}
+	
 	
 	/** Recupera el DPI de la pantalla principal.
 	 * @return DPI de la pantalla principal. */

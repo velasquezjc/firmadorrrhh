@@ -5,10 +5,6 @@
   <artifactId>afirma-ui-simpleafirma-configurator</artifactId>
   <name>afirma-ui-simpleafirma-configurator</name>
   <version>3.3.2-SNAPSHOT</version>
-  <scm>
-    <connection>scm:svn:http://svn-ctt.administracionelectronica.gob.es/svn/clienteafirma/project/afirma-desktop/afirma-simple/trunk</connection>
-    <url>http://svn-ctt.administracionelectronica.gob.es/svn/clienteafirma/project/afirma-desktop/afirma-simple/trunk</url>
-  </scm>
   <build>
     <plugins>
       <plugin>
@@ -75,7 +71,7 @@
       <artifactId>jnlp-api</artifactId>
       <version>7.0</version>
       <scope>system</scope>
-      <systemPath>D:\Mis programas\Java\jdk1.8.0_251\jre/lib/javaws.jar</systemPath>
+      <systemPath>D:\Programas\Java\jdk1.8.0_291\jre/lib/javaws.jar</systemPath>
     </dependency>
   </dependencies>
   <properties>

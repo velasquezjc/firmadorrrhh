@@ -23,7 +23,7 @@ public class AutofirmaJWS extends JnlpDownloadServlet
 		PrintWriter out=res.getWriter();
 		out.println("<?xml version='1.0' encoding='utf-8'?>");
 		//TRABAJO: modificar a https://127.0.0.1:8443 para evitar la busqueda por dns para que funcione
-		out.println("<jnlp spec='1.0+' codebase='http://www.milocal.com:8080/AutofirmaJWS/' > ");
+		out.println("<jnlp spec='1.0+' codebase='https://www.milocal.com:8443/AutofirmaJWS/' > ");
 		//facu sea http o https:   out.println("<jnlp spec='1.0+' codebase='http://www.milocal.com:8080/AutofirmaJWS/' > ");
 		
 		//server:  out.println("<jnlp spec='1.0+' codebase='https://clientefirma-pc16.rhcloud.com/AutofirmaJWS/' > ");
@@ -33,7 +33,7 @@ public class AutofirmaJWS extends JnlpDownloadServlet
 		out.println("<homepage href='index.html'/> ");
 		out.println("<description>Proyecto basado en AutoFirma</description>");
 		out.println("<description kind='short'>AutoFirma MDS</description> ");
-		out.println("<icon href='http://www.milocal.com:8080/AutofirmaJWS/img/images.jpg' width='64' height='64'/> ");
+		out.println("<icon href='https://www.milocal.com:8443/AutofirmaJWS/img/images.jpg' width='64' height='64'/> ");
 		out.println("<offline-allowed/> ");
 		out.println("</information>");		
 		out.println("<security>");
