@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>D:\Programas\Java\jdk1.8.0_291\bin\afirma-simple-installer\jar\AutoFirmaConfiguradorMDS.jar</jar>
+  <outfile>D:\Programas\Java\jdk1.8.0_291\bin\afirma-simple-installer\AutoFirma64\AutoFirmaConfiguradorMDS.exe</outfile>
+  <errTitle>Error: Se ha superado el tiempo de espera antes de recibir peticiones config.</errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>true</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest>D:\Programas\Java\jdk1.8.0_291\bin\afirma-simple-installer\AutoFirmaConfigurator.manifest</manifest>
+  <icon>D:\Programas\Java\jdk1.8.0_291\bin\afirma-simple-installer\logomds2-modified.ico</icon>
+  <classPath>
+    <mainClass>es.gob.afirma.standalone.configurator.AutoFirmaConfigurator</mainClass>
+  </classPath>
+  <jre>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion>1.8.0</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+    <opt>-Xms512m -Xmx1g</opt>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.8.0.0</fileVersion>
+    <txtFileVersion>1.8.0</txtFileVersion>
+    <fileDescription>Configurador AutoFirmaMDS</fileDescription>
+    <copyright>GPL</copyright>
+    <productVersion>1.8.0.0</productVersion>
+    <txtProductVersion>1.8.0</txtProductVersion>
+    <productName>Configurador AutoFirmaMDS</productName>
+    <companyName>Gobierno de Argentina</companyName>
+    <internalName>Configurador AutoFirmaMDS</internalName>
+    <originalFilename>AutoFirmaConfiguradorMDS.exe</originalFilename>
+    <trademarks></trademarks>
+    <language>SPANISH_MEXICO</language>
+  </versionInfo>
+  <messages>
+    <startupErr>Ocurrió un error mientras arrancaba la aplicación</startupErr>
+    <bundledJreErr>Esta aplicación fue configurada para utilizar una versión embebida de Java Runtime Environment (JRE) pero el runtime no se encuentra o está corrupto.</bundledJreErr>
+    <jreVersionErr>La aplicación requiere un Java Runtime Environment (JRE)</jreVersionErr>
+    <launcherErr>El registro hace referencia a una instalación de Java Runtime Environment (JRE) que no existe o está corrupta.</launcherErr>
+    <instanceAlreadyExistsMsg>Ya se encuentra corriendo una instancia de esta aplicación.</instanceAlreadyExistsMsg>
+  </messages>
+</launch4jConfig>
